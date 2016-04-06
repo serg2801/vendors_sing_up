@@ -1,0 +1,22 @@
+<p>Business Name/D.B.A: <%= @vendor.first_name %></p>
+<p>Greeting: <%= @vendor.greeting %></p>
+<p>First Name: <%= @vendor.first_name %></p>
+<p>Last Name: <%= @vendor.last_name %></p>
+<p>Email: <%= @vendor.email %></p>
+<p>Phone Number: <%= @vendor.phone_number %></p>
+<p>Address: <%= @vendor.address %></p>
+<p>Unit/Suite/etc.: <%= @vendor.suite %></p>
+<p>City: <%= @vendor.city %></p>
+<p>Zip Code: <%= @vendor.zipcode %></p>
+<p>State: <%= @vendor.state %></p>
+<p>Country: <%= @vendor.country %></p>
+<p>Web site url: <%= @vendor.web_site_url %></p>
+<div>
+  <p>Check the options that describe your business:</p>
+  <% @vendor.companies.each do |company| %>
+  <p><%= company.title %></p>
+  <% end %>
+</div>
+<p>Information: <%= @vendor.information %></p>
+
+Thank you!!!

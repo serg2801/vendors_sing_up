@@ -10,6 +10,19 @@
   </div>
   <%= form_for @vendor do |f| %>
       <div class="row">
+        <% if @vendor.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= pluralize(@vendor.errors.count, "error") %> prohibited
+                this project from being saved:
+              </h2>
+              <ul>
+                <% @vendor.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
         <div class="col-lg-12">
           <!-- col-lg-12 start here -->
           <div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">
@@ -115,7 +128,7 @@
                   <% Company.order(:title).each do |company_type| %>
                       <div class="col-lg-3 col-md-6">
                         <div class="checkbox-custom">
-                          <%= check_box_tag "vendor[company_ids][]", company_type.id, nil, :id => "cmt_#{company_type.id}" %>
+                          <%= check_box_tag "vendor[company_ids][]", company_type.id, nil, :id => "cmt_#{company_type.id}", name_company: "checkbox_company[]" %>
                           <label for="cmt_<%= company_type.id %>"><%= company_type.title.upcase %></label>
                         </div>
                       </div>
@@ -132,31 +145,8 @@
         <div class="col-lg-12">
           <div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">
             <div class="panel-heading">
-              <h4 class="panel-title">BUSINESS INFORMATION</h4>
-
-              <div class="panel-controls panel-controls-right">
-                <a class="panel-refresh" href="#"><i class="fa fa-circle-o"></i></a>
-                <a class="toggle panel-minimize" href="#"><i class="fa fa-angle-up"></i></a>
-                <a class="panel-close" href="#"><i class="fa fa-times"></i></a>
-              </div>
-            </div>
-            <div class="panel-body pt0 pb0">
-              <div class="form-horizontal group-border stripped">
-
-                <div class="form-group">
-                  <label for="" class="col-lg-3 col-md-3 control-label text-left">UPLOAD PRODUCT EXAMPLE</label>
-
-                  <div class="col-lg-9 col-md-9">
-                    <%#= f.file_field :sample_photo %>
-                    <input type="file" data-iconname="" data-buttonname="btn-danger" data-buttontext="UPLOAD" class="filestyle" id="filestyle-0" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);" tabindex="-1">
-
-                    <div class="bootstrap-filestyle input-group"><input type="text" class="form-control ">
-                      <span class="group-span-filestyle input-group-btn" tabindex="0"><label class="btn btn-upload " for="filestyle-0">UPLOAD</label></span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+              <h4 class="panel-title">UPLOAD PRODUCT EXAMPLE</h4>
+              <%= f.file_field :image, class: 'btn-file' %>
             </div>
           </div>
         </div>
@@ -230,7 +220,7 @@
                     </div>
                     <div class="col-xs-12">
                       <div class="checkbox-custom">
-                        <input type="checkbox" value="option" id="agree" name="agree">
+                        <input type="checkbox" value="option" id="agree checkbox_agree" name="agree">
                         <label for="agree">AGREE</label>
                       </div>
                     </div>
@@ -243,8 +233,7 @@
 
         <div class="row">
           <div class="col-lg-12 m-b-lg">
-            <!-- <button type="button" class="btn-submit-app">SUBMIT APPLCIATION</button> -->
-            <%= f.submit "SUBMIT APPLICATION", :class => "btn-submit-app" %>
+            <%= f.submit "SUBMIT APPLICATION", onclick: "validateCheckbox();", :class => "btn-submit-app", id: "submit_form" %>
           </div>
         </div>
   <% end %>

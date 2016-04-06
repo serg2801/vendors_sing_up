@@ -1,5 +1,9 @@
 class VendorsController < ApplicationController
 
+  def show
+    @vendor = Vendor.find(params[:id])
+  end
+
   def new
     @vendor = Vendor.new
   end
@@ -12,7 +16,8 @@ class VendorsController < ApplicationController
        @vendor.companies << @company
     end
     if @vendor.save
-      redirect_to @vendor
+      VendorMailer.signup_cinfirmation(@vendor).deliver
+      redirect_to @vendor, notice: "Successfully!!!"
     else
       render 'new'
     end
@@ -21,7 +26,7 @@ class VendorsController < ApplicationController
   private
   def vendor_params
     params.require(:vendor).permit(:business_name, :greeting, :first_name, :last_name, :email, :phone_number, :address,
-                                   :suite, :city, :state, :zipcode, :country, :web_site_url, :information)
+                                   :suite, :city, :state, :zipcode, :country, :web_site_url, :information, :image)
   end
 
 end
