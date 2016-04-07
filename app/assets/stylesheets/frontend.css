@@ -19,6 +19,9 @@ a:hover {
     color: #b3b1c4;
     text-decoration: underline;
 }
+.row {
+    margin: 0;
+}
 
 /* Customer Navigation Bar */
 
@@ -253,5 +256,12 @@ a:hover {
 }
 
 .text-center {
-    font-family: "Open Sans";
+    font-family: 'Playfair Display';
+}
+.bold-title {
+    background-color: #212721;
+    color: #FFF;
+}
+.b-t-md {
+    border-top: 3px solid #212721;
 }
