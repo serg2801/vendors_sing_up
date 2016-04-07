@@ -49,35 +49,35 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :first_name, "FIRST NAME", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :first_name, "First Name", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :first_name, :class => "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :last_name, "LAST NAME", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :last_name, "Last Name", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :last_name, :class => "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :email, "EMAIL", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :email, "Email", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.email_field :email, :class => "form-control", :required => true %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :phone_number, "PHONE NUMBER", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :phone_number, "Phone Number", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :phone_number, :class => "form-control" %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :address, "ADDRESS", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :address, "Address", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :address, :class => "form-control" %>
                   </div>
@@ -91,36 +91,36 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :city, "CITY", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :city, "City", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
                     <%= f.text_field :city, :class => "form-control" %>
                   </div>
-                  <%= f.label :state, "STATE", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :state, "State", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
                     <%= f.text_field :state, :class => "form-control" %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :zipcode, "ZIP CODE", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :zipcode, "ZIP Code", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
                     <%= f.text_field :zipcode, :class => "form-control" %>
                   </div>
-                  <%= f.label :country, "COUNTRY", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :country, "Country", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
                     <%= f.text_field :country, :class => "form-control" %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :web_site_url, "WEBSITE ADDRESS", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :web_site_url, "Website", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :web_site_url, :class => "form-control" %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :web_site_url, "Interior Design Certificate Number (e.g: NCID or CCIDC):", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :certificate, "Interior Design Certificate Number (e.g: NCID or CCIDC):", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :certificate, :class => "form-control" %>
                   </div>
@@ -144,16 +144,16 @@
       </div>
 
 
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">
-            <div class="panel-heading">
-              <h4 class="panel-title">Please upload a copy of your Inteior Design Certification:</h4>
-              <%= f.file_field :image, class: 'btn-file' %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--<div class="row">-->
+        <!--<div class="col-lg-12">-->
+          <!--<div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">-->
+            <!--<div class="panel-heading">-->
+              <!--<h4 class="panel-title">Please upload a copy of your Inteior Design Certification:</h4>-->
+              <!--<%#= f.file_field :image, class: 'btn-file' %>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
 
       <div class="row">
@@ -191,31 +191,24 @@
               <div class="panel-body pt0 pb0">
                 <form role="form" class="form-horizontal group-border stripped" id="validate" novalidate="novalidate">
                   <div class="form-group">
-                    <label class="col-xs-12 control-label">BY CLICKING THE "l AGREE" BUTTON. YOU HEREBY REPRESENT AND
-                      WARRANT AS FOLLOWS : </label>
+                    <label class="col-xs-12 control-label">By submitting this form, you agree to the following: </label>
 
                     <div class="col-xs-12">
                       <ul>
-                        <li>You have reviewed, understand and agree to the terms of the Arbor Gentry Mutual
-                          Non-Disclosure Agreement ("NDA").
+                        <li>The terms of the Arbor Gentry, LLC Non-Disclosure Agreement (NDA) found .
                           <a href="/nda.pdf" target="_blank" class="btn btn-agreement">NON-DISCLOSURE
                             AGREEMENT</a></li>
-                        <li>If you are agreeing to the NDA on behalf of a company or other entity, you are legally
-                          authorized to bind that entity
-                        </li>
-                        <li>You understand that agreeing to the NDA and submitting your appiication does not mean that
-                          you hove been approved as a Tandem Arbor vendor or that you are committing to do business with
-                          Tandem Arbor;
-                        </li>
-                        <li>If you are selected to become a Tandem Arbor vendor, you will need to review and agree to
-                          our separate Tandem Arbor vendor Terms and Conditions.
+                        <li>If you intend to purchase merchandise for resale, and wish to waive sales tax on your
+                          qualifying orders, please be advised that we will do so only upon request, and that tax
+                          documentation is subject to review, validation and approval at the sole discretion of
+                          Arbor Gentry and in accordance with state, local and federal guidelines.
                         </li>
                       </ul>
                     </div>
                     <div class="col-xs-12 agree_checkbox">
                       <div class="checkbox-custom">
                         <input type="checkbox" value="option" id="agree checkbox_agree" name="agree">
-                        <label for="agree">AGREE</label>
+                        <label for="agree">I agree to the terms, conditions, and agreements outlined above.</label>
                       </div>
                     </div>
                   </div>
@@ -227,7 +220,7 @@
 
         <div class="row">
           <div class="col-lg-12 m-b-lg">
-            <%= f.submit "SUBMIT APPLICATION", :class => "btn-submit-app", :id => "submit_form" %>
+            <%= f.submit "SUBMIT", :class => "btn-submit-app", :id => "submit_form" %>
           </div>
         </div>
   <% end %>

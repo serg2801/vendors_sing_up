@@ -6,6 +6,7 @@
 */
 
 body {
+    background: #fff;
     font-family: "Open Sans", "Century Gothic", sans-serif;
 }
 
@@ -249,4 +250,8 @@ a:hover {
 
 .btn .btn-link a:hover {
     color: #b3b1c4;
+}
+
+.text-center {
+    font-family: "Open Sans";
 }
