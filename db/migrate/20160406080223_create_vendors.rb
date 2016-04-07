@@ -15,6 +15,7 @@ class CreateVendors < ActiveRecord::Migration
       t.string  :zipcode
       t.string  :country
       t.string  :web_site_url
+      t.string  :certificate
 
 
 

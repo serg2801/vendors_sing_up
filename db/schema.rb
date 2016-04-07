@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160406115906) do
     t.string   "zipcode"
     t.string   "country"
     t.string   "web_site_url"
+    t.string   "certificate"
     t.text     "information"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
