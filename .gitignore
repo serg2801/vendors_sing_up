@@ -18,6 +18,12 @@
 /public/system/option_images
 /config/database.yml
 
+.ruby-gemset
+.ruby-version
+/public/assets/
+/public/uploads/vendor/
+  
+
 ## Directory-based project format:
 .idea/
 # if you remove the above rule, at least ignore the following:
