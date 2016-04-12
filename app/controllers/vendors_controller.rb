@@ -1,9 +1,5 @@
 class VendorsController < ApplicationController
 
-  def show
-    @vendor = Vendor.find(params[:id])
-  end
-
   def new
     @vendor = Vendor.new
   end
@@ -17,7 +13,7 @@ class VendorsController < ApplicationController
     end
     if @vendor.save
       VendorMailer.signup_cinfirmation(@vendor).deliver
-      redirect_to @vendor, notice: "Successfully!!!"
+      redirect_to trade_path, notice: "Successfully!!!"
     else
       render 'new'
     end

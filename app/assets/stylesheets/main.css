@@ -1930,7 +1930,6 @@ li.L9 {
   display: block;
   width: 32px;
   height: 32px;
-  background: rgba(0, 0, 0, 0.4) url(/assets/backtop.png) no-repeat center center;
   text-indent: -9999px;
   border-radius: 3px;
   transition: all;
@@ -3102,21 +3101,7 @@ fieldset[disabled] .pricing-table.yellow .pricing-bottom .price .btn.active {
 .weather .icon {
   background-color: rgba(255, 255, 255, 0.7);
 }
-.weather.snow {
-  background-image: url(/assets/weather/snow.png);
-}
-.weather.rain {
-  background-image: url(/assets/weather/rain.png);
-}
-.weather.clear {
-  background-image: url(/assets/weather/clear.png);
-}
-.weather.cloud {
-  background-image: url(/assets/weather/cloud.png);
-}
-.weather.sunny {
-  background-image: url(/assets/weather/sunny.png);
-}
+
 /* -----------------------------------------
    Recent comments
 ----------------------------------------- */
@@ -3491,11 +3476,7 @@ div.gallery-upload .dropzone .dz-message:after {
     margin: 0;
     padding: 0;
   }
-  .page-content,
-  .row {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+
   .panel {
     box-shadow: none;
   }
@@ -3517,6 +3498,17 @@ div.gallery-upload .dropzone .dz-message:after {
     display: none;
   }
 }
-.vendor_show {
+.banner {
     text-align: center;
+}
+.row .text-center {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+}
+
+.row .form_container {
+    padding: 0;
 }
