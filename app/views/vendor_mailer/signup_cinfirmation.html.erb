@@ -1,4 +1,4 @@
-<p>Business Name/D.B.A: <%= @vendor.first_name %></p>
+<p>Business Name/D.B.A: <%= @vendor.business_name %></p>
 <p>Greeting: <%= @vendor.greeting %></p>
 <p>First Name: <%= @vendor.first_name %></p>
 <p>Last Name: <%= @vendor.last_name %></p>
@@ -15,7 +15,7 @@
 <div>
   <p>Check the options that describe your business:</p>
   <% @vendor.companies.each do |company| %>
-  <p><%= company.title %></p>
+  <p>--- <%= company.title %></p>
   <% end %>
 </div>
 <p>Information: <%= @vendor.information %></p>

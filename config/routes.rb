@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'vendors#new'
 
-  resources :vendors, only: [ :new, :create ]
-  resources :trades, only: [ :new, :create ]
+  resources :vendors, only: [ :create ]
+  resources :trades, only: [ :create ]
 
-  get 'trade', to: 'static_pages#trade'
-  get 'vendor', to: 'static_pages#vendor'
+  get 'trade', to: "vendors#new"
+  get 'vendor', to: "trades#new"
+
+  get 'trade_success', to: 'static_pages#trade'
+  get 'vendor_success', to: 'static_pages#vendor'
 
   # get 'vendor/sign_up' => 'vendor#sign_up'
 

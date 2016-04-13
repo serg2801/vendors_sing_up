@@ -10,26 +10,37 @@ class TradesController < ApplicationController
     @channels = params[:trade][:channel_ids]
     @options = params[:trade][:option_ids]
 
-    @categories.each do |category|
-      @category = Category.find(category)
-      @trade.categories << @category
-    end
-
-    @channels.each do |channel|
-      @channel = Channel.find(channel)
-      @trade.channels << @channel
-    end
-
-    @options.each do |option|
-      @option = Option.find(option)
-      @trade.options << @option
-    end
-
-    if @trade.save
-      TradeMailer.signup_confirmation(@trade).deliver
-      redirect_to vendor_path, notice: "Successfully!!!"
-    else
+    if @categories.nil?
+      flash[:warning] = "Please, indicate the options that describe your business!"
       render 'new'
+    elsif @channels.nil?
+      flash[:warning] = "Please, indicate what categories would you like to see on Tandem Arbor!"
+      render 'new'
+    elsif @options.nil?
+      flash[:warning] = "Please, indicate What channel(s) do you currently sell through!"
+      render 'new'
+    else
+      @categories.each do |category|
+        @category = Category.find(category)
+        @trade.categories << @category
+      end
+
+      @channels.each do |channel|
+        @channel = Channel.find(channel)
+        @trade.channels << @channel
+      end
+
+      @options.each do |option|
+        @option = Option.find(option)
+        @trade.options << @option
+      end
+
+      if @trade.save
+        TradeMailer.signup_confirmation(@trade).deliver
+        redirect_to vendor_success_path
+      else
+        render 'new'
+      end
     end
   end
 

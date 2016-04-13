@@ -2,6 +2,7 @@ $(document).ready(function(){
     //$("#submit_form").on("click",function(){
     //    if (($("input[name_company*='checkbox_company']:checked").length)<=0) {
     //        $('.company_check_box').css('border', 'solid red');
+    //        //alert("You must check the options that describe your business");
     //        return false;
     //    }
     //    $('.company_check_box').css('border', 'none');

@@ -16,11 +16,16 @@
                 <%= pluralize(@trade.errors.count, "error") %> prohibited
                 this project from being saved:
               </h2>
-              <ul>
+              <ul class="<%= flash_class(:warning) %>">
                 <% @trade.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
                 <% end %>
               </ul>
+            </div>
+        <% end %>
+        <% flash.each do |key, value| %>
+            <div class="text-center <%= flash_class(key) %>">
+              <%= value %>
             </div>
         <% end %>
         <div class="col-lg-12 form_container">

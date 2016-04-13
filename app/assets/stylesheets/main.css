@@ -3520,3 +3520,8 @@ div.gallery-upload .dropzone .dz-message:after {
 .row .form_container {
     padding: 0;
 }
+.row .alert-warning {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+}

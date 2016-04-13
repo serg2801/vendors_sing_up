@@ -4,7 +4,6 @@ class VendorMailer < ApplicationMailer
   def signup_cinfirmation(vendor)
     @vendor = vendor
     # attachments["#{@vendor.image}"] = File.read("#{Rails.root}/public/#{@vendor.image}")
-    # mail to: "trade@tandemarbor.com", subject:  "Vendor Form"
-    mail to: "serg-koreckij@yandex.ru", subject:  "Vendor Form Submission " + "#{@vendor.business_name}"
+    mail to: "trade@tandemarbor.com", subject:  "Trade Form Submission " + "#{@vendor.business_name}"
   end
 end
