@@ -1,0 +1,15 @@
+class Trade < ActiveRecord::Base
+
+  has_many :categories, :through =>  :trade_categories
+  has_many :trade_categories, dependent: :destroy
+
+  has_many :channels, :through =>  :trade_channels
+  has_many :trade_channels, dependent: :destroy
+
+  has_many :options, :through =>  :trade_options
+  has_many :trade_options, dependent: :destroy
+
+  validates :business_name, :greeting, :first_name, :last_name, :email, :phone_number, :address,
+            :city, :state, :zipcode, :country, :web_site_url_my, presence:  true
+
+end

@@ -11,46 +11,105 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406115906) do
+ActiveRecord::Schema.define(version: 20160413090749) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "companies", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "greetings", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trade_categories", force: :cascade do |t|
+    t.integer  "trade_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "trade_channels", force: :cascade do |t|
+    t.integer  "trade_id"
+    t.integer  "chanel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trade_options", force: :cascade do |t|
+    t.integer  "trade_id"
+    t.integer  "option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.string   "business_name"
+    t.string   "greeting"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "address"
+    t.string   "suite"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "country"
+    t.string   "web_site_url_my"
+    t.string   "web_site"
+    t.text     "information"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "vendor_companies", force: :cascade do |t|
-    t.integer  "vendor_id",  limit: 4
-    t.integer  "company_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "vendor_id"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vendors", force: :cascade do |t|
-    t.string   "business_name", limit: 255
-    t.string   "greeting",      limit: 255
-    t.string   "first_name",    limit: 255
-    t.string   "last_name",     limit: 255
-    t.string   "email",         limit: 255
-    t.string   "phone_number",  limit: 255
-    t.string   "address",       limit: 255
-    t.string   "suite",         limit: 255
-    t.string   "city",          limit: 255
-    t.string   "state",         limit: 255
-    t.string   "zipcode",       limit: 255
-    t.string   "country",       limit: 255
-    t.string   "web_site_url",  limit: 255
-    t.string   "certificate",   limit: 255
-    t.text     "information",   limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "image",         limit: 255
+    t.string   "business_name"
+    t.string   "greeting"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "address"
+    t.string   "suite"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "country"
+    t.string   "web_site_url"
+    t.string   "certificate"
+    t.text     "information"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "image"
   end
 
 end

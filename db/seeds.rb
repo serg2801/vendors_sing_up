@@ -15,9 +15,34 @@ Company.create(title: "Manufacturer")
 Company.create(title: "Interior Designer")
 Company.create(title: "Other")
 
-#Greeting Type
-Greeting.create(name: "Mr.")
-Greeting.create(name: "Ms.")
-Greeting.create(name: "Mrs.")
-Greeting.create(name: "Miss.")
+# Option Type
+
+Option.create(title: "Sales Rep. or Wholesale")
+Option.create(title: "Antique Dealer")
+Option.create(title: "Vintage Dealer")
+Option.create(title: "Manufacturer")
+Option.create(title: "Hand-crafted/Artisinal")
+Option.create(title: "Interior Designer ")
+Option.create(title: "Other/Not Applicable")
+
+# Category Type
+
+Category.create(title: "Seating")
+Category.create(title: "Kitchen")
+Category.create(title: "Lighting")
+Category.create(title: "Rugs")
+Category.create(title: "Decor")
+Category.create(title: "Outdoor")
+Category.create(title: "Soft Goods")
+Category.create(title: "Case Goods")
+
+# Channel Type
+
+Channel.create(title: "Direct to Consumer")
+Channel.create(title: "Brick and Mortar Store")
+Channel.create(title: "Showroom")
+Channel.create(title: "Flash Sales Website(s)")
+Channel.create(title: "3rd Party e-Commerce Site(s)")
+Channel.create(title: "Other")
+
 

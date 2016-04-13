@@ -1933,7 +1933,7 @@ li.L9 {
   text-indent: -9999px;
   border-radius: 3px;
   transition: all;
-  transition-duration: 0.4;
+  /*transition-duration: 0.4;*/
 }
 #back-to-top a:hover {
   background-color: #303946;
@@ -2038,7 +2038,7 @@ li.L9 {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
   transition: box-shadow 0.3s ease;
   border: none;
-  background-color: none;
+  /*background-color: none;*/
 }
 .dotstyle li a {
   top: 0;
@@ -3500,6 +3500,14 @@ div.gallery-upload .dropzone .dz-message:after {
 }
 .banner {
     text-align: center;
+}
+.content {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: normal;
+}
+.content .mail_static_page {
+    /*color: #337ab7;*/
 }
 .row .text-center {
     font-size: 24px;
