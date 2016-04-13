@@ -3,7 +3,7 @@ class TradeMailer < ApplicationMailer
 
   def signup_confirmation(trade)
     @trade = trade
-    # attachments["#{@vendor.image}"] = File.read("#{Rails.root}/public/#{@vendor.image}")
+    attachments["#{@trade.image}"] = File.read("#{Rails.root}/public/#{@trade.image}")
     mail to: "trade@tandemarbor.com", subject:  "Vendor Form Submission " + "#{@trade.business_name}"
   end
 end

@@ -47,7 +47,7 @@ class TradesController < ApplicationController
   private
   def trade_params
     params.require(:trade).permit(:business_name, :greeting, :first_name, :last_name, :email, :phone_number, :address,
-                                   :suite, :city, :state, :zipcode, :country, :web_site_url_my, :web_site, :information)
+                                   :suite, :city, :state, :zipcode, :country, :web_site_url_my, :web_site, :information, :image)
   end
 
 

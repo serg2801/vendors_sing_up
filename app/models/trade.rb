@@ -13,4 +13,6 @@ class Trade < ActiveRecord::Base
             :city, :state, :zipcode, :country, :web_site_url_my, presence:  true
   validates :phone_number, :numericality => {:only_integer => true}
 
+  mount_uploader :image, ImageUploader
+
 end
