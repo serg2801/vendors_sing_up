@@ -3,7 +3,7 @@ class CreateTradeChannels < ActiveRecord::Migration
     create_table :trade_channels do |t|
 
       t.integer :trade_id
-      t.integer :chanel_id
+      t.integer :channel_id
 
       t.timestamps null: false
     end

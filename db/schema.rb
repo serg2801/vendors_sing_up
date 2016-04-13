@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160413090749) do
 
   create_table "trade_channels", force: :cascade do |t|
     t.integer  "trade_id"
-    t.integer  "chanel_id"
+    t.integer  "channel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

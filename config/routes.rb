@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   root 'vendors#new'
 
   resources :vendors, only: [ :new, :create ]
+  resources :trades, only: [ :new, :create ]
 
   get 'trade', to: 'static_pages#trade'
+  get 'vendor', to: 'static_pages#vendor'
 
   # get 'vendor/sign_up' => 'vendor#sign_up'
 
