@@ -22,7 +22,9 @@
 .ruby-version
 /public/assets/
 /public/uploads/vendor/
-  
+/public/uploads/trade/
+/public/uploads/
+
 
 ## Directory-based project format:
 .idea/
