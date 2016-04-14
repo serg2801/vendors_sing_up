@@ -166,7 +166,7 @@
                   <% end %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :web_site, "Website URL(s):", :class => "col-lg-2 col-md-3 control-label" %>
+                  <%= f.label :web_site, "Website URL(s):", :class => "col-xs-12 control-label website_urls_label" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :web_site, :class => "form-control" %>
                   </div>
@@ -209,12 +209,12 @@
 
 
               </div>
-              <div class="panel-body pt0 pb0">
+              <div class="panel-body">
                 <form role="form" class="form-horizontal group-border stripped" id="validate" novalidate="novalidate">
                   <div class="form-group">
                     <label class="col-xs-12 control-label">By submitting this form, you agree to the following: </label>
 
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 pt0 pb0">
                       <ul>
                         <li>The terms of the Arbor Gentry, LLC Non-Disclosure Agreement (NDA):
                           <a href="/nda.pdf" target="_blank" class="btn btn-agreement">NON-DISCLOSURE
