@@ -11,7 +11,7 @@
 <p>State: <%= @vendor.state %></p>
 <p>Country: <%= @vendor.country %></p>
 <p>Web site url: <%= @vendor.web_site_url %></p>
-<!--<p>Interior Design Certificate Number (e.g: NCID or CCIDC): <%#= @vendor.certificate %></p>-->
+<p>Interior Design Certificate Number (e.g: NCID or CCIDC): <%= @vendor.certificate %></p>
 <div>
   <p>Check the options that describe your business:</p>
   <% @vendor.companies.each do |company| %>
