@@ -3528,3 +3528,6 @@ div.gallery-upload .dropzone .dz-message:after {
 .row .website_urls_label {
     width: 15%;
 }
+.row .certificate_label {
+    padding:0 14px 0 20px;
+}

@@ -17,6 +17,7 @@ class VendorsController < ApplicationController
       end
       if @vendor.save
         VendorMailer.signup_cinfirmation(@vendor).deliver
+        VendorMailer.send_confirmation(@vendor).deliver
         redirect_to trade_success_path
       else
         render 'new'

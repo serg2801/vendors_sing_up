@@ -6,4 +6,11 @@ class TradeMailer < ApplicationMailer
     attachments["#{@trade.image}"] = File.read("#{Rails.root}/public/#{@trade.image}")
     mail to: "trade@tandemarbor.com", subject:  "Vendor Form Submission " + "#{@trade.business_name}"
   end
+
+  def send_confirmation(trade)
+    @trade = trade
+    mail to: trade.email,
+         subject:  "Vendor Form Submission"
+  end
+
 end

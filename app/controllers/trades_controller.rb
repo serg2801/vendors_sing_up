@@ -37,6 +37,7 @@ class TradesController < ApplicationController
 
       if @trade.save
         TradeMailer.signup_confirmation(@trade).deliver
+        TradeMailer.send_confirmation(@trade).deliver
         redirect_to vendor_success_path
       else
         render 'new'
