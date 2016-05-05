@@ -46,3 +46,4 @@ Channel.create(title: "3rd Party e-Commerce Site(s)")
 Channel.create(title: "Other")
 
 
+AdminUser.create!(email: 'admin@tandemarbor.com', password: 'DK87dds', password_confirmation: 'DK87dds')
