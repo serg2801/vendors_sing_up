@@ -45,7 +45,7 @@ ActiveAdmin.register Vendor do
         image_tag vendor.image.url
       end
       row :image do
-        link_to('download', "#{vendor.image}", :download => 'filename')
+        link_to('download', "#{vendor.image}", :download => "#{vendor.id}_trade") unless vendor.image_url.nil?
       end
     end
   end

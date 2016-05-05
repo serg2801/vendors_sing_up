@@ -19,7 +19,7 @@ ActiveAdmin.register Trade do
   end
 
   show do
-    attributes_table do
+    attributes_table  do
       row :business_name
       row :greeting
       row :first_name
@@ -55,7 +55,7 @@ ActiveAdmin.register Trade do
         image_tag trade.image.url
       end
       row :image do
-        link_to('download', "#{trade.image}", :download => 'filename')
+        link_to('download', "#{trade.image}", :download => "#{trade.id}_vendor") unless trade.image_url.nil?
       end
     end
   end
