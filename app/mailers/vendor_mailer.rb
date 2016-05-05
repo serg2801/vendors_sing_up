@@ -3,7 +3,7 @@ class VendorMailer < ApplicationMailer
 
   def signup_cinfirmation(vendor)
     @vendor = vendor
-    attachments["#{@vendor.image}"] = File.read("#{Rails.root}/public/#{@vendor.image}") if @vendor.image != nil
+    attachments["#{@vendor.image}"] = File.read("#{Rails.root}/public/#{@vendor.image}") unless @vendor.image_url.nil?
     mail to: "trade@tandemarbor.com", subject:  "Trade Form Submission " + "#{@vendor.business_name}"
   end
 
