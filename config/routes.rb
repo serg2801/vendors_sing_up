@@ -9,13 +9,16 @@ Rails.application.routes.draw do
   root 'vendors#new'
 
   resources :vendors, only: [ :create ]
-  resources :trades, only: [ :create ]
+  resources :trades,  only: [ :create ]
+  resources :boards,  only: [ :create ]
 
-  get 'trade', to: "vendors#new"
+  get 'trade',  to: "vendors#new"
   get 'vendor', to: "trades#new"
+  get 'vendor-onboarding',  to: "boards#new"
 
-  get 'trade_success', to: 'static_pages#trade'
+  get 'trade_success',  to: 'static_pages#trade'
   get 'vendor_success', to: 'static_pages#vendor'
+  get 'board_success',  to: 'static_pages#board'
 
   # get 'vendor/sign_up' => 'vendor#sign_up'
 

@@ -4,7 +4,6 @@ class CreateBoards < ActiveRecord::Migration
 
       t.string  :legal_business_name
       t.string  :company_name
-#     t.string  :brand_names
       t.string  :vendor_based_in
       t.string  :vendor_based_in_other
 
@@ -26,7 +25,7 @@ class CreateBoards < ActiveRecord::Migration
       t.string  :finance_name
       t.string  :finance_phone
       t.string  :finance_email
-      t.string  :finance_business_fax
+      t.string  :finance_fax
 
       #Purchase Orders and Order Fulfillment Representative
       t.string  :purchase_orders_name
@@ -66,9 +65,6 @@ class CreateBoards < ActiveRecord::Migration
       t.string  :integrations_contact_email
       t.string  :integrations_contact_fax
 
-
-#      t.string  :transportation_and_shipment
-
       t.string  :upc_marketing
 
       #UPC Ticketing Contact
@@ -91,11 +87,7 @@ class CreateBoards < ActiveRecord::Migration
       t.string  :returns_address_zip
       t.string  :returns_address_country
 
-
       t.string  :preferred_shipping_method
-
-#     t.string  :vendor_account
-#     t.string  :arbor_gentry_accounts
 
       t.text  :protocol_for_freight_shipments
 
@@ -104,12 +96,12 @@ class CreateBoards < ActiveRecord::Migration
       t.string  :transportation_and_shipment_section
       t.string  :ship_alone_items
 
-#     t.string  :product_type
-
       t.string  :average_inventory_levels
 
-      t.string  :typical_shipping_lead_time
-      t.string  :average_inventory_replenishment_time
+      t.string  :typical_shipping_lead_time_count
+      t.string  :typical_shipping_lead_time_day
+      t.string  :average_inventory_replenishment_time_count
+      t.string  :average_inventory_replenishment_time_day
       t.string  :average_inventory_replenishment_time_other
 
       t.string  :method

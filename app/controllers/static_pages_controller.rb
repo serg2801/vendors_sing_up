@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def vendor
   end
+
+  def board
+  end
 end

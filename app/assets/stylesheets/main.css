@@ -3535,3 +3535,31 @@ div.gallery-upload .dropzone .dz-message:after {
     padding-left: 20px;
     clear: both;
 }
+.brand_names {
+    position: relative;
+}
+#add_brand_name_js {
+    position: absolute;
+    top: 15px;
+}
+.product_types {
+    position: relative;
+}
+#add_product_type_js {
+    position: absolute;
+    top: 15px;
+}
+.arbor_gentries {
+    position: relative;
+}
+#add_arbor_gentry_js {
+    position: absolute;
+    top: 15px;
+}
+.vendor_carriers {
+    position: relative;
+}
+#add_vendor_carrier_js {
+    position: absolute;
+    top: 15px;
+}
