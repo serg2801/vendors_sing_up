@@ -131,67 +131,76 @@ $(document).ready(function () {
             this_vendor_carrier = $(this);
             vendor_carriers.push(this_vendor_carrier.find('.vendor_carrier input').val());
         });
-        $(".vendor_carrier").val(vendor_carriers);
+        $(".vendor_carrier_hidden").val(vendor_carriers);
     });
 
     $(document).on("click", ".remote_vendor_carrier",function(e){
         e.preventDefault();
         $(this).parents(".form-group").remove();
+
         var vendor_carriers = [];
         $(".vendor_carriers .form-group").each(function () {
             this_vendor_carrier = $(this);
             vendor_carriers.push(this_vendor_carrier.find('.vendor_carrier input').val());
         });
-        $(".vendor_carrier").val(vendor_carriers);
+        $(".vendor_carrier_hidden").val(vendor_carriers);
     });
 
     $("#add_arbor_gentry_js").click(function (e) {
         e.preventDefault();
         $(".arbor_gentries").prepend(
             '<div class="form-group">' +
-            '<div class="col-lg-10 col-md-9">' +
+            '<div class="col-lg-10 col-md-9 arbor_gentry">' +
             '<input type="arbor_gentry" class="form-control">' +
             '</div>' +
             '<button type="submit" class="btn btn-danger remote_arbor_gentry">Remove</button>' +
             '</div>');
+
         var arbor_gentries = [];
-        $(".vendor_carriers .form-group").each(function () {
+        $(".arbor_gentries .form-group").each(function () {
             this_arbor_gentry = $(this);
             arbor_gentries.push(this_arbor_gentry.find('.arbor_gentry input').val());
         });
-        $(".vendor_carrier").val(arbor_gentries);
+        $(".arbor_gentry_hidden").val(arbor_gentries);
     });
 
     $(document).on("click", ".remote_arbor_gentry",function(e){
         e.preventDefault();
         $(this).parents(".form-group").remove();
+
         var arbor_gentries = [];
-        $(".vendor_carriers .form-group").each(function () {
+        $(".arbor_gentries .form-group").each(function () {
             this_arbor_gentry = $(this);
             arbor_gentries.push(this_arbor_gentry.find('.arbor_gentry input').val());
         });
-        $(".vendor_carrier").val(arbor_gentries);
+        $(".arbor_gentry_hidden").val(arbor_gentries);
     });
 
     $("#add_product_type_js").click(function (e) {
         e.preventDefault();
         $(".product_types").prepend(
             '<div class="form-group">' +
-            '<div class="col-lg-9 col-md-9">' +
+            '<div class="col-lg-9 col-md-9 product_type">' +
             '<input type="product_type" class="form-control">' +
             '</div>' +
             '<button type="submit" class="btn btn-danger remote_product_type">Remove</button>' +
             '</div>');
         var product_types = [];
-        $(".vendor_carriers .form-group").each(function () {
+        $(".product_types .form-group").each(function () {
             this_product_type = $(this);
             product_types.push(this_product_type.find('.product_type input').val());
         });
-        $(".vendor_carrier").val(product_types);
+        $(".product_type_hidden").val(product_types);
     });
 
     $(document).on("click", ".remote_product_type",function(e){
         e.preventDefault();
         $(this).parents(".form-group").remove();
+        var product_types = [];
+        $(".product_types .form-group").each(function () {
+            this_product_type = $(this);
+            product_types.push(this_product_type.find('.product_type input').val());
+        });
+        $(".product_type_hidden").val(product_types);
     });
 });

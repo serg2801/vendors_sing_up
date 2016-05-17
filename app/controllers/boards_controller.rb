@@ -5,7 +5,6 @@ class BoardsController < ApplicationController
   end
 
   def create
-    binding.pry
     @board = Board.new(board_params)
 
     if @board.save

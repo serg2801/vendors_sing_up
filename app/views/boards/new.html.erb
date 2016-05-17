@@ -624,7 +624,7 @@
                     <div class="form-group">
                       <div class="col-lg-10 col-md-9 vendor_carrier">
                         <input type="vendor_carrier" class="form-control">
-                        <input type="hidden" name = "vendor_carriers" value="" class="vendor_carrier">
+                        <input type="hidden" name = "vendor_carriers" value="" class="vendor_carrier_hidden">
                       </div>
                       <button id="add_vendor_carrier_js" class="btn">Add Another Carrier</button>
                     </div>
@@ -636,9 +636,9 @@
 
                  <div class="arbor_gentries">
                    <div class="form-group">
-                     <div class="col-lg-10 col-md-9">
+                     <div class="col-lg-10 col-md-9 arbor_gentry">
                        <input type="arbor_gentry" class="form-control">
-                       <input type="hidden" name = "arbor_gentries" value="" class="arbor_gentry">
+                       <input type="hidden" name = "arbor_gentries" value="" class="arbor_gentry_hidden">
                      </div>
                      <button id="add_arbor_gentry_js" class="btn">Add Another Carrier</button>
                    </div>
@@ -711,9 +711,9 @@
 
                  <div class="product_types">
                    <div class="form-group">
-                     <div class="col-lg-9 col-md-9">
-                       <input type="product_type" class="form-control">
-                       <input type="hidden" name = "product_types" value="" class="product_type">
+                     <div class="col-lg-9 col-md-9 product_type">
+                       <input type="product_type" class="form-control ">
+                       <input type="hidden" name = "product_types" value="" class="product_type_hidden">
                      </div>
                      <button id="add_product_type_js" class="btn">Add Another Product Type</button>
                    </div>
@@ -862,7 +862,7 @@
 
                   <div class="form-group">
                     <div class="panel-heading">
-                      <h4 class="panel-title">re there any special requirements for purchase orders?</h4>
+                      <h4 class="panel-title">Are there any special requirements for purchase orders?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
                       <%= f.label :requirements_for_purchase_orders, "Yes", :value => "true"  %>
