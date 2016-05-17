@@ -3,7 +3,7 @@ class CreateArborGentryCarriers < ActiveRecord::Migration
     create_table :arbor_gentry_carriers do |t|
 
       t.string :name
-      t.references :broad, index: true, foreign_key: true
+      t.references :board, index: true, foreign_key: true
 
       t.timestamps null: false
     end

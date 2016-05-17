@@ -67,12 +67,12 @@ ActiveRecord::Schema.define(version: 20160516122204) do
 
   create_table "arbor_gentry_carriers", force: :cascade do |t|
     t.string   "name"
-    t.integer  "broad_id"
+    t.integer  "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "arbor_gentry_carriers", ["broad_id"], name: "index_arbor_gentry_carriers_on_broad_id"
+  add_index "arbor_gentry_carriers", ["board_id"], name: "index_arbor_gentry_carriers_on_board_id"
 
   create_table "boards", force: :cascade do |t|
     t.string   "legal_business_name"
@@ -207,12 +207,12 @@ ActiveRecord::Schema.define(version: 20160516122204) do
 
   create_table "product_types", force: :cascade do |t|
     t.string   "name"
-    t.integer  "broad_id"
+    t.integer  "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "product_types", ["broad_id"], name: "index_product_types_on_broad_id"
+  add_index "product_types", ["board_id"], name: "index_product_types_on_board_id"
 
   create_table "trade_categories", force: :cascade do |t|
     t.integer  "trade_id"
@@ -267,12 +267,12 @@ ActiveRecord::Schema.define(version: 20160516122204) do
     t.string   "transportation_contact_phone"
     t.string   "transportation_contact_email"
     t.string   "transportation_contact_fax"
-    t.integer  "broad_id"
+    t.integer  "board_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
 
-  add_index "transportation_and_shipments", ["broad_id"], name: "index_transportation_and_shipments_on_broad_id"
+  add_index "transportation_and_shipments", ["board_id"], name: "index_transportation_and_shipments_on_board_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -294,12 +294,12 @@ ActiveRecord::Schema.define(version: 20160516122204) do
 
   create_table "vendor_carriers", force: :cascade do |t|
     t.string   "name"
-    t.integer  "broad_id"
+    t.integer  "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "vendor_carriers", ["broad_id"], name: "index_vendor_carriers_on_broad_id"
+  add_index "vendor_carriers", ["board_id"], name: "index_vendor_carriers_on_board_id"
 
   create_table "vendor_companies", force: :cascade do |t|
     t.integer  "vendor_id"

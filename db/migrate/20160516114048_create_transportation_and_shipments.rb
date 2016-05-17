@@ -14,7 +14,7 @@ class CreateTransportationAndShipments < ActiveRecord::Migration
       t.string  :transportation_contact_email
       t.string  :transportation_contact_fax
 
-      t.references :broad, index: true, foreign_key: true
+      t.references :board, index: true, foreign_key: true
 
       t.timestamps null: false
     end
