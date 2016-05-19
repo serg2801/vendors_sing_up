@@ -46,25 +46,6 @@ ActiveRecord::Schema.define(version: 20160516122204) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-
   create_table "arbor_gentry_carriers", force: :cascade do |t|
     t.string   "name"
     t.integer  "board_id"
@@ -168,12 +149,12 @@ ActiveRecord::Schema.define(version: 20160516122204) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
-    t.integer  "broad_id"
+    t.integer  "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "brands", ["broad_id"], name: "index_brands_on_broad_id"
+  add_index "brands", ["board_id"], name: "index_brands_on_board_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
