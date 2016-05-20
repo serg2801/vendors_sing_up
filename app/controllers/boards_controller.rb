@@ -8,8 +8,8 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
     if @board.save
       @board.brands.build(name: params[:brands])
-      # TradeMailer.signup_confirmation(@trade).deliver
-      # TradeMailer.send_confirmation(@trade).deliver
+      BoardMailer.signup_confirmation(@board).deliver
+      BoardMailer.send_confirmation(@board).deliver
       redirect_to board_success_path
     else
       render 'new'
