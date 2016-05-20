@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pry'
 
+gem "cocoon"
 gem "rmagick"
 gem "carrierwave"
 gem "font-awesome-rails"

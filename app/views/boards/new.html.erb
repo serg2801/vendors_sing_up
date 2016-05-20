@@ -50,15 +50,12 @@
                     <%= f.text_field :company_name, :class => "form-control" %>
                   </div>
                 </div>
-                <div class="brand_names">
-                  <div class="form-group">
-                    <label class="col-lg-2 col-md-3 control-label">Brand Name(s):</label>
-                    <div class="col-lg-8 col-md-9 brand_name">
-                      <input type="brand" class="form-control">
-                      <input type="hidden" name = "brands" value="brand_names[]" class="brand_hidden" >
-                    </div>
-                    <button id="add_brand_name_js" class="btn">Add Another Brand Name</button>
-                  </div>
+
+                <div class="form-group">
+                  <%= f.fields_for :brands do |brand| %>
+                      <%= render 'brand_fields', :f => brand %>
+                  <% end %>
+                  <%= link_to_add_association 'Add Another Brand Name', f, :brands, class: 'btn btn-info' %>
                 </div>
 
                 <div class="form-group">
@@ -392,80 +389,11 @@
               <div class="panel-body pt0 pb0">
                 <div class="form-horizontal group-border stripped" id="validate">
 
-                  <div class="transportation_and_shipments">
-                    <div class="transportation_and_shipment">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">Ship From Information</h4>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">Street:</label>
-                        <div class="col-lg-10 col-md-9">
-                          <input type="street" class="form-control">
-                          <input type="hidden" name = "transportation_and_shipments" value="" class="transportation_and_shipment" >
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">Unit, Suite, Floor:</label>
-                        <div class="col-lg-10 col-md-9">
-                          <input type="unit" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">City:</label>
-                        <div class="col-lg-10 col-md-9">
-                          <input type="city" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">State:</label>
-                        <div class="col-lg-10 col-md-9">
-                          <input type="state" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">Zip/Postal Code:</label>
-                        <div class="col-lg-10 col-md-9">
-                          <input type="zip" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">Country:</label>
-                        <div class="col-lg-10 col-md-9">
-                          <input type="country" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="panel-heading">
-                        <h4 class="panel-title">Transportation Contact</h4>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">Name:</label>
-                        <div class="col-lg-4 col-md-9">
-                          <input type="name" class="form-control">
-                        </div>
-                        <label class="col-lg-2 col-md-3 control-label">Phone:</label>
-                        <div class="col-lg-4 col-md-9">
-                          <input type="phone" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 col-md-3 control-label">Email:</label>
-                        <div class="col-lg-4 col-md-9">
-                          <input type="email" class="form-control">
-                        </div>
-                        <label class="col-lg-2 col-md-3 control-label">Fax:</label>
-                        <div class="col-lg-4 col-md-9">
-                          <input type="fax" class="form-control">
-                        </div>
-                        <button id="add_location_and_contact_js" class="btn">Add Another Ship Location and Contact</button>
-                      </div>
-                    </div>
+                  <div class="form-group">
+                    <%= f.fields_for :transportation_and_shipments do |transportation| %>
+                        <%= render 'transportation_and_shipment_fields', :f => transportation %>
+                    <% end %>
+                    <%= link_to_add_association 'Add Another Ship Location and Contact', f, :transportation_and_shipments, class: 'btn btn-info' %>
                   </div>
                 </div>
               </div>
@@ -619,30 +547,23 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">If "Vendor's Account," what carriers are you set up to use?</h4>
                   </div>
-
-                  <div class="vendor_carriers">
-                    <div class="form-group">
-                      <div class="col-lg-10 col-md-9 vendor_carrier">
-                        <input type="vendor_carrier" class="form-control">
-                        <input type="hidden" name = "vendor_carriers" value="" class="vendor_carrier_hidden">
-                      </div>
-                      <button id="add_vendor_carrier_js" class="btn">Add Another Carrier</button>
-                    </div>
+                  <div class="form-group">
+                    <%= f.fields_for :vendor_carriers do |carrier| %>
+                        <%= render 'vendor_carrier_fields', :f => carrier %>
+                    <% end %>
+                    <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info' %>
                   </div>
 
                   <div class="panel-heading">
                     <h4 class="panel-title">If "Arbor Gentry's Accounts," what are your preferred carriers?</h4>
                   </div>
 
-                 <div class="arbor_gentries">
-                   <div class="form-group">
-                     <div class="col-lg-10 col-md-9 arbor_gentry">
-                       <input type="arbor_gentry" class="form-control">
-                       <input type="hidden" name = "arbor_gentries" value="" class="arbor_gentry_hidden">
-                     </div>
-                     <button id="add_arbor_gentry_js" class="btn">Add Another Carrier</button>
-                   </div>
-                 </div>
+                  <div class="form-group">
+                    <%= f.fields_for :arbor_gentry_carriers do |arbor_gentry| %>
+                        <%= render '_arbor_gentry_carrier_fields', :f => arbor_gentry %>
+                    <% end %>
+                    <%= link_to_add_association 'Add Another Carrier', f, :arbor_gentry_carriers, class: 'btn btn-info' %>
+                  </div>
 
                   <div class="form-group">
                     <div class="panel-heading">
@@ -709,15 +630,12 @@
                     <h4 class="panel-title">Product Type(s):</h4>
                   </div>
 
-                 <div class="product_types">
-                   <div class="form-group">
-                     <div class="col-lg-9 col-md-9 product_type">
-                       <input type="product_type" class="form-control ">
-                       <input type="hidden" name = "product_types" value="" class="product_type_hidden">
-                     </div>
-                     <button id="add_product_type_js" class="btn">Add Another Product Type</button>
-                   </div>
-                 </div>
+                  <div class="form-group">
+                    <%= f.fields_for :product_types do |product_type| %>
+                        <%= render '_product_type_fields', :f => product_type %>
+                    <% end %>
+                    <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info' %>
+                  </div>
 
                   <div class="form-group">
                     <div class="panel-heading">

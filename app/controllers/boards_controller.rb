@@ -30,7 +30,11 @@ class BoardsController < ApplicationController
                                   :transportation_and_shipment_section, :ship_alone_items, :average_inventory_levels, :typical_shipping_lead_time_count, :typical_shipping_lead_time_day,
                                   :average_inventory_replenishment_time_other, :method, :method_other, :frequency, :frequency_other, :credit_card, :wire_transfer, :ach, :check_by_mail, :pay_pal,
                                   :bitcoin, :costs_fees, :if_so_costs_fees, :requirements_for_purchase_orders, :if_yes_requirements_for_purchase_orders, :imap_pricing, :return_policy, :merchandising,
-                                  :average_inventory_replenishment_time_count, :average_inventory_replenishment_time_day)
+                                  :average_inventory_replenishment_time_count, :average_inventory_replenishment_time_day, brands_attributes: [:id, :name, :board_id, :_destroy],
+                                  vendor_carriers_attributes: [:id, :name, :board_id, :_destroy], arbor_gentry_carriers_attributes: [:id, :name, :board_id, :_destroy], product_types_attributes: [:id, :name, :board_id, :_destroy],
+                                  transportation_and_shipments_attributes: [:id, :board_id, :ship_from_information_unit, :ship_from_information_city, :ship_from_information_state, :ship_from_information_zip,
+                                                                            :ship_from_information_country, :transportation_contact_name, :transportation_contact_phone, :transportation_contact_email,
+                                                                            :transportation_contact_fax, :ship_from_information_street, :_destroy])
   end
 
 end
