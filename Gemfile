@@ -31,6 +31,7 @@ gem "carrierwave"
 gem "font-awesome-rails"
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'country-select'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
