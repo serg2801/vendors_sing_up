@@ -3,7 +3,6 @@ class BoardMailer < ApplicationMailer
 
   def signup_confirmation(board)
     @board = board
-    # attachments["#{@board.image}"] = File.read("#{Rails.root}/public/#{@board.image}") unless @board.image_url.nil?
     mail to: "skoretskiy@webiprog.com", subject:  "Vendor Onboarding Form " + "#{@board.legal_business_name}"
   end
 
