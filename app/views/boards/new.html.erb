@@ -61,12 +61,12 @@
                 <div class="form-group">
                   <%= f.label :vendor_based_in, "Vendor Based In:", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
-                    <%= f.label :vendor_based_in, "United States", :value => "true"  %>
-                    <%= f.radio_button :vendor_based_in, true, :checked => true %>
-                    <%= f.label :vendor_based_in, "Europe", :value => "false" %>
-                    <%= f.radio_button :vendor_based_in, false %>
-                    <%= f.label :vendor_based_in_other, "Other", :value => "false" %>
-                    <%= f.radio_button :vendor_based_in, false %>
+                    <%= f.label(:vendor_based_in, "United States") %>
+                    <%= f.radio_button(:vendor_based_in, 'United States') %>
+                    <%= f.label(:vendor_based_in, "Europe") %>
+                    <%= f.radio_button(:vendor_based_in, 'Europe') %>
+                    <%= f.label(:vendor_based_in, "Other") %>
+                    <%= f.radio_button(:vendor_based_in, 'Other') %>
                   </div>
                   <div class="col-lg-4 col-md-9">
                     <%= f.text_field :vendor_based_in_other, :class => "form-control" %>
@@ -342,12 +342,12 @@
                 <div class="form-group">
                   <%= f.label :inventory_integration_method, "Inventory Integration Method:", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
-                    <%= f.label :inventory_integration_method, "EDI", :value => "true"  %>
-                    <%= f.radio_button :inventory_integration_method, true, :checked => true %>
-                    <%= f.label :inventory_integration_method, "API", :value => "false" %>
-                    <%= f.radio_button :inventory_integration_method, false %>
-                    <%= f.label :inventory_integration_method, "Partner Connect", :value => "false" %>
-                    <%= f.radio_button :inventory_integration_method, false %>
+                    <%= f.label(:inventory_integration_method, "EDI") %>
+                    <%= f.radio_button(:inventory_integration_method, 'EDI') %>
+                    <%= f.label(:inventory_integration_method, "API") %>
+                    <%= f.radio_button(:inventory_integration_method, 'API') %>
+                    <%= f.label(:inventory_integration_method, "Partner Connect") %>
+                    <%= f.radio_button(:inventory_integration_method, 'Partner Connect') %>
                   </div>
                 </div>
 
@@ -413,10 +413,10 @@
                   <div class="form-group">
                     <%= f.label :upc_marketing, "UPC Marketing:", :class => "col-lg-2 col-md-3 control-label" %>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :upc_marketing, "Yes", :value => "true"  %>
-                      <%= f.radio_button :upc_marketing, true, :checked => true %>
-                      <%= f.label :upc_marketing, "No", :value => "false" %>
-                      <%= f.radio_button :upc_marketing, false %>
+                      <%= f.label(:upc_marketing, "Yes") %>
+                      <%= f.radio_button(:upc_marketing, 'Yes') %>
+                      <%= f.label(:upc_marketing, "No") %>
+                      <%= f.radio_button(:upc_marketing, 'No') %>
                     </div>
                   </div>
 
@@ -537,10 +537,10 @@
                       <h4 class="panel-title">Preferred shipping method:</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :preferred_shipping_method, "Vendor's Account", :value => "true"  %>
-                      <%= f.radio_button :preferred_shipping_method, true, :checked => true %>
-                      <%= f.label :preferred_shipping_method, "Arbor Gentry's Account", :value => "false" %>
-                      <%= f.radio_button :preferred_shipping_method, false %>
+                      <%= f.label(:preferred_shipping_method, "Vendor's Account") %>
+                      <%= f.radio_button(:preferred_shipping_method, "Vendor's Account") %>
+                      <%= f.label(:preferred_shipping_method, "Arbor Gentry's Account") %>
+                      <%= f.radio_button(:preferred_shipping_method, "Arbor Gentry's Account") %>
                     </div>
                   </div>
 
@@ -583,10 +583,10 @@
                       <h4 class="panel-title">Do you have multiple warehouses?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :multiple_warehouses, "Yes", :value => "true"  %>
-                      <%= f.radio_button :multiple_warehouses, true, :checked => true %>
-                      <%= f.label :multiple_warehouses, "No", :value => "false" %>
-                      <%= f.radio_button :multiple_warehouses, false %>
+                      <%= f.label(:multiple_warehouses, "Yes") %>
+                      <%= f.radio_button(:multiple_warehouses, "Yes") %>
+                      <%= f.label(:multiple_warehouses, "No") %>
+                      <%= f.radio_button(:multiple_warehouses, "No") %>
                     </div>
                   </div>
 
@@ -595,10 +595,10 @@
                       <h4 class="panel-title">Do you plan on shipping from multiple warehouses?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :shipping_from_multiple_warehouses, "Yes", :value => "true"  %>
-                      <%= f.radio_button :shipping_from_multiple_warehouses, true, :checked => true %>
-                      <%= f.label :shipping_from_multiple_warehouses, "No", :value => "false" %>
-                      <%= f.radio_button :shipping_from_multiple_warehouses, false %>
+                      <%= f.label(:shipping_from_multiple_warehouses, "Yes") %>
+                      <%= f.radio_button(:shipping_from_multiple_warehouses, "Yes") %>
+                      <%= f.label(:shipping_from_multiple_warehouses, "No") %>
+                      <%= f.radio_button(:shipping_from_multiple_warehouses, "No") %>
                     </div>
                   </div>
 
@@ -607,10 +607,10 @@
                       <h4 class="panel-title">Are all warehouses listed under the Transportation and Shipment section?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :transportation_and_shipment_section, "Yes", :value => "true"  %>
-                      <%= f.radio_button :transportation_and_shipment_section, true, :checked => true %>
-                      <%= f.label :transportation_and_shipment_section, "No", :value => "false" %>
-                      <%= f.radio_button :transportation_and_shipment_section, false %>
+                      <%= f.label(:transportation_and_shipment_section, "Yes") %>
+                      <%= f.radio_button(:transportation_and_shipment_section, "Yes") %>
+                      <%= f.label(:transportation_and_shipment_section, "No") %>
+                      <%= f.radio_button(:transportation_and_shipment_section, "No") %>
                     </div>
                   </div>
 
@@ -619,10 +619,10 @@
                       <h4 class="panel-title">Do you have ship alone items?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :ship_alone_items, "Yes", :value => "true"  %>
-                      <%= f.radio_button :ship_alone_items, true, :checked => true %>
-                      <%= f.label :ship_alone_items, "No", :value => "false" %>
-                      <%= f.radio_button :ship_alone_items, false %>
+                      <%= f.label(:ship_alone_items, "Yes") %>
+                      <%= f.radio_button(:ship_alone_items, "Yes") %>
+                      <%= f.label(:ship_alone_items, "No") %>
+                      <%= f.radio_button(:ship_alone_items, "No") %>
                     </div>
                   </div>
 
@@ -696,13 +696,14 @@
                       <h4 class="panel-title">How and when do you provide inventory updates (including discounted and new items)?</h4>
                     </div>
                     <div class="col-lg-6 col-md-9">
-                      <%= f.label :method, "Method:", :value => "true"  %>
-                      <%= f.label :method, "Via EDI", :value => "true"  %>
-                      <%= f.radio_button :method, true, :checked => true %>
-                      <%= f.label :method, "Via Email", :value => "false" %>
-                      <%= f.radio_button :method, false %>
-                      <%= f.label :method, "Other", :value => "false" %>
-                      <%= f.radio_button :method, false %>
+                      <%= f.label :method, "Method:"%>
+
+                      <%= f.label(:method, "Via EDI") %>
+                      <%= f.radio_button(:method, "Via EDI") %>
+                      <%= f.label(:method, "Via Email") %>
+                      <%= f.radio_button(:method, "Via Email") %>
+                      <%= f.label(:method, "Other") %>
+                      <%= f.radio_button(:method, "Other") %>
                     </div>
                     <div class="col-lg-6 col-md-9">
                       <%= f.text_field :method_other, :class => "form-control" %>
@@ -711,13 +712,14 @@
 
                   <div class="form-group">
                     <div class="col-lg-6 col-md-9">
-                      <%= f.label :frequency, "Frequency:", :value => "true"  %>
-                      <%= f.label :frequency, "Daily", :value => "true"  %>
-                      <%= f.radio_button :frequency, true, :checked => true %>
-                      <%= f.label :frequency, "Weekly", :value => "false" %>
-                      <%= f.radio_button :frequency, false %>
-                      <%= f.label :frequency, "Other", :value => "false" %>
-                      <%= f.radio_button :frequency, false %>
+                      <%= f.label :frequency, "Frequency:"%>
+
+                      <%= f.label(:frequency, "Daily") %>
+                      <%= f.radio_button(:frequency, "Daily") %>
+                      <%= f.label(:frequency, "Weekly") %>
+                      <%= f.radio_button(:frequency, "Weekly") %>
+                      <%= f.label(:frequency, "Other") %>
+                      <%= f.radio_button(:frequency, "Other") %>
                     </div>
                     <div class="col-lg-6 col-md-9">
                       <%= f.text_field :frequency_other, :class => "form-control" %>
@@ -783,10 +785,10 @@
                       <h4 class="panel-title">Are there any special requirements for purchase orders?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :requirements_for_purchase_orders, "Yes", :value => "true"  %>
-                      <%= f.radio_button :requirements_for_purchase_orders, true, :checked => true %>
-                      <%= f.label :requirements_for_purchase_orders, "No", :value => "false" %>
-                      <%= f.radio_button :requirements_for_purchase_orders, false %>
+                      <%= f.label(:requirements_for_purchase_orders, "Yes") %>
+                      <%= f.radio_button(:requirements_for_purchase_orders, "Yes") %>
+                      <%= f.label(:requirements_for_purchase_orders, "No") %>
+                      <%= f.radio_button(:requirements_for_purchase_orders, "No") %>
                     </div>
                   </div>
 
@@ -813,10 +815,10 @@
                       <h4 class="panel-title">Are there any special requirements for purchase orders?</h4>
                     </div>
                     <div class="col-lg-4 col-md-9">
-                      <%= f.label :return_policy, "Option A", :value => "true"  %>
-                      <%= f.radio_button :return_policy, true, :checked => true %>
-                      <%= f.label :return_policy, "Option B", :value => "false" %>
-                      <%= f.radio_button :return_policy, false %>
+                      <%= f.label(:return_policy, "Option A") %>
+                      <%= f.radio_button(:return_policy, "Option A") %>
+                      <%= f.label(:return_policy, "Option B") %>
+                      <%= f.radio_button(:return_policy, "Option B") %>
                     </div>
                   </div>
 
