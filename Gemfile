@@ -29,9 +29,10 @@ gem "cocoon"
 gem "rmagick"
 gem "carrierwave"
 gem "font-awesome-rails"
-gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
-gem 'country-select'
+gem 'devise', '~> 3.2'
+gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'kaminari'
+gem 'country_select'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
