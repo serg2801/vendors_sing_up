@@ -28,6 +28,7 @@ class BoardsController < ApplicationController
     @user = User.find(current_user.id)
     @board = @user.board
     if @board.update_attributes(board_params)
+      BoardMailer.update_board(@board).deliver
       redirect_to board_success_update_path
     else
       render :edit

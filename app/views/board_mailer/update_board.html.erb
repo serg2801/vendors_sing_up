@@ -1,0 +1,218 @@
+<h3>Vendor Onboarding Form</h3>
+<p>Legal Business Name: <%= @board.legal_business_name %></p>
+<p>Company Name/D.B.A: <%= @board.company_name %></p>
+<div>
+  <p>Brand Name(s):</p>
+  <% @board.brands.each do |brand| %>
+  <p> <%= brand.name %></p>
+  <% end %>
+</div>
+<p>Vendor Based In: <%= @board.vendor_based_in %></p>
+<p> Other: <%= @board.vendor_based_in_other %></p>
+
+<h3>Vendor Main Address</h3>
+
+<p>Street: <%= @board.main_address_street %></p>
+<p>Unit, Suite, Floor: <%= @board.main_address_unit %></p>
+<p>City: <%= @board.main_address_city %></p>
+<p>State: <%= @board.main_address_state %></p>
+<p>Zip/Postal Code: <%= @board.main_address_zip %></p>
+<p>Country: <%= @board.main_address_country %></p>
+
+<h3>Vendor Contacts</h3>
+
+<h5>Primary Business Representative</h5>
+
+<p>Name: <%= @board.primary_business_name %></p>
+<p>Phone: <%= @board.primary_business_phone %></p>
+<p>Email: <%= @board.primary_business_email %></p>
+<p>Fax: <%= @board.primary_business_fax %></p>
+<p><%= @board.finance_name %></p>
+
+<h5>Finance Representative</h5>
+
+<p>Name: <%= @board.finance_name %></p>
+<p>Phone:<%= @board.finance_phone %></p>
+<p>Email: <%= @board.finance_email %></p>
+<p>Fax: <%= @board.finance_fax %></p>
+
+<h5>Purchase Orders and Order Fulfillment Representative</h5>
+<p>Name: <%= @board.purchase_orders_name %></p>
+
+<p>Phone: <%= @board.purchase_orders_phone %></p>
+<p>Email: <%= @board.purchase_orders_email %></p>
+<p>Fax: <%= @board.purchase_orders_fax %></p>
+
+<h5>Inventory Representative</h5>
+
+<p>Name:<%= @board.inventory_name %></p>
+<p>Phone:<%= @board.inventory_phone %></p>
+<p>Email:<%= @board.inventory_email %></p>
+<p>Fax:<%= @board.inventory_fax %></p>
+
+<h5>Returns Representative</h5>
+
+<p>Name:<%= @board.returns_name %></p>
+<p>Phone:<%= @board.returns_phone %></p>
+<p>Email:<%= @board.returns_email %></p>
+<p>Fax:<%= @board.returns_fax %></p>
+
+<h5>Product Information Representative</h5>
+
+<p>Name:<%= @board.product_information_name %></p>
+<p>Pxone: <%= @board.product_information_phone %></p>
+<p>Email: <%= @board.product_information_email %></p>
+<p>Fax:<%= @board.product_information_fax %></p>
+
+<h5>Customer Service Representative</h5>
+
+<p>Name: <%= @board.customer_service_name %></p>
+<p>Phone:<%= @board.customer_service_phone %></p>
+<p>Email:<%= @board.customer_service_email %></p>
+<p>Fax:<%= @board.customer_service_fax %></p>
+
+<h3>Inventory Integration</h3>
+<p><%= @board.inventory_integration_method %></p>
+
+<h5>Integrations Contact</h5>
+
+<p>Name:<%= @board.integrations_contact_name %></p>
+<p>Phone:<%= @board.integrations_contact_phone %></p>
+<p>Email:<%= @board.integrations_contact_email %></p>
+<p>Fax:<%= @board.integrations_contact_fax %></p>
+
+
+<h3>Transportation and Shipment</h3>
+
+<div>
+  <% @board.transportation_and_shipments.each do |t| %>
+      <h5>Ship From Information:</h5>
+
+      <p>Street: <%= t.ship_from_information_street %></p>
+      <p>Unit, Suite, Floor: <%= t.ship_from_information_unit %></p>
+      <p>City: <%= t.ship_from_information_city %></p>
+      <p>State: <%= t.ship_from_information_state %></p>
+      <p>Zip/Postal Code: <%= t.ship_from_information_zip %></p>
+      <p>Country: <%= t.ship_from_information_country %></p>
+
+      <h5>Transportation Contact</h5>
+
+      <p>Name: <%= t.transportation_contact_name %></p>
+      <p>Phone: <%= t.transportation_contact_phone %></p>
+      <p>Email: <%= t.transportation_contact_email %></p>
+      <p>Fax: <%= t.transportation_contact_fax %></p>
+  <% end %>
+</div>
+
+<h3>UPC Details</h3>
+
+<p>UPC Marketing: <%= @board.upc_marketing %></p>
+
+<h5>UPC Ticketing Contact:</h5>
+
+<p>Name:<%= @board.upc_ticketing_contact_name %></p>
+<p>Phone:<%= @board.upc_ticketing_contact_phone %></p>
+<p>Email:<%= @board.upc_ticketing_contact_email %></p>
+<p>Fax:<%= @board.upc_ticketing_contact_fax %></p>
+
+<h5>Returns Contact:</h5>
+
+<p>Name: <%= @board.returns_contact_name %></p>
+<p>Phone:<%= @board.returns_contact_phone %></p>
+<p>Email: <%= @board.returns_contact_email %></p>
+<p>Fax: <%= @board.returns_contact_fax %></p>
+
+<h5>Returns Address:</h5>
+
+<p>Street: <%= @board.returns_address_street %></p>
+<p>Unit, Suite, Floor: <%= @board.returns_address_unit %></p>
+<p>City: <%= @board.returns_address_city %></p>
+<p>State: <%= @board.returns_address_state %></p>
+<p>Zip/Postal Code: <%= @board.returns_address_zip %></p>
+<p>Country: <%= @board.returns_address_country %></p>
+
+<h3>Drop Shipping</h3>
+
+<p>Preferred shipping method: <%= @board.preferred_shipping_method %></p>
+
+<div>
+  <h5>If "Vendor's Account," what carriers are you set up to use?</h5>
+  <% @board.vendor_carriers.each do |v| %>
+  <p> <%= v.name %></p>
+  <% end %>
+</div>
+
+<div>
+  <h5>If "Arbor Gentry's Accounts," what are your preferred carriers?</h5>
+  <% @board.arbor_gentry_carriers.each do |a| %>
+      <p> <%= a.name %></p>
+  <% end %>
+</div>
+
+<p>What is your protocol for freight shipments? <%= @board.protocol_for_freight_shipments %></p>
+
+<h3>Warehousing</h3>
+
+<p>Do you have multiple warehouses? <%= @board.multiple_warehouses %></p>
+<p>Do you plan on shipping from multiple warehouses? <%= @board.shipping_from_multiple_warehouses %></p>
+<p>Are all warehouses listed under the Transportation and Shipment section? <%= @board.transportation_and_shipment_section %></p>
+<p>Do you have ship alone items? <%= @board.ship_alone_items %></p>
+
+<div>
+  <h5>Product Type(s):</h5>
+  <% @board.product_types.each do |p| %>
+      <p> <%= p.name %></p>
+  <% end %>
+</div>
+
+<p>What are your average inventory levels? <%= @board.average_inventory_levels %></p>
+<div>
+  <p>What is your typical shipping lead time?</p>
+  <%= @board.typical_shipping_lead_time_count %>
+  <%= @board.typical_shipping_lead_time_day %>
+</div>
+
+<div>
+  <p>What are your average inventory replenishment timelines?</p>
+  <%= @board.average_inventory_replenishment_time_count %>
+  <%= @board.average_inventory_replenishment_time_day %>
+  <p>Other: <%= @board.average_inventory_replenishment_time_other %></p>
+</div>
+
+<h3>Product Details</h3>
+
+<h5>How and when do you provide inventory updates (including discounted and new items)?</h5>
+
+<div>
+  <p>Method: <%= @board.method %></p>
+  <p>Other: <%= @board.method_other %></p>
+</div>
+
+<div>
+  <p>Frequency: <%= @board.frequency %></p>
+  <p>Other: <%= @board.frequency_other %></p>
+</div>
+
+<h5>How do we bill the following fees?</h5>
+
+<p>Credit Card: <%= @board.credit_card %></p>
+<p>Wire Transfer: <%= @board.wire_transfer %></p>
+<p>ACH: <%= @board.ach %></p>
+<p>Check By Mail: <%= @board.check_by_mail %></p>
+<p>PayPal: <%= @board.pay_pal %></p>
+<p>Bitcoin: <%= @board.bitcoin %></p>
+
+<p>Are there any costs/fees in addition to COGs? <%= @board.costs_fees %></p>
+<p>If so, how are these costs billed? <%= @board.if_so_costs_fees %></p>
+
+<p>Are there any special requirements for purchase orders?<%= @board.requirements_for_purchase_orders %></p>
+<p>If yes, please explain the requirements:  <%= @board.if_yes_requirements_for_purchase_orders %></p>
+
+<p>Please explain your discount/promotional rules in regards to IMAP pricing:<%= @board.imap_pricing %></p>
+<p>What is your chosen return policy?<%= @board.return_policy %></p>
+<p>What, if any, are your merchandising stipulations and strategy recommendations for your product?<%= @board.merchandising %></p>
+
+<p>Consented: true </p>
+
+
+Thank you!!!

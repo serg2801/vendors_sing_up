@@ -17,8 +17,9 @@ ActiveAdmin.register Board do
 
 
   # actions :all
+  menu label: "Onboarding Form"
 
-  index do
+  index :title => "Onboarding Form" do
     column :legal_business_name
     column :company_name
     # actions defaults: false do |board|
@@ -27,21 +28,23 @@ ActiveAdmin.register Board do
 
     actions defaults: false do |board|
       if board.grants_access == false
-        link_to 'Grants Access', grants_access_admin_boards_path(board)
+        link_to 'Grant Access', grant_access_admin_boards_path(board)
       end
     end
     actions
   end
 
-  collection_action :grants_access, method: :get, title: 'Grants Access' do
+  collection_action :grant_access, method: :get, title: 'Grant Access' do
     @board = Board.find(params[:format])
     o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
     password_string = (0...20).map { o[rand(o.length)] }.join
     puts password_string
-    user = User.new({:email => @board.primary_business_email, :password => password_string, :password_confirmation => password_string })
-    user.save
-    @board = Board.find(params[:format])
-    @board.update_attributes(grants_access: true, user_id: user.id)
+    @user = User.new({email: @board.primary_business_email, password: password_string, password_confirmation: password_string, pas_decrypt: password_string})
+    if @user.save
+      @board = Board.find(params[:format])
+      @board.update_attributes(grants_access: true, user_id: @user.id)
+      BoardMailer.create_user(@board, @user).deliver
+    end
     redirect_to admin_boards_path
   end
 
@@ -66,7 +69,6 @@ ActiveAdmin.register Board do
   #     render :new
   #   end
   # end
-
 
 
   controller do
