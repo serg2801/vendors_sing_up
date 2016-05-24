@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :vendors, only: [ :create ]
   resources :trades,  only: [ :create ]
-  resources :boards,  only: [ :create ]
+  resources :boards
 
   get 'trade',  to: "vendors#new"
   get 'vendor', to: "trades#new"

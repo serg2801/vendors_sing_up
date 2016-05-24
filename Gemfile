@@ -30,7 +30,7 @@ gem "rmagick"
 gem "carrierwave"
 gem "font-awesome-rails"
 gem 'devise', '~> 3.2'
-gem 'activeadmin', '~> 1.0.0.pre1'
+gem "activeadmin", git: "https://github.com/gregbell/active_admin"
 gem 'kaminari'
 gem 'country_select'
 
