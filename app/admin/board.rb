@@ -22,6 +22,13 @@ ActiveAdmin.register Board do
   index :title => "Onboarding Form" do
     column :legal_business_name
     column :company_name
+    column :vendor_based_in
+    column :vendor_based_in_other
+    column :main_address_street
+    column :main_address_unit
+    column :main_address_city
+    column :main_address_state
+    column :main_address_zip
     # actions defaults: false do |board|
     #   link_to "View", admin_board_path(board)
     # end
@@ -74,7 +81,6 @@ ActiveAdmin.register Board do
   controller do
 
     def show
-      binding.pry
       @board = Board.find(params[:id])
     end
 
