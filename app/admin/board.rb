@@ -26,7 +26,9 @@ ActiveAdmin.register Board do
     # end
 
     actions defaults: false do |board|
-      link_to 'Grants Access', grants_access_admin_boards_path(board)
+      if board.grants_access == false
+        link_to 'Grants Access', grants_access_admin_boards_path(board)
+      end
     end
     actions
   end
@@ -38,6 +40,8 @@ ActiveAdmin.register Board do
     puts password_string
     user = User.new({:email => @board.primary_business_email, :password => password_string, :password_confirmation => password_string })
     user.save
+    @board = Board.find(params[:format])
+    @board.update_attributes(grants_access: true, user_id: user.id)
     redirect_to admin_boards_path
   end
 

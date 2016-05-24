@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def board
   end
+
+  def board_update
+  end
 end

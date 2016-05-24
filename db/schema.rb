@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516122204) do
+ActiveRecord::Schema.define(version: 20160524120018) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -143,8 +143,10 @@ ActiveRecord::Schema.define(version: 20160516122204) do
     t.text     "imap_pricing"
     t.string   "return_policy"
     t.text     "merchandising"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
+    t.integer  "user_id"
+    t.boolean  "grants_access",                              default: false
   end
 
   create_table "brands", force: :cascade do |t|

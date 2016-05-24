@@ -1,5 +1,14 @@
 class BoardsController < ApplicationController
 
+  def show
+    @board = Board.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(current_user.id)
+    @board = @user.board
+  end
+
   def new
     @board = Board.new
   end
@@ -12,6 +21,16 @@ class BoardsController < ApplicationController
       redirect_to board_success_path
     else
       render 'new'
+    end
+  end
+
+  def update
+    @user = User.find(current_user.id)
+    @board = @user.board
+    if @board.update_attributes(board_params)
+      redirect_to board_success_update_path
+    else
+      render :edit
     end
   end
 

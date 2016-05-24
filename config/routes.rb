@@ -16,13 +16,12 @@ Rails.application.routes.draw do
   get 'vendor', to: "trades#new"
   get 'vendor-onboarding',  to: "boards#new"
 
-  get 'trade_success',  to: 'static_pages#trade'
-  get 'vendor_success', to: 'static_pages#vendor'
-  get 'board_success',  to: 'static_pages#board'
+  get 'trade_success',         to: 'static_pages#trade'
+  get 'vendor_success',        to: 'static_pages#vendor'
+  get 'board_success',         to: 'static_pages#board'
+  get 'board_success_update',  to: 'static_pages#board_update'
 
-  # get 'vendor/sign_up' => 'vendor#sign_up'
-
-  # post 'vendor/sign_up' => 'vendor#sign_up', as: :sing_up
+  get 'persons/profile', as: 'user_root'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
