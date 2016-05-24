@@ -3563,3 +3563,10 @@ div.gallery-upload .dropzone .dz-message:after {
     position: absolute;
     top: 15px;
 }
+.log_in_form {
+    width: 50%;
+    margin: 0 auto;
+}
+.submit_log_in {
+    margin-left: 105px;
+}
