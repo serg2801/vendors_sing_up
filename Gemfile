@@ -20,8 +20,8 @@ gem "cocoon"
 gem "rmagick"
 gem "carrierwave"
 gem "font-awesome-rails"
-gem 'devise', '~> 3.2'
-gem "activeadmin", git: "https://github.com/gregbell/active_admin"
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
 gem 'country_select'
 
