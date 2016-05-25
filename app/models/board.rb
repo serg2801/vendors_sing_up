@@ -14,4 +14,8 @@ class Board < ActiveRecord::Base
   accepts_nested_attributes_for :product_types, reject_if: :all_blank, allow_destroy: true
 
   validates :primary_business_email, presence:  true
+
+  def display_name
+    # "#{first_name} #{last_name}"
+  end
 end

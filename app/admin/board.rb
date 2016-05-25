@@ -7,14 +7,7 @@ ActiveAdmin.register Board do
   index :title => "Onboarding Form" do
     column :legal_business_name
     column :company_name
-    column :vendor_based_in
-    column :vendor_based_in_other
-    column :main_address_street
-    column :main_address_unit
-    column :main_address_city
-    column :main_address_state
-    column :main_address_zip
-
+    column :created_at
 
     actions defaults: false do |board|
       unless board.grants_access
@@ -23,6 +16,10 @@ ActiveAdmin.register Board do
 
     end
     actions
+  end
+
+  show do
+    render 'show_board'
   end
 
   collection_action :grant_access, method: :get, title: 'Grant Access' do
@@ -49,7 +46,7 @@ ActiveAdmin.register Board do
     def create
       @board = Board.new(board_params)
       if @board.save
-        redirect_to admin_boards_path
+        redirect_to admin_board_path(@board.id)
       else
         render 'new'
       end
