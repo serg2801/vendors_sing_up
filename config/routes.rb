@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'vendors#new'
+  root 'static_pages#home'
 
   resources :vendors, only: [ :create ]
   resources :trades,  only: [ :create ]
   resources :boards
 
-  get 'trade',  to: "vendors#new"
-  get 'vendor', to: "trades#new"
+  get 'trade-signup',       to: "vendors#new"
+  get 'vendor-signup',      to: "trades#new"
   get 'vendor-onboarding',  to: "boards#new"
 
   get 'trade_success',         to: 'static_pages#trade'

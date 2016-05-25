@@ -263,5 +263,9 @@ a:hover {
     color: #FFF;
 }
 .b-t-md {
-    border-top: 3px solid #212721;
+    border-top: 1px solid #212721;
+}
+.ta-Footer img {
+ position: relative;
+    right: 10px;
 }

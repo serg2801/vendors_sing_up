@@ -3573,3 +3573,6 @@ div.gallery-upload .dropzone .dz-message:after {
 .log_in_form input {
     margin: 10px;
 }
+.row .form_container .nested-fields {
+    margin: 0;
+}
