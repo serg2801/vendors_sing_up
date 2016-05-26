@@ -49,7 +49,7 @@
               </div>
 
               <div class="form-group">
-                <%= f.label :vendor_based_in, "Vendor Based In:", :class => "col-lg-2 col-md-3 control-label" %>
+                <%= f.label :vendor_based_in, "Vendor Location:", :class => "col-lg-2 col-md-3 control-label" %>
                 <div class="col-lg-4 col-md-9">
                   <%= f.label(:vendor_based_in, "United States") %>
                   <%= f.radio_button(:vendor_based_in, 'United States') %>
@@ -133,7 +133,7 @@
           </div>
           <div class="panel-body pt0 pb0">
             <div class="form-horizontal group-border stripped" id="validate">
-              <div class="panel-heading">
+              <div class="panel-heading form-group">
                 <h4 class="panel-title">Primary Business Representative</h4>
               </div>
               <div class="form-group">
@@ -158,7 +158,7 @@
                 </div>
               </div>
 
-              <div class="panel-heading">
+              <div class="panel-heading form-group">
                 <h4 class="panel-title">Finance Representative</h4>
               </div>
 
@@ -184,133 +184,161 @@
                 </div>
               </div>
 
-              <div class="panel-heading">
-                <h4 class="panel-title">Purchase Orders and Order Fulfillment Representative</h4>
-              </div>
-
               <div class="form-group">
-                <%= f.label :purchase_orders_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :purchase_orders_name, :class => "form-control" %>
-                </div>
-                <%= f.label :purchase_orders_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :purchase_orders_phone, :class => "form-control" %>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :purchase_orders_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.email_field :purchase_orders_email, :class => "form-control" %>
-                </div>
-                <%= f.label :purchase_orders_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :purchase_orders_fax, :class => "form-control" %>
+                <div class="col-lg-10 col-md-9">
+                  <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Add additional contact fields
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#" id="show_order_js">Purchase Orders and Order Fulfillment Representative</a></li>
+                      <li><a href="#" id="show_inventory_js">Inventory Representative</a></li>
+                      <li><a href="#" id="show_return_js">Returns Representative</a></li>
+                      <li><a href="#" id="show_information_js">Product Information Representative</a></li>
+                      <li><a href="#" id="show_service_js">Customer Service Representative</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <div class="panel-heading">
-                <h4 class="panel-title">Inventory Representative</h4>
-              </div>
+              <div id="contact_order_js">
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">Purchase Orders and Order Fulfillment Representative</h4>
+                </div>
 
-              <div class="form-group">
-                <%= f.label :inventory_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :inventory_name, :class => "form-control" %>
+                <div class="form-group">
+                  <%= f.label :purchase_orders_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :purchase_orders_name, :class => "form-control" %>
+                  </div>
+                  <%= f.label :purchase_orders_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :purchase_orders_phone, :class => "form-control" %>
+                  </div>
                 </div>
-                <%= f.label :inventory_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :inventory_phone, :class => "form-control" %>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <%= f.label :inventory_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.email_field :inventory_email, :class => "form-control" %>
-                </div>
-                <%= f.label :inventory_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :inventory_fax, :class => "form-control" %>
-                </div>
-              </div>
-
-              <div class="panel-heading">
-                <h4 class="panel-title">Returns Representative</h4>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :returns_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :returns_name, :class => "form-control" %>
-                </div>
-                <%= f.label :returns_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :returns_phone, :class => "form-control" %>
+                <div class="form-group">
+                  <%= f.label :purchase_orders_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.email_field :purchase_orders_email, :class => "form-control" %>
+                  </div>
+                  <%= f.label :purchase_orders_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :purchase_orders_fax, :class => "form-control" %>
+                  </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <%= f.label :returns_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.email_field :returns_email, :class => "form-control" %>
+              <div id="contact_inventory_js">
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">Inventory Representative</h4>
                 </div>
-                <%= f.label :returns_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :returns_fax, :class => "form-control" %>
+
+                <div class="form-group">
+                  <%= f.label :inventory_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :inventory_name, :class => "form-control" %>
+                  </div>
+                  <%= f.label :inventory_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :inventory_phone, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :inventory_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.email_field :inventory_email, :class => "form-control" %>
+                  </div>
+                  <%= f.label :inventory_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :inventory_fax, :class => "form-control" %>
+                  </div>
                 </div>
               </div>
 
-              <div class="panel-heading">
-                <h4 class="panel-title">Product Information Representative</h4>
-              </div>
+              <div id="contact_return_js">
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">Returns Representative</h4>
+                </div>
 
-              <div class="form-group">
-                <%= f.label :product_information_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :product_information_name, :class => "form-control" %>
+                <div class="form-group">
+                  <%= f.label :returns_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :returns_name, :class => "form-control" %>
+                  </div>
+                  <%= f.label :returns_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :returns_phone, :class => "form-control" %>
+                  </div>
                 </div>
-                <%= f.label :product_information_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :product_information_phone, :class => "form-control" %>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <%= f.label :product_information_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.email_field :product_information_email, :class => "form-control" %>
-                </div>
-                <%= f.label :product_information_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :product_information_fax, :class => "form-control" %>
-                </div>
-              </div>
-
-              <div class="panel-heading">
-                <h4 class="panel-title">Customer Service Representative</h4>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :customer_service_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :customer_service_name, :class => "form-control" %>
-                </div>
-                <%= f.label :customer_service_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :customer_service_phone, :class => "form-control" %>
+                <div class="form-group">
+                  <%= f.label :returns_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.email_field :returns_email, :class => "form-control" %>
+                  </div>
+                  <%= f.label :returns_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :returns_fax, :class => "form-control" %>
+                  </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <%= f.label :customer_service_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.email_field :customer_service_email, :class => "form-control" %>
+              <div id="contact_information_js">
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">Product Information Representative</h4>
                 </div>
-                <%= f.label :customer_service_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :customer_service_fax, :class => "form-control" %>
+
+                <div class="form-group">
+                  <%= f.label :product_information_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :product_information_name, :class => "form-control" %>
+                  </div>
+                  <%= f.label :product_information_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :product_information_phone, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :product_information_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.email_field :product_information_email, :class => "form-control" %>
+                  </div>
+                  <%= f.label :product_information_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :product_information_fax, :class => "form-control" %>
+                  </div>
+                </div>
+              </div>
+
+              <div id="contact_service_js">
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">Customer Service Representative</h4>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :customer_service_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :customer_service_name, :class => "form-control" %>
+                  </div>
+                  <%= f.label :customer_service_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :customer_service_phone, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :customer_service_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.email_field :customer_service_email, :class => "form-control" %>
+                  </div>
+                  <%= f.label :customer_service_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :customer_service_fax, :class => "form-control" %>
+                  </div>
                 </div>
               </div>
 
@@ -336,12 +364,12 @@
                   <%= f.radio_button(:inventory_integration_method, 'EDI') %>
                   <%= f.label(:inventory_integration_method, "API") %>
                   <%= f.radio_button(:inventory_integration_method, 'API') %>
-                  <%= f.label(:inventory_integration_method, "Partner Connect") %>
-                  <%= f.radio_button(:inventory_integration_method, 'Partner Connect') %>
+                  <%= f.label(:inventory_integration_method, "Other/None") %>
+                  <%= f.radio_button(:inventory_integration_method, 'Other/None') %>
                 </div>
               </div>
 
-              <div class="panel-heading">
+              <div class="panel-heading form-group">
                 <h4 class="panel-title">Integrations Contact</h4>
               </div>
               <div class="form-group">
@@ -395,47 +423,47 @@
           <div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">
             <!-- Start .panel -->
             <div class="panel-heading">
-              <h4 class="panel-title">UPC Details</h4>
+              <h4 class="panel-title">Returns Information</h4>
             </div>
             <div class="panel-body pt0 pb0">
               <div class="form-horizontal group-border stripped" id="validate">
 
-                <div class="form-group">
-                  <%= f.label :upc_marketing, "UPC Marketing:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:upc_marketing, "Yes") %>
-                    <%= f.radio_button(:upc_marketing, 'Yes') %>
-                    <%= f.label(:upc_marketing, "No") %>
-                    <%= f.radio_button(:upc_marketing, 'No') %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<%#= f.label :upc_marketing, "UPC Marketing:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.label(:upc_marketing, "Yes") %>-->
+                    <!--<%#= f.radio_button(:upc_marketing, 'Yes') %>-->
+                    <!--<%#= f.label(:upc_marketing, "No") %>-->
+                    <!--<%#= f.radio_button(:upc_marketing, 'No') %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="panel-heading">
-                  <h4 class="panel-title">UPC Ticketing Contact</h4>
-                </div>
-                <div class="form-group">
-                  <%= f.label :upc_ticketing_contact_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :upc_ticketing_contact_name, :class => "form-control" %>
-                  </div>
-                  <%= f.label :upc_ticketing_contact_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :upc_ticketing_contact_phone, :class => "form-control" %>
-                  </div>
-                </div>
+                <!--<div class="panel-heading form-group">-->
+                  <!--<h4 class="panel-title">UPC Ticketing Contact</h4>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                  <!--<%#= f.label :upc_ticketing_contact_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :upc_ticketing_contact_name, :class => "form-control" %>-->
+                  <!--</div>-->
+                  <!--<%#= f.label :upc_ticketing_contact_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :upc_ticketing_contact_phone, :class => "form-control" %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="form-group">
-                  <%= f.label :upc_ticketing_contact_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :upc_ticketing_contact_email, :class => "form-control" %>
-                  </div>
-                  <%= f.label :upc_ticketing_contact_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :upc_ticketing_contact_fax, :class => "form-control" %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<%#= f.label :upc_ticketing_contact_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :upc_ticketing_contact_email, :class => "form-control" %>-->
+                  <!--</div>-->
+                  <!--<%#= f.label :upc_ticketing_contact_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :upc_ticketing_contact_fax, :class => "form-control" %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="panel-heading">
+                <div class="panel-heading form-group">
                   <h4 class="panel-title">Returns Contact</h4>
                 </div>
                 <div class="form-group">
@@ -460,7 +488,7 @@
                   </div>
                 </div>
 
-                <div class="panel-heading">
+                <div class="panel-heading form-group">
                   <h4 class="panel-title">Returns Address</h4>
                 </div>
 
@@ -523,7 +551,7 @@
               <div class="form-horizontal group-border stripped" id="validate">
 
                 <div class="form-group">
-                  <div class="panel-heading">
+                  <div class="panel-heading ">
                     <h4 class="panel-title">Preferred shipping method:</h4>
                   </div>
                   <div class="col-lg-4 col-md-9">
@@ -534,8 +562,8 @@
                   </div>
                 </div>
 
-                <div class="panel-heading">
-                  <h4 class="panel-title">If "Vendor's Account," what carriers are you set up to use?</h4>
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">What are your preferred carriers?</h4>
                 </div>
                 <div class="form-group">
                   <%= f.fields_for :vendor_carriers do |carrier| %>
@@ -544,65 +572,65 @@
                   <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info' %>
                 </div>
 
-                <div class="panel-heading">
-                  <h4 class="panel-title">If "Arbor Gentry's Accounts," what are your preferred carriers?</h4>
-                </div>
+                <!--<div class="panel-heading form-group">-->
+                  <!--<h4 class="panel-title">If "Arbor Gentry's Accounts," what are your preferred carriers?</h4>-->
+                <!--</div>-->
 
-                <div class="form-group">
-                  <%= f.fields_for :arbor_gentry_carriers do |arbor_gentry| %>
-                      <%#= render '_arbor_gentry_carrier_fields', :f => arbor_gentry %>
-                  <% end %>
-                  <%= link_to_add_association 'Add Another Carrier', f, :arbor_gentry_carriers, class: 'btn btn-info' %>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<%#= f.fields_for :arbor_gentry_carriers do |arbor_gentry| %>-->
+                      <!--<%#= render 'arbor_gentry_carrier_fields', :f => arbor_gentry %>-->
+                  <!--<%# end %>-->
+                  <!--<%#= link_to_add_association 'Add Another Carrier', f, :arbor_gentry_carriers, class: 'btn btn-info' %>-->
+                <!--</div>-->
 
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">What is your protocol for freight shipments?</h4>
                   </div>
                   <div class="col-lg-10 col-md-9">
-                    <%= f.text_area :protocol_for_freight_shipments, :class => "form-control" %>
+                    <%= f.text_area :protocol_for_freight_shipments, placeholder: "Boxed, palletized, blanket-wrapped, etc.", :class => "form-control" %>
                   </div>
                 </div>
 
-                <div class="panel-heading">
+                <div class="panel-heading form-group">
                   <h4 class="panel-title">Warehousing</h4>
                 </div>
 
-                <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">Do you have multiple warehouses?</h4>
-                  </div>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:multiple_warehouses, "Yes") %>
-                    <%= f.radio_button(:multiple_warehouses, "Yes") %>
-                    <%= f.label(:multiple_warehouses, "No") %>
-                    <%= f.radio_button(:multiple_warehouses, "No") %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<div class="panel-heading">-->
+                    <!--<h4 class="panel-title">Do you have multiple warehouses?</h4>-->
+                  <!--</div>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.label(:multiple_warehouses, "Yes") %>-->
+                    <!--<%#= f.radio_button(:multiple_warehouses, "Yes") %>-->
+                    <!--<%#= f.label(:multiple_warehouses, "No") %>-->
+                    <!--<%#= f.radio_button(:multiple_warehouses, "No") %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">Do you plan on shipping from multiple warehouses?</h4>
-                  </div>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:shipping_from_multiple_warehouses, "Yes") %>
-                    <%= f.radio_button(:shipping_from_multiple_warehouses, "Yes") %>
-                    <%= f.label(:shipping_from_multiple_warehouses, "No") %>
-                    <%= f.radio_button(:shipping_from_multiple_warehouses, "No") %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<div class="panel-heading">-->
+                    <!--<h4 class="panel-title">Do you plan on shipping from multiple warehouses?</h4>-->
+                  <!--</div>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.label(:shipping_from_multiple_warehouses, "Yes") %>-->
+                    <!--<%#= f.radio_button(:shipping_from_multiple_warehouses, "Yes") %>-->
+                    <!--<%#= f.label(:shipping_from_multiple_warehouses, "No") %>-->
+                    <!--<%#= f.radio_button(:shipping_from_multiple_warehouses, "No") %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">Are all warehouses listed under the Transportation and Shipment section?</h4>
-                  </div>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:transportation_and_shipment_section, "Yes") %>
-                    <%= f.radio_button(:transportation_and_shipment_section, "Yes") %>
-                    <%= f.label(:transportation_and_shipment_section, "No") %>
-                    <%= f.radio_button(:transportation_and_shipment_section, "No") %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<div class="panel-heading">-->
+                    <!--<h4 class="panel-title">Are all warehouses listed under the Transportation and Shipment section?</h4>-->
+                  <!--</div>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.label(:transportation_and_shipment_section, "Yes") %>-->
+                    <!--<%#= f.radio_button(:transportation_and_shipment_section, "Yes") %>-->
+                    <!--<%#= f.label(:transportation_and_shipment_section, "No") %>-->
+                    <!--<%#= f.radio_button(:transportation_and_shipment_section, "No") %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
                 <div class="form-group">
                   <div class="panel-heading">
@@ -616,13 +644,13 @@
                   </div>
                 </div>
 
-                <div class="panel-heading">
+                <div class="panel-heading form-group">
                   <h4 class="panel-title">Product Type(s):</h4>
                 </div>
 
                 <div class="form-group">
                   <%= f.fields_for :product_types do |product_type| %>
-                      <%#= render '_product_type_fields', :f => product_type %>
+                      <%= render 'product_type_fields', :f => product_type %>
                   <% end %>
                   <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info' %>
                 </div>
@@ -716,45 +744,51 @@
                   </div>
                 </div>
 
-                <div class="panel-heading">
-                  <h4 class="panel-title">How do we bill the following fees?</h4>
-                </div>
-                <div class="form-group">
-                  <%= f.label :credit_card, "Credit Card:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :credit_card, :class => "form-control" %>
-                  </div>
-                  <%= f.label :wire_transfer, "Wire Transfer:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :wire_transfer, :class => "form-control" %>
-                  </div>
-                </div>
+                <!--<div class="panel-heading">-->
+                  <!--<h4 class="panel-title">How do we bill the following fees?</h4>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                  <!--<%#= f.label :credit_card, "Credit Card:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :credit_card, :class => "form-control" %>-->
+                  <!--</div>-->
+                  <!--<%#= f.label :wire_transfer, "Wire Transfer:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :wire_transfer, :class => "form-control" %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="form-group">
-                  <%= f.label :ach, "ACH:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :ach, :class => "form-control" %>
-                  </div>
-                  <%= f.label :check_by_mail, "Check By Mail:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :check_by_mail, :class => "form-control" %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<%#= f.label :ach, "ACH:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :ach, :class => "form-control" %>-->
+                  <!--</div>-->
+                  <!--<%#= f.label :check_by_mail, "Check By Mail:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :check_by_mail, :class => "form-control" %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-                <div class="form-group">
-                  <%= f.label :pay_pal, "PayPal:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :pay_pal, :class => "form-control" %>
-                  </div>
-                  <%= f.label :bitcoin, "Bitcoin:", :class => "col-lg-2 col-md-3 control-label" %>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.text_field :bitcoin, :class => "form-control" %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<%#= f.label :pay_pal, "PayPal:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :pay_pal, :class => "form-control" %>-->
+                  <!--</div>-->
+                  <!--<%#= f.label :bitcoin, "Bitcoin:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                  <!--<div class="col-lg-4 col-md-9">-->
+                    <!--<%#= f.text_field :bitcoin, :class => "form-control" %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">Are there any costs/fees in addition to COGs?</h4>
+                  </div>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.label(:costs_fees_radio, "Yes") %>
+                    <%= f.radio_button(:costs_fees_radio, "Yes") %>
+                    <%= f.label(:costs_fees_radio, "No") %>
+                    <%= f.radio_button(:costs_fees_radio, "No") %>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_area :costs_fees, :class => "form-control" %>
@@ -804,11 +838,8 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">Are there any special requirements for purchase orders?</h4>
                   </div>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:return_policy, "Option A") %>
-                    <%= f.radio_button(:return_policy, "Option A") %>
-                    <%= f.label(:return_policy, "Option B") %>
-                    <%= f.radio_button(:return_policy, "Option B") %>
+                  <div class="col-lg-10 col-md-9">
+                    <%= f.text_field :return_policy, :class => "form-control" %>
                   </div>
                 </div>
 
@@ -819,6 +850,16 @@
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :merchandising, :class => "form-control" %>
                   </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-xs-12 control-label">Please upload a copy of your W-9 form: </label>
+                  <%= f.file_field :w_9_form, class: 'btn-file input_uploader' %>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-xs-12 control-label">Please upload a copy of your Certificate of Insurance: </label>
+                  <%= f.file_field :certificate, class: 'btn-file input_uploader' %>
                 </div>
 
 

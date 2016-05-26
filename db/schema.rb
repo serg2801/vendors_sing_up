@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526081713) do
+ActiveRecord::Schema.define(version: 20160526141318) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -147,6 +147,9 @@ ActiveRecord::Schema.define(version: 20160526081713) do
     t.datetime "updated_at",                                                 null: false
     t.integer  "user_id"
     t.boolean  "grants_access",                              default: false
+    t.string   "costs_fees_radio"
+    t.string   "w_9_form"
+    t.string   "certificate"
   end
 
   create_table "brands", force: :cascade do |t|

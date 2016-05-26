@@ -7,7 +7,7 @@
   <p> <%= brand.name %></p>
   <% end %>
 </div>
-<p>Vendor Based In: <%= @board.vendor_based_in %></p>
+<p>Vendor Location: <%= @board.vendor_based_in %></p>
 <p> Other: <%= @board.vendor_based_in_other %></p>
 
 <h3>Vendor Main Address</h3>
@@ -104,16 +104,16 @@
   <% end %>
 </div>
 
-<h3>UPC Details</h3>
+<h3>Returns Information</h3>
 
-<p>UPC Marketing: <%= @board.upc_marketing %></p>
+<!--<p>UPC Marketing: <%#= @board.upc_marketing %></p>-->
 
-<h5>UPC Ticketing Contact:</h5>
+<!--<h5>UPC Ticketing Contact:</h5>-->
 
-<p>Name:<%= @board.upc_ticketing_contact_name %></p>
-<p>Phone:<%= @board.upc_ticketing_contact_phone %></p>
-<p>Email:<%= @board.upc_ticketing_contact_email %></p>
-<p>Fax:<%= @board.upc_ticketing_contact_fax %></p>
+<!--<p>Name:<%#= @board.upc_ticketing_contact_name %></p>-->
+<!--<p>Phone:<%#= @board.upc_ticketing_contact_phone %></p>-->
+<!--<p>Email:<%#= @board.upc_ticketing_contact_email %></p>-->
+<!--<p>Fax:<%#= @board.upc_ticketing_contact_fax %></p>-->
 
 <h5>Returns Contact:</h5>
 
@@ -136,26 +136,26 @@
 <p>Preferred shipping method: <%= @board.preferred_shipping_method %></p>
 
 <div>
-  <h5>If "Vendor's Account," what carriers are you set up to use?</h5>
+  <h5>What are your preferred carriers?</h5>
   <% @board.vendor_carriers.each do |v| %>
   <p> <%= v.name %></p>
   <% end %>
 </div>
 
-<div>
-  <h5>If "Arbor Gentry's Accounts," what are your preferred carriers?</h5>
-  <% @board.arbor_gentry_carriers.each do |a| %>
-      <p> <%= a.name %></p>
-  <% end %>
-</div>
+<!--<div>-->
+  <!--<h5>If "Arbor Gentry's Accounts," what are your preferred carriers?</h5>-->
+  <!--<%# @board.arbor_gentry_carriers.each do |a| %>-->
+      <!--<p> <%#= a.name %></p>-->
+  <!--<%# end %>-->
+<!--</div>-->
 
 <p>What is your protocol for freight shipments? <%= @board.protocol_for_freight_shipments %></p>
 
 <h3>Warehousing</h3>
 
-<p>Do you have multiple warehouses? <%= @board.multiple_warehouses %></p>
-<p>Do you plan on shipping from multiple warehouses? <%= @board.shipping_from_multiple_warehouses %></p>
-<p>Are all warehouses listed under the Transportation and Shipment section? <%= @board.transportation_and_shipment_section %></p>
+<!--<p>Do you have multiple warehouses? <%#= @board.multiple_warehouses %></p>-->
+<!--<p>Do you plan on shipping from multiple warehouses? <%#= @board.shipping_from_multiple_warehouses %></p>-->
+<!--<p>Are all warehouses listed under the Transportation and Shipment section? <%#= @board.transportation_and_shipment_section %></p>-->
 <p>Do you have ship alone items? <%= @board.ship_alone_items %></p>
 
 <div>
@@ -193,15 +193,16 @@
   <p>Other: <%= @board.frequency_other %></p>
 </div>
 
-<h5>How do we bill the following fees?</h5>
+<!--<h5>How do we bill the following fees?</h5>-->
 
-<p>Credit Card: <%= @board.credit_card %></p>
-<p>Wire Transfer: <%= @board.wire_transfer %></p>
-<p>ACH: <%= @board.ach %></p>
-<p>Check By Mail: <%= @board.check_by_mail %></p>
-<p>PayPal: <%= @board.pay_pal %></p>
-<p>Bitcoin: <%= @board.bitcoin %></p>
+<!--<p>Credit Card: <%#= @board.credit_card %></p>-->
+<!--<p>Wire Transfer: <%#= @board.wire_transfer %></p>-->
+<!--<p>ACH: <%#= @board.ach %></p>-->
+<!--<p>Check By Mail: <%#= @board.check_by_mail %></p>-->
+<!--<p>PayPal: <%#= @board.pay_pal %></p>-->
+<!--<p>Bitcoin: <%#= @board.bitcoin %></p>-->
 
+<p>Are there any costs/fees in addition to COGs? <%= @board.costs_fees_radio %></p>
 <p>Are there any costs/fees in addition to COGs? <%= @board.costs_fees %></p>
 <p>If so, how are these costs billed? <%= @board.if_so_costs_fees %></p>
 

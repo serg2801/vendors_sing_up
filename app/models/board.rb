@@ -7,6 +7,10 @@ class Board < ActiveRecord::Base
 
   belongs_to :user
 
+  mount_uploader :w_9_form, ImageUploader
+  mount_uploader :certificate, ImageUploader
+
+
   accepts_nested_attributes_for :brands, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :transportation_and_shipments, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :vendor_carriers, reject_if: :all_blank, allow_destroy: true

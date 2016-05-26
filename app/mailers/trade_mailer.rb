@@ -24,6 +24,7 @@ class TradeMailer < ApplicationMailer
 
   def update_trade(trade)
     @trade = trade
+    attachments["#{@trade.image}"] = File.read("#{Rails.root}/public/#{@trade.image}") unless @trade.image_url.nil?
     mail to: "trade@tandemarbor.com",
          # reply_to: "vendors@tandemarbor.com",
          subject:  "Update Vendor Onboarding Form" + "#{@trade.business_name}"
