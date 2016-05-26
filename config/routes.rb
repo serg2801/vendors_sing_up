@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :vendors, only: [ :create ]
-  resources :trades,  only: [ :create ]
+  resources :trades
   resources :boards
 
   get 'trade-signup',       to: "vendors#new"
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'vendor_success',        to: 'static_pages#vendor'
   get 'board_success',         to: 'static_pages#board'
   get 'board_success_update',  to: 'static_pages#board_update'
+  get 'trade_success_update',  to: 'static_pages#trade_update'
 
   get 'persons/profile', as: 'user_root'
 

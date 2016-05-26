@@ -1,6 +1,8 @@
 ActiveAdmin.register Board do
 
   actions :all
+  config.clear_action_items!
+  config.filters = false
   form partial: 'form'
   menu label: "Onboarding Form"
 
@@ -22,11 +24,14 @@ ActiveAdmin.register Board do
     render 'show_board'
   end
 
+  action_item 'New Onboarding Form', only: :index do
+    link_to 'New Onboarding Form', new_admin_board_path, method: :get
+  end
+
   collection_action :grant_access, method: :get, title: 'Grant Access' do
     @board = Board.find(params[:format])
     o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
     password_string = (0...20).map { o[rand(o.length)] }.join
-    puts password_string
     @user = User.new({email: @board.primary_business_email, password: password_string, password_confirmation: password_string, pas_decrypt: password_string})
     if @user.save
       @board = Board.find(params[:format])

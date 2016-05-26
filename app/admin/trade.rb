@@ -1,8 +1,9 @@
 ActiveAdmin.register Trade do
 
+  actions :all
   config.clear_action_items!
   config.filters = false
-
+  form partial: 'form'
   menu label: "Vendor"
 
   index :title => "Vendor" do
@@ -11,10 +12,13 @@ ActiveAdmin.register Trade do
     column :email
     column :phone_number
     column :created_at
-
     actions defaults: false do |trade|
-      link_to "View", admin_trade_path(trade)
+      unless trade.grant_access
+        link_to 'Grant Access', grant_access_admin_trades_path(trade)
+      end
+
     end
+    actions
 
   end
 
@@ -59,5 +63,42 @@ ActiveAdmin.register Trade do
       end
     end
   end
+
+  action_item 'New Vendor', only: :index do
+    link_to 'New Vendor', new_admin_trade_path, method: :get
+  end
+
+
+  collection_action :grant_access, method: :get, title: 'Grant Access' do
+    @trade = Trade.find(params[:format])
+    o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+    password_string = (0...20).map { o[rand(o.length)] }.join
+    @user = User.new({email: @trade.email, password: password_string, password_confirmation: password_string, pas_decrypt: password_string})
+    if @user.save
+      @trade = Trade.find(params[:format])
+      @trade.update_attributes(grant_access: true, user_id: @user.id)
+      TradeMailer.create_user(@trade, @user).deliver
+    end
+    redirect_to admin_trades_path
+  end
+
+  controller do
+
+    def create
+      @trade = Trade.new(trade_params)
+      if @trade.save
+        redirect_to admin_trade_path(@trade.id)
+      else
+        render 'new'
+      end
+    end
+
+
+    private
+    def trade_params
+      params.require(:trade).permit!
+    end
+  end
+
 
 end

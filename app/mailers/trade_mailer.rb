@@ -14,4 +14,19 @@ class TradeMailer < ApplicationMailer
          subject:  "Vendor Form Submission"
   end
 
+  def create_user(trade, user)
+    @trade = trade
+    @user = user
+    mail to: @user.email,
+         #      reply_to: "vendors@tandemarbor.com",
+         subject:  "Vendor Form"
+  end
+
+  def update_trade(trade)
+    @trade = trade
+    mail to: "trade@tandemarbor.com",
+         # reply_to: "vendors@tandemarbor.com",
+         subject:  "Update Vendor Onboarding Form" + "#{@trade.business_name}"
+  end
+
 end

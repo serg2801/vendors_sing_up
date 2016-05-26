@@ -14,4 +14,7 @@ class StaticPagesController < ApplicationController
 
   def board_update
   end
+
+  def trade_update
+  end
 end

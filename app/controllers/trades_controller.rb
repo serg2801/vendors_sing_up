@@ -1,5 +1,10 @@
 class TradesController < ApplicationController
 
+  def edit
+    @user = User.find(current_user.id)
+    @trade = @user.trade
+  end
+
   def new
     @trade = Trade.new
   end
@@ -42,6 +47,17 @@ class TradesController < ApplicationController
       else
         render 'new'
       end
+    end
+  end
+
+  def update
+    @user = User.find(current_user.id)
+    @trade = @user.trade
+    if @trade.update_attributes(trade_params)
+      TradeMailer.update_trade(@trade).deliver
+      redirect_to trade_success_update_path
+    else
+      render :edit
     end
   end
 
