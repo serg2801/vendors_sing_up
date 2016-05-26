@@ -621,7 +621,7 @@
 
               <div class="form-group">
                 <%= f.fields_for :product_types do |product_type| %>
-                    <%= render '_product_type_fields', :f => product_type %>
+                    <%= render 'product_type_fields', :f => product_type %>
                 <% end %>
                 <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info' %>
               </div>
