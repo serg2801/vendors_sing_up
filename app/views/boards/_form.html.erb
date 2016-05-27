@@ -397,9 +397,9 @@
                   <%= f.radio_button(:inventory_integration_method, 'API', class: "radio_inventory_js") %>
                   <%= f.label(:inventory_integration_method, "API", class: "form_radio_button") %>
                   <%= f.radio_button(:inventory_integration_method, 'None', class: "radio_inventory_js") %>
-                  <%= f.label(:inventory_integration_method, "None" , class: "form_radio_button") %>
+                  <%= f.label(:inventory_integration_method, "None", class: "form_radio_button") %>
                   <%= f.radio_button(:inventory_integration_method, 'Other', id: "radio_inventory_js", class: "radio_inventory_js") %>
-                  <%= f.label(:inventory_integration_method, "Other" , class: "form_radio_button") %>
+                  <%= f.label(:inventory_integration_method, "Other", class: "form_radio_button") %>
                 </div>
                 <div class="col-lg-4 col-md-9">
                   <%= f.text_field :inventory_integration_method_other, placeholder: "Other...", :class => "form-control", id: "form_other_inventory_js" %>
@@ -466,38 +466,38 @@
               <div class="form-horizontal group-border stripped" id="validate">
 
                 <!--<div class="form-group">-->
-                  <!--<%#= f.label :upc_marketing, "UPC Marketing:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.label(:upc_marketing, "Yes") %>-->
-                    <!--<%#= f.radio_button(:upc_marketing, 'Yes') %>-->
-                    <!--<%#= f.label(:upc_marketing, "No") %>-->
-                    <!--<%#= f.radio_button(:upc_marketing, 'No') %>-->
-                  <!--</div>-->
+                <!--<%#= f.label :upc_marketing, "UPC Marketing:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.label(:upc_marketing, "Yes") %>-->
+                <!--<%#= f.radio_button(:upc_marketing, 'Yes') %>-->
+                <!--<%#= f.label(:upc_marketing, "No") %>-->
+                <!--<%#= f.radio_button(:upc_marketing, 'No') %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="panel-heading form-group">-->
-                  <!--<h4 class="panel-title">UPC Ticketing Contact</h4>-->
+                <!--<h4 class="panel-title">UPC Ticketing Contact</h4>-->
                 <!--</div>-->
                 <!--<div class="form-group">-->
-                  <!--<%#= f.label :upc_ticketing_contact_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :upc_ticketing_contact_name, :class => "form-control" %>-->
-                  <!--</div>-->
-                  <!--<%#= f.label :upc_ticketing_contact_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :upc_ticketing_contact_phone, :class => "form-control" %>-->
-                  <!--</div>-->
+                <!--<%#= f.label :upc_ticketing_contact_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :upc_ticketing_contact_name, :class => "form-control" %>-->
+                <!--</div>-->
+                <!--<%#= f.label :upc_ticketing_contact_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :upc_ticketing_contact_phone, :class => "form-control" %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="form-group">-->
-                  <!--<%#= f.label :upc_ticketing_contact_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :upc_ticketing_contact_email, :class => "form-control" %>-->
-                  <!--</div>-->
-                  <!--<%#= f.label :upc_ticketing_contact_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :upc_ticketing_contact_fax, :class => "form-control" %>-->
-                  <!--</div>-->
+                <!--<%#= f.label :upc_ticketing_contact_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :upc_ticketing_contact_email, :class => "form-control" %>-->
+                <!--</div>-->
+                <!--<%#= f.label :upc_ticketing_contact_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :upc_ticketing_contact_fax, :class => "form-control" %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <div class="panel-heading form-group">
@@ -610,14 +610,14 @@
                 </div>
 
                 <!--<div class="panel-heading form-group">-->
-                  <!--<h4 class="panel-title">If "Arbor Gentry's Accounts," what are your preferred carriers?</h4>-->
+                <!--<h4 class="panel-title">If "Arbor Gentry's Accounts," what are your preferred carriers?</h4>-->
                 <!--</div>-->
 
                 <!--<div class="form-group">-->
-                  <!--<%#= f.fields_for :arbor_gentry_carriers do |arbor_gentry| %>-->
-                      <!--<%#= render 'arbor_gentry_carrier_fields', :f => arbor_gentry %>-->
-                  <!--<%# end %>-->
-                  <!--<%#= link_to_add_association 'Add Another Carrier', f, :arbor_gentry_carriers, class: 'btn btn-info' %>-->
+                <!--<%#= f.fields_for :arbor_gentry_carriers do |arbor_gentry| %>-->
+                <!--<%#= render 'arbor_gentry_carrier_fields', :f => arbor_gentry %>-->
+                <!--<%# end %>-->
+                <!--<%#= link_to_add_association 'Add Another Carrier', f, :arbor_gentry_carriers, class: 'btn btn-info' %>-->
                 <!--</div>-->
 
                 <div class="form-group">
@@ -697,10 +697,305 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.fields_for :product_types do |product_type| %>
-                      <%= render 'product_type_fields', :f => product_type %>
-                  <% end %>
-                  <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info', id: "add_another_product_type" %>
+                  <select>
+                    <optgroup label="FURNITURE">
+                      <option value="">SEATING - SOFAS & LOVESEATS</option>
+                      <option value="">SEATING - SECTIONALS</option>
+                      <option value="">SEATING - SLEEPERS & DAYBEDS</option>
+                      <option value="">SEATING - ACCENT CHAIRS</option>
+                      <option value="">SEATING - DINING CHAIRS</option>
+                      <option value="">SEATING - DESK CHAIRS</option>
+                      <option value="">SEATING - CHAISES, SETTEES</option>
+                      <option value="">SEATING - BENCHES, OTTOMANS & POUFS</option>
+                      <option value="">SEATING - BAR & COUNTER</option>
+                      <option value="">SEATING - STOOLS</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">SHELVING & CABINETS - ARMOIRES & CABINETS</option>
+                      <option value="">SHELVING & CABINETS - BAR STORAGE & CARTS</option>
+                      <option value="">SHELVING & CABINETS - SIDEBOARDS & HUTCHES</option>
+                      <option value="">SHELVING & CABINETS - MEDIA CONSOLES</option>
+                      <option value="">SHELVING & CABINETS - SHELVES & BOOKCASES</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">TABLES - DINING TABLES</option>
+                      <option value="">TABLES - BAR & COUNTER TABLES</option>
+                      <option value="">TABLES - COCKTAIL & COFFEE TABLES</option>
+                      <option value="">TABLES - CONSOLE TABLES</option>
+                      <option value="">TABLES - SIDE TABLES</option>
+                      <option value="">TABLES - TRUNKS</option>
+                      <option value="">TABLES - DESKS</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">TABLES - DINING TABLES</option>
+                      <option value="">TABLES - BAR & COUNTER TABLES</option>
+                      <option value="">TABLES - COCKTAIL & COFFEE TABLES</option>
+                      <option value="">TABLES - CONSOLE TABLES</option>
+                      <option value="">TABLES - SIDE TABLES</option>
+                      <option value="">TABLES - TRUNKS</option>
+                      <option value="">TABLES - DESKS</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">BEDROOM FURNITURE - BED FRAMES</option>
+                      <option value="">BEDROOM FURNITURE - HEADBOARDS</option>
+                      <option value="">BEDROOM FURNITURE - MATTRESSES</option>
+                      <option value="">BEDROOM FURNITURE - NIGHTSTANDS</option>
+                      <option value="">BEDROOM FURNITURE - DRESSERS</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">BATH FURNITURE - ÉTAGÈRES & CABINETS</option>
+                      <option value="">BATH FURNITURE - MIRRORS</option>
+                      <option value="">BATH FURNITURE - VANITIES & SINKS</option>
+                      <option value="">BATH FURNITURE - TUBS</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">OFFICE FURNITURE - DESKS</option>
+                      <option value="">OFFICE FURNITURE - CHAIRS</option>
+                      <option value="">OFFICE FURNITURE - OFFICE STORAGE</option>
+                    </optgroup>
+                    <optgroup label="FURNITURE">
+                      <option value="">OUTDOOR FURNITURE - SOFAS & LOVESEATS</option>
+                      <option value="">OUTDOOR FURNITURE - SECTIONALS</option>
+                      <option value="">OUTDOOR FURNITURE - LOUNGERS</option>
+                      <option value="">OUTDOOR FURNITURE - ACCENT CHAIRS</option>
+                      <option value="">OUTDOOR FURNITURE - COFFEE TABLES</option>
+                      <option value="">OUTDOOR FURNITURE - DINING CHAIRS</option>
+                      <option value="">OUTDOOR FURNITURE - DINING & BAR TABLES</option>
+                      <option value="">OUTDOOR FURNITURE - STOOLS</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">APPLIANCES - REFRIGERATOR</option>
+                      <option value="">APPLIANCES - OVENS</option>
+                      <option value="">APPLIANCES - COOKTOPS</option>
+                      <option value="">APPLIANCES - RANGES</option>
+                      <option value="">APPLIANCES - DISHWASHERS</option>
+                      <option value="">APPLIANCES - HOODS</option>
+                      <option value="">APPLIANCES - FITTINGS</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">ACCESSORIES - STEP STOOLS + LADDERS</option>
+                      <option value="">ACCESSORIES - KNOBS & HANDLES</option>
+                      <option value="">ACCESSORIES - STORAGE</option>
+                      <option value="">ACCESSORIES - TRASHCANS</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - CUTLERY & PREP</option>
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - BAKEWARE</option>
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - POTS & PANS</option>
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - COOKING TOOLS</option>
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - CANISTERS & JARS</option>
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - DISH TOWELS, APRONS & MITTS</option>
+                      <option value="">COOKWARE, BAKEWARE & TOOLS - GOURMET</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">TABLETOP - PLATES</option>
+                      <option value="">TABLETOP - BOWLS</option>
+                      <option value="">TABLETOP - MUGS & CUPS</option>
+                      <option value="">TABLETOP - STEMWARE</option>
+                      <option value="">TABLETOP - GLASSWARE</option>
+                      <option value="">TABLETOP - FLATWARE</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">SERVEWARE - PLATTERS & TRAYS</option>
+                      <option value="">SERVEWARE - COFFEE & TEA</option>
+                      <option value="">SERVEWARE - SALT & PEPPER</option>
+                      <option value="">SERVEWARE - SERVING BOWLS</option>
+                      <option value="">SERVEWARE - SERVING UTENSILS</option>
+                      <option value="">SERVEWARE - PITCHERS & JUGS</option>
+                      <option value="">SERVEWARE - CHEESE BOARDS</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">ENTERTAINING - COCKTAIL PLATES</option>
+                      <option value="">ENTERTAINING - COASTERS</option>
+                      <option value="">ENTERTAINING - CHARGERS</option>
+                      <option value="">ENTERTAINING - SERVING TRAYS</option>
+                      <option value="">ENTERTAINING - ACCESSORIES</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">TABLE LINENS - NAPKINS</option>
+                      <option value="">TABLE LINENS - PLACEMATS</option>
+                      <option value="">TABLE LINENS - TABLECLOTHS & RUNNERS</option>
+                      <option value="">TABLE LINENS - NAPKIN RINGS</option>
+                    </optgroup>
+                    <optgroup label="KITCHEN & TABLETOP">
+                      <option value="">BARWARE - COCKTAIL GLASSES</option>
+                      <option value="">BARWARE - PITCHERS & DECANTERS</option>
+                      <option value="">BARWARE - BAR ACCESSORIES</option>
+                    </optgroup>
+                    <optgroup label="BED & BATH">
+                      <option value="">BED LINENS - DUVET COVERS & SHAMS</option>
+                      <option value="">BED LINENS - SHEETING</option>
+                      <option value="">BED LINENS - QUILTS & COVERLETS</option>
+                    </optgroup>
+                    <optgroup label="BED & BATH">
+                      <option value="">BEDDING ACCESSORIES - THROWS & BLANKETS</option>
+                      <option value="">BEDDING ACCESSORIES - PILLOW INSERTS</option>>
+                      <option value="">BEDDING ACCESSORIES - DECORATIVE PILLOWS BATH LINENS </option>
+                      <option value="">BEDDING ACCESSORIES - TOWELS </option>
+                      <option value="">BEDDING ACCESSORIES - BATH RUGS </option>
+                      <option value="">BEDDING ACCESSORIES - SHOWER CURTAINS </option>
+                    </optgroup>
+                    <optgroup label="BED & BATH">
+                      <option value="">BATH FITTINGS - WALL MOUNTED HARDWARE</option>
+                      <option value="">BATH FITTINGS - VANITIES & WALL SHELVES</option>
+                      <option value="">BATH FITTINGS - KNOBS, HOOKS & PULLS</option>
+                      <option value="">BATH FITTINGS - FAUCETS & FITTINGS</option>
+                    </optgroup>
+                    <optgroup label="BED & BATH">
+                      <option value="">BATH ACCESSORIES - COUNTERTOP ACCESSORIES</option>
+                      <option value="">BATH ACCESSORIES - COUNTERTOP MIRRORS</option>
+                      <option value="">BATH ACCESSORIES - BATH STORAGE</option>
+                      <option value="">BATH ACCESSORIES - SHOWER BASKETS</option>
+                      <option value="">BATH ACCESSORIES - SOAP & LOTION COLLECTIONS</option>
+                    </optgroup>
+                    <optgroup label="LIGHTING">
+                      <option value="">CEILING - CHANDELIERS</option>
+                      <option value="">CEILING - PENDANTS</option>
+                      <option value="">CEILING - FLUSHMOUNTS</option>
+                      <option value="">CEILING - CEILING FANS</option>
+                    </optgroup>
+                    <optgroup label="LIGHTING">
+                      <option value="">LAMPS - FLOOR LAMPS</option>
+                      <option value="">LAMPS - TABLE LAMPS</option>
+                    </optgroup>
+                    <optgroup label="LIGHTING">
+                      <option value="">WALL - WALL SCONCES</option>
+                      <option value="">WALL - BATH SCONCES</option>
+                      <option value="">WALL - PICTURE LIGHTS</option>
+                    </optgroup>
+                    <optgroup label="LIGHTING">
+                      <option value="">OUTDOOR - OUTDOOR PENDANTS</option>
+                      <option value="">OUTDOOR - OUTDOOR SCONCES</option>
+                      <option value="">OUTDOOR - OUTDOOR FLUSHMOUNTS</option>
+                      <option value="">OUTDOOR - STRING LIGHTS</option>
+                    </optgroup>
+                    <optgroup label="LIGHTING">
+                      <option value="">LIGHTING ACCESSORIES - SHADES</option>
+                      <option value="">LIGHTING ACCESSORIES - LIGHTBULBS</option>
+                      <option value="">LIGHTING ACCESSORIES - SWITCH PLATES</option>
+                      <option value="">LIGHTING ACCESSORIES - LIT DÉCOR</option>
+                    </optgroup>
+                    <optgroup label="RUGS">
+                      <option value="">RUGS BY STYLE - HIDES, SKINS & LEATHER</option>
+                      <option value="">RUGS BY STYLE - NATURAL FIBER, SISAL & TEXTURE</option>
+                      <option value="">RUGS BY STYLE - PATTERN</option>
+                      <option value="">RUGS BY STYLE - SHAG</option>
+                      <option value="">RUGS BY STYLE - SILK</option>
+                      <option value="">RUGS BY STYLE - FLATWEAVE</option>
+                      <option value="">RUGS BY STYLE - ANTIQUE & VINTAGE</option>
+                      <option value="">RUGS BY STYLE - RUG ACCESSORIES</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">OBJECTS - BOOKENDS</option>
+                      <option value="">OBJECTS - BOOKS</option>
+                      <option value="">OBJECTS - CANDLES & CANDLE HOLDERS</option>
+                      <option value="">OBJECTS - CLOCKS</option>
+                      <option value="">OBJECTS - FRAMES</option>
+                      <option value="">OBJECTS - LETTERS & NUMBERS</option>
+                      <option value="">OBJECTS - OBJECTS</option>
+                      <option value="">OBJECTS - VASES</option>
+                      <option value="">OBJECTS - VESSELS & TRAYS</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">MIRRORS - FLOOR MIRRORS</option>
+                      <option value="">MIRRORS - WALL MIRRORS</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">WINDOWS - DRAPERY</option>
+                      <option value="">WINDOWS - SHADES</option>
+                      <option value="">WINDOWS - BLINDS</option>
+                      <option value="">WINDOWS - HARDWARE</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">OFFICE & STORAGE - BASKETS & TOTES</option>
+                      <option value="">OFFICE & STORAGE - SHELVING</option>
+                      <option value="">OFFICE & STORAGE - DESK ACCESSORIES</option>
+                      <option value="">OFFICE & STORAGE - BOXES</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">WALL DÉCOR - ARTWORK</option>
+                      <option value="">WALL DÉCOR - WALL CARVINGS/PLAQUES</option>
+                      <option value="">WALL DÉCOR - DISPLAY SHELVES</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">HEARTH - SCREENS</option>
+                      <option value="">HEARTH - TOOLS & ACCESSORIES</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">PILLOWS & THROWS - PILLOWS</option>
+                      <option value="">PILLOWS & THROWS - PILLOW INSERTS</option>
+                      <option value="">PILLOWS & THROWS - THROWS</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">SMALL FURNITURE - BAR CARTS</option>
+                      <option value="">SMALL FURNITURE - COAT RACKS</option>
+                      <option value="">SMALL FURNITURE - LUGGAGE RACKS</option>
+                      <option value="">SMALL FURNITURE - LADDERS & SCREENS</option>
+                      <option value="">SMALL FURNITURE - WALL SHELVING</option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">HARDWARE - DOORBELLS</option>
+                      <option value="">HARDWARE - HINGES & LATCHES</option>
+                      <option value="">HARDWARE - HOOKS</option>
+                      <option value="">HARDWARE - KNOBS</option>
+                      <option value="">HARDWARE - KNOCKERS</option>
+                      <option value="">HARDWARE - MAILBOXES</option>
+                      <option value="">HARDWARE - NUMBERS</option>
+                      <option value="">HARDWARE - PULLS, HANDLES & KNOBS </option>
+                      <option value="">HARDWARE - REGISTER COVERS </option>
+                      <option value="">HARDWARE - SWITCH PLATES </option>
+                    </optgroup>
+                    <optgroup label="DÉCOR">
+                      <option value="">FABRIC BY THE YARD</option>
+                    </optgroup>
+                    <optgroup label="OUTDOOR">
+                      <option value="">OUTDOOR FURNITURE - SOFAS & LOVESEATS</option>
+                      <option value="">OUTDOOR FURNITURE - SECTIONALS</option>
+                      <option value="">OUTDOOR FURNITURE - LOUNGERS</option>
+                      <option value="">OUTDOOR FURNITURE - ACCENT CHAIRS</option>
+                      <option value="">OUTDOOR FURNITURE - COFFEE TABLES</option>
+                      <option value="">OUTDOOR FURNITURE - DINING CHAIRS</option>
+                      <option value="">OUTDOOR FURNITURE - DINING & BAR TABLES</option>
+                      <option value="">OUTDOOR FURNITURE - STOOLS</option>
+                    </optgroup>
+                    <optgroup label="OUTDOOR">
+                      <option value="">OUTDOOR DÉCOR - FOUNTAINS</option>
+                      <option value="">OUTDOOR DÉCOR - GARDEN OBJECTS</option>
+                      <option value="">OUTDOOR DÉCOR - TOPIARIES</option>
+                      <option value="">OUTDOOR DÉCOR - URNS & PEDESTALS</option>
+                    </optgroup>
+                    <optgroup label="OUTDOOR">
+                      <option value="">FIRE & HEAT - FIREPLACE & PITS</option>
+                      <option value="">FIRE & HEAT - FIRE ACCESSORIES</option>
+                      <option value="">FIRE & HEAT - OUTDOOR HEATERS</option>
+                      <option value="">FIRE & HEAT - FIRE & HEAT COVERS</option>
+                      <option value="">FIRE & HEAT - GRILLS & OVENS</option>
+                    </optgroup>
+                    <optgroup label="OUTDOOR">
+                      <option value="">OUTDOOR LIGHTING - PENDANTS</option>
+                      <option value="">OUTDOOR LIGHTING - SCONCES</option>
+                      <option value="">OUTDOOR LIGHTING - FLUSHMOUNTS</option>
+                      <option value="">OUTDOOR LIGHTING - STRING LIGHTS</option>
+                    </optgroup>
+                    <optgroup label="OUTDOOR">
+                      <option value="">UMBRELLAS - UMBRELLAS</option>
+                      <option value="">UMBRELLAS - UMBRELLA STANDS</option>
+                      <option value="">UMBRELLAS - UMBRELLA COVERS</option>
+                    </optgroup>
+                    <optgroup label="OUTDOOR">
+                      <option value="">OUTDOOR ACCESSORIES - COVERS</option>
+                      <option value="">OUTDOOR ACCESSORIES - CUSHIONS</option>
+                      <option value="">OUTDOOR ACCESSORIES - PILLOWS</option>
+                      <option value="">OUTDOOR ACCESSORIES - PLANTERS</option>
+                      <option value="">OUTDOOR ACCESSORIES - DOORMATS</option>
+                    </optgroup>
+                  </select>
+                  
+
+                  <!--<%#= f.fields_for :product_types do |product_type| %>-->
+                  <!--<%#= render 'product_type_fields', :f => product_type %>-->
+                  <!--<%# end %>-->
+                  <!--<%#= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info', id: "add_another_product_type" %>-->
                 </div>
 
                 <div class="form-group">
@@ -759,10 +1054,11 @@
 
                 <div class="form-group">
                   <div class="panel-heading">
-                    <h4 class="panel-title">How and when do you provide inventory updates (including discounted and new items)?</h4>
+                    <h4 class="panel-title">How and when do you provide inventory updates (including discounted and new
+                      items)?</h4>
                   </div>
                   <div class="col-lg-4 col-md-9">
-                    <%= f.label :method, "Method:", class: "form_radio_button"%>
+                    <%= f.label :method, "Method:", class: "form_radio_button" %>
                     <%= f.radio_button(:method, "Via EDI", class: "radio_button_method_js") %>
                     <%= f.label(:method, "Via EDI", class: "form_radio_button") %>
                     <%= f.radio_button(:method, "Via Email", class: "radio_button_method_js") %>
@@ -777,7 +1073,7 @@
 
                 <div class="form-group">
                   <div class="col-lg-4 col-md-9">
-                    <%= f.label :frequency, "Frequency:", class: "form_radio_button"%>
+                    <%= f.label :frequency, "Frequency:", class: "form_radio_button" %>
                     <%= f.radio_button(:frequency, "Daily", class: "radio_button_frequency_js") %>
                     <%= f.label(:frequency, "Daily", class: "form_radio_button") %>
                     <%= f.radio_button(:frequency, "Weekly", class: "radio_button_frequency_js") %>
@@ -791,39 +1087,39 @@
                 </div>
 
                 <!--<div class="panel-heading">-->
-                  <!--<h4 class="panel-title">How do we bill the following fees?</h4>-->
+                <!--<h4 class="panel-title">How do we bill the following fees?</h4>-->
                 <!--</div>-->
                 <!--<div class="form-group">-->
-                  <!--<%#= f.label :credit_card, "Credit Card:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :credit_card, :class => "form-control" %>-->
-                  <!--</div>-->
-                  <!--<%#= f.label :wire_transfer, "Wire Transfer:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :wire_transfer, :class => "form-control" %>-->
-                  <!--</div>-->
+                <!--<%#= f.label :credit_card, "Credit Card:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :credit_card, :class => "form-control" %>-->
                 <!--</div>-->
-
-                <!--<div class="form-group">-->
-                  <!--<%#= f.label :ach, "ACH:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :ach, :class => "form-control" %>-->
-                  <!--</div>-->
-                  <!--<%#= f.label :check_by_mail, "Check By Mail:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :check_by_mail, :class => "form-control" %>-->
-                  <!--</div>-->
+                <!--<%#= f.label :wire_transfer, "Wire Transfer:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :wire_transfer, :class => "form-control" %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="form-group">-->
-                  <!--<%#= f.label :pay_pal, "PayPal:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :pay_pal, :class => "form-control" %>-->
-                  <!--</div>-->
-                  <!--<%#= f.label :bitcoin, "Bitcoin:", :class => "col-lg-2 col-md-3 control-label" %>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.text_field :bitcoin, :class => "form-control" %>-->
-                  <!--</div>-->
+                <!--<%#= f.label :ach, "ACH:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :ach, :class => "form-control" %>-->
+                <!--</div>-->
+                <!--<%#= f.label :check_by_mail, "Check By Mail:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :check_by_mail, :class => "form-control" %>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                <!--<%#= f.label :pay_pal, "PayPal:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :pay_pal, :class => "form-control" %>-->
+                <!--</div>-->
+                <!--<%#= f.label :bitcoin, "Bitcoin:", :class => "col-lg-2 col-md-3 control-label" %>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.text_field :bitcoin, :class => "form-control" %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <div class="form-group">
@@ -873,7 +1169,8 @@
 
                 <div class="form-group">
                   <div class="panel-heading">
-                    <h4 class="panel-title">Please explain your discount/promotional rules in regards to IMAP pricing:</h4>
+                    <h4 class="panel-title">Please explain your discount/promotional rules in regards to IMAP
+                      pricing:</h4>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :imap_pricing, :class => "form-control" %>
@@ -881,17 +1178,18 @@
                 </div>
 
                 <!--<div class="form-group">-->
-                  <!--<div class="panel-heading">-->
-                    <!--<h4 class="panel-title">Are there any special requirements for purchase orders?</h4>-->
-                  <!--</div>-->
-                  <!--<div class="col-lg-10 col-md-9">-->
-                    <!--<%#= f.text_field :return_policy, :class => "form-control" %>-->
-                  <!--</div>-->
+                <!--<div class="panel-heading">-->
+                <!--<h4 class="panel-title">Are there any special requirements for purchase orders?</h4>-->
+                <!--</div>-->
+                <!--<div class="col-lg-10 col-md-9">-->
+                <!--<%#= f.text_field :return_policy, :class => "form-control" %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <div class="form-group">
                   <div class="panel-heading">
-                    <h4 class="panel-title">What, if any, are your merchandising stipulations and strategy recommendations for your product?</h4>
+                    <h4 class="panel-title">What, if any, are your merchandising stipulations and strategy
+                      recommendations for your product?</h4>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :merchandising, :class => "form-control" %>
