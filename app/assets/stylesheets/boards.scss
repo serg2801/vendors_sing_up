@@ -14,4 +14,43 @@
   #contact_service_js {
     display: none;
   }
+  #contact_other_js {
+    display: none;
+  }
+  .form_costs_fees_other_js {
+    display: none;
+  }
+  .purchase_orders_block_js {
+    display: none;
+  }
+  .form-group {
+    .form_radio_button {
+      font-weight: normal;
+      margin-right: 20px;
+    }
+    #form_other_js {
+      display: none;
+    }
+    .radio_button_group {
+      padding: 5px;
+    }
+    .radio_button_group_inventory {
+      padding-top: 12px;
+    }
+    .radio_button_group_ml {
+      margin-left: 10px;
+    }
+    #form_other_inventory_js {
+      display: none;
+    }
+    #form_method_other_js {
+      display: none;
+    }
+    #form_frequency_other_js {
+      display: none;
+    }
+    .form_costs_fees_other_js {
+      display: none;
+    }
+  }
 }

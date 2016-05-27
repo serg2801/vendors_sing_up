@@ -1,0 +1,109 @@
+$(document).on("page:change",function () {
+
+    $("#add_brand_name").trigger("click");
+    $(".nested-fields .brand_name").find(".remove_brand_js").hide();
+
+    $("#add_another_location").trigger("click");
+    $(".nested-fields .ship_information").find(".remove_ship_information_js").hide();
+
+    $("#add_another_carrier").trigger("click");
+    $(".nested-fields .another_carrier").find(".remove_another_carrier_js").hide();
+
+    $("#add_another_product_type").trigger("click");
+    $(".nested-fields .product_type").find(".remove_another_product_type_js").hide();
+
+    $("#show_order_js").click(function (e) {
+        e.preventDefault();
+        $("#contact_order_js").toggle();
+    });
+
+    $("#show_inventory_js").click(function (e) {
+        e.preventDefault();
+        $("#contact_inventory_js").toggle();
+    });
+
+    $("#show_return_js").click(function (e) {
+        e.preventDefault();
+        $("#contact_return_js").toggle();
+    });
+
+    $("#show_information_js").click(function (e) {
+        e.preventDefault();
+        $("#contact_information_js").toggle();
+    });
+
+    $("#show_service_js").click(function (e) {
+        e.preventDefault();
+        $("#contact_service_js").toggle();
+    });
+    $("#show_other_js").click(function (e) {
+        e.preventDefault();
+        $("#contact_other_js").toggle();
+    });
+
+    $(".form-group .radio_button_js").click(function () {
+        if (document.getElementById("radio_button_other_js").checked)
+        {
+            $("#form_other_js").show();
+        }else
+        {
+            $("#form_other_js").hide();
+            $("#form_other_js").val("");
+        }
+    });
+
+    $(".form-group .radio_inventory_js").click(function () {
+        if (document.getElementById("radio_inventory_js").checked)
+        {
+            $("#form_other_inventory_js").show();
+        }else
+        {
+            $("#form_other_inventory_js").hide();
+            $("#form_other_inventory_js").val("");
+        }
+    });
+
+    $(".form-group .radio_button_method_js").click(function () {
+        if (document.getElementById("radio_method_other_js").checked)
+        {
+            $("#form_method_other_js").show();
+        }else
+        {
+            $("#form_method_other_js").hide();
+            $("#form_method_other_js").val("");
+        }
+    });
+
+    $(".form-group .radio_button_frequency_js").click(function () {
+        if (document.getElementById("radio_frequency_other_js").checked)
+        {
+            $("#form_frequency_other_js").show();
+        }else
+        {
+            $("#form_frequency_other_js").hide();
+            $("#form_frequency_other_js").val("");
+        }
+    });
+    $(".form-group .radio_button_costs_fees_js").click(function () {
+        if (document.getElementById("radio_costs_fees_yes_js").checked)
+        {
+            $(".form_costs_fees_other_js").show();
+        }else
+        {
+            $(".form_costs_fees_other_js").hide();
+            $(".form_costs_fees_other_js").val("");
+            $(".form_costs_fees_other_js .costs_fees").val("");
+        }
+    });
+    $(".form-group .radio_button_purchase_orders_js").click(function () {
+        if (document.getElementById("radio_purchase_orders_yes_js").checked)
+        {
+            $(".purchase_orders_block_js").show();
+        }else
+        {
+            $(".purchase_orders_block_js").hide();
+            $(".purchase_orders_block_js .purchase_order").val("");
+        }
+    });
+
+});

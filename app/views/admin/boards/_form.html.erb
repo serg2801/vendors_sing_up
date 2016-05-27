@@ -313,6 +313,37 @@
               </div>
             </div>
 
+            <div id="contact_other_js">
+              <div class="form-group">
+                <%= f.label :contact_other_title, "Title:", :class => "col-lg-2 col-md-3 control-label" %>
+                <div class="col-lg-4 col-md-9">
+                  <%= f.text_field :contact_other_title, :class => "form-control" %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :contact_other_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                <div class="col-lg-4 col-md-9">
+                  <%= f.text_field :contact_other_name, :class => "form-control" %>
+                </div>
+                <%= f.label :contact_other_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                <div class="col-lg-4 col-md-9">
+                  <%= f.text_field :contact_other_phone, :class => "form-control" %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :contact_other_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                <div class="col-lg-4 col-md-9">
+                  <%= f.email_field :contact_other_email, :class => "form-control" %>
+                </div>
+                <%= f.label :contact_other_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                <div class="col-lg-4 col-md-9">
+                  <%= f.text_field :contact_other_fax, :class => "form-control" %>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

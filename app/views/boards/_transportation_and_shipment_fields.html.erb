@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div class="panel-heading form-group">
+  <div class="panel-heading">
     <h4 class="panel-title">Transportation Contact</h4>
   </div>
 
@@ -82,6 +82,7 @@
       <%= f.text_field :transportation_contact_fax, :class => "form-control" %>
     </div>
   </div>
-
-  <%= link_to_remove_association "remove", f, class: "btn btn-danger" %>
+  <div class="ship_information">
+    <%= link_to_remove_association "Remove", f, class: "btn btn-danger remove_ship_information_js" %>
+  </div>
 </div>

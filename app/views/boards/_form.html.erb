@@ -45,21 +45,21 @@
                 <%= f.fields_for :brands do |brand| %>
                     <%= render 'brand_fields', :f => brand %>
                 <% end %>
-                <%= link_to_add_association 'Add Another Brand Name', f, :brands, class: 'btn btn-info' %>
+                <%= link_to_add_association 'Add Another Brand Name', f, :brands, class: 'btn btn-info', id: "add_brand_name" %>
               </div>
 
               <div class="form-group">
                 <%= f.label :vendor_based_in, "Vendor Location:", :class => "col-lg-2 col-md-3 control-label" %>
-                <div class="col-lg-4 col-md-9">
-                  <%= f.label(:vendor_based_in, "United States") %>
-                  <%= f.radio_button(:vendor_based_in, 'United States') %>
-                  <%= f.label(:vendor_based_in, "Europe") %>
-                  <%= f.radio_button(:vendor_based_in, 'Europe') %>
-                  <%= f.label(:vendor_based_in, "Other") %>
-                  <%= f.radio_button(:vendor_based_in, 'Other') %>
+                <div class="col-lg-4 col-md-9 radio_button_group">
+                  <%= f.radio_button(:vendor_based_in, 'United States', class: "radio_button_js") %>
+                  <%= f.label(:vendor_based_in, "United States", class: "form_radio_button") %>
+                  <%= f.radio_button(:vendor_based_in, 'Europe', class: "radio_button_js") %>
+                  <%= f.label(:vendor_based_in, "Europe", class: "form_radio_button") %>
+                  <%= f.radio_button(:vendor_based_in, 'Other', id: "radio_button_other_js", class: "radio_button_js") %>
+                  <%= f.label(:vendor_based_in, "Other", class: "form_radio_button") %>
                 </div>
                 <div class="col-lg-4 col-md-9">
-                  <%= f.text_field :vendor_based_in_other, :class => "form-control" %>
+                  <%= f.text_field :vendor_based_in_other, placeholder: "Other...", :class => "form-control", id: "form_other_js" %>
                 </div>
               </div>
             </div>
@@ -197,6 +197,7 @@
                       <li><a href="#" id="show_return_js">Returns Representative</a></li>
                       <li><a href="#" id="show_information_js">Product Information Representative</a></li>
                       <li><a href="#" id="show_service_js">Customer Service Representative</a></li>
+                      <li><a href="#" id="show_other_js">Other</a></li>
                     </ul>
                   </div>
                 </div>
@@ -342,6 +343,37 @@
                 </div>
               </div>
 
+              <div id="contact_other_js">
+                <div class="form-group">
+                  <%= f.label :contact_other_title, "Title:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :contact_other_title, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :contact_other_name, "Name:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :contact_other_name, :class => "form-control" %>
+                  </div>
+                  <%= f.label :contact_other_phone, "Phone:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :contact_other_phone, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :contact_other_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.email_field :contact_other_email, :class => "form-control" %>
+                  </div>
+                  <%= f.label :contact_other_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.text_field :contact_other_fax, :class => "form-control" %>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -359,13 +391,18 @@
 
               <div class="form-group">
                 <%= f.label :inventory_integration_method, "Inventory Integration Method:", :class => "col-lg-2 col-md-3 control-label" %>
+                <div class="col-lg-4 col-md-9 radio_button_group_inventory">
+                  <%= f.radio_button(:inventory_integration_method, 'EDI', class: "radio_inventory_js") %>
+                  <%= f.label(:inventory_integration_method, "EDI", class: "form_radio_button") %>
+                  <%= f.radio_button(:inventory_integration_method, 'API', class: "radio_inventory_js") %>
+                  <%= f.label(:inventory_integration_method, "API", class: "form_radio_button") %>
+                  <%= f.radio_button(:inventory_integration_method, 'None', class: "radio_inventory_js") %>
+                  <%= f.label(:inventory_integration_method, "None" , class: "form_radio_button") %>
+                  <%= f.radio_button(:inventory_integration_method, 'Other', id: "radio_inventory_js", class: "radio_inventory_js") %>
+                  <%= f.label(:inventory_integration_method, "Other" , class: "form_radio_button") %>
+                </div>
                 <div class="col-lg-4 col-md-9">
-                  <%= f.label(:inventory_integration_method, "EDI") %>
-                  <%= f.radio_button(:inventory_integration_method, 'EDI') %>
-                  <%= f.label(:inventory_integration_method, "API") %>
-                  <%= f.radio_button(:inventory_integration_method, 'API') %>
-                  <%= f.label(:inventory_integration_method, "Other/None") %>
-                  <%= f.radio_button(:inventory_integration_method, 'Other/None') %>
+                  <%= f.text_field :inventory_integration_method_other, placeholder: "Other...", :class => "form-control", id: "form_other_inventory_js" %>
                 </div>
               </div>
 
@@ -411,7 +448,7 @@
                   <%= f.fields_for :transportation_and_shipments do |transportation| %>
                       <%= render 'transportation_and_shipment_fields', :f => transportation %>
                   <% end %>
-                  <%= link_to_add_association 'Add Another Ship Location and Contact', f, :transportation_and_shipments, class: 'btn btn-info' %>
+                  <%= link_to_add_association 'Add Another Location', f, :transportation_and_shipments, class: 'btn btn-info', id: 'add_another_location' %>
                 </div>
               </div>
             </div>
@@ -554,11 +591,11 @@
                   <div class="panel-heading ">
                     <h4 class="panel-title">Preferred shipping method:</h4>
                   </div>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:preferred_shipping_method, "Vendor's Account") %>
+                  <div class="col-lg-4 col-md-9 radio_button_group_ml">
                     <%= f.radio_button(:preferred_shipping_method, "Vendor's Account") %>
-                    <%= f.label(:preferred_shipping_method, "Arbor Gentry's Account") %>
+                    <%= f.label(:preferred_shipping_method, "Vendor's Account", class: "form_radio_button") %>
                     <%= f.radio_button(:preferred_shipping_method, "Arbor Gentry's Account") %>
+                    <%= f.label(:preferred_shipping_method, "Arbor Gentry's Account", class: "form_radio_button") %>
                   </div>
                 </div>
 
@@ -569,7 +606,7 @@
                   <%= f.fields_for :vendor_carriers do |carrier| %>
                       <%= render 'vendor_carrier_fields', :f => carrier %>
                   <% end %>
-                  <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info' %>
+                  <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info', id: "add_another_carrier" %>
                 </div>
 
                 <!--<div class="panel-heading form-group">-->
@@ -592,67 +629,78 @@
                   </div>
                 </div>
 
-                <div class="panel-heading form-group">
-                  <h4 class="panel-title">Warehousing</h4>
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 form_container">
+          <!-- col-lg-12 start here -->
+          <div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">
+            <!-- Start .panel -->
+            <div class="panel-heading">
+              <h4 class="panel-title">Warehousing</h4>
+            </div>
+            <div class="panel-body pt0 pb0">
+              <div class="form-horizontal group-border stripped" id="validate">
 
                 <!--<div class="form-group">-->
-                  <!--<div class="panel-heading">-->
-                    <!--<h4 class="panel-title">Do you have multiple warehouses?</h4>-->
-                  <!--</div>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.label(:multiple_warehouses, "Yes") %>-->
-                    <!--<%#= f.radio_button(:multiple_warehouses, "Yes") %>-->
-                    <!--<%#= f.label(:multiple_warehouses, "No") %>-->
-                    <!--<%#= f.radio_button(:multiple_warehouses, "No") %>-->
-                  <!--</div>-->
+                <!--<div class="panel-heading">-->
+                <!--<h4 class="panel-title">Do you have multiple warehouses?</h4>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.label(:multiple_warehouses, "Yes") %>-->
+                <!--<%#= f.radio_button(:multiple_warehouses, "Yes") %>-->
+                <!--<%#= f.label(:multiple_warehouses, "No") %>-->
+                <!--<%#= f.radio_button(:multiple_warehouses, "No") %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="form-group">-->
-                  <!--<div class="panel-heading">-->
-                    <!--<h4 class="panel-title">Do you plan on shipping from multiple warehouses?</h4>-->
-                  <!--</div>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.label(:shipping_from_multiple_warehouses, "Yes") %>-->
-                    <!--<%#= f.radio_button(:shipping_from_multiple_warehouses, "Yes") %>-->
-                    <!--<%#= f.label(:shipping_from_multiple_warehouses, "No") %>-->
-                    <!--<%#= f.radio_button(:shipping_from_multiple_warehouses, "No") %>-->
-                  <!--</div>-->
+                <!--<div class="panel-heading">-->
+                <!--<h4 class="panel-title">Do you plan on shipping from multiple warehouses?</h4>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.label(:shipping_from_multiple_warehouses, "Yes") %>-->
+                <!--<%#= f.radio_button(:shipping_from_multiple_warehouses, "Yes") %>-->
+                <!--<%#= f.label(:shipping_from_multiple_warehouses, "No") %>-->
+                <!--<%#= f.radio_button(:shipping_from_multiple_warehouses, "No") %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="form-group">-->
-                  <!--<div class="panel-heading">-->
-                    <!--<h4 class="panel-title">Are all warehouses listed under the Transportation and Shipment section?</h4>-->
-                  <!--</div>-->
-                  <!--<div class="col-lg-4 col-md-9">-->
-                    <!--<%#= f.label(:transportation_and_shipment_section, "Yes") %>-->
-                    <!--<%#= f.radio_button(:transportation_and_shipment_section, "Yes") %>-->
-                    <!--<%#= f.label(:transportation_and_shipment_section, "No") %>-->
-                    <!--<%#= f.radio_button(:transportation_and_shipment_section, "No") %>-->
-                  <!--</div>-->
+                <!--<div class="panel-heading">-->
+                <!--<h4 class="panel-title">Are all warehouses listed under the Transportation and Shipment section?</h4>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-md-9">-->
+                <!--<%#= f.label(:transportation_and_shipment_section, "Yes") %>-->
+                <!--<%#= f.radio_button(:transportation_and_shipment_section, "Yes") %>-->
+                <!--<%#= f.label(:transportation_and_shipment_section, "No") %>-->
+                <!--<%#= f.radio_button(:transportation_and_shipment_section, "No") %>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">Do you have ship alone items?</h4>
                   </div>
-                  <div class="col-lg-4 col-md-9">
-                    <%= f.label(:ship_alone_items, "Yes") %>
+                  <div class="col-lg-4 col-md-9 radio_button_group_ml">
                     <%= f.radio_button(:ship_alone_items, "Yes") %>
-                    <%= f.label(:ship_alone_items, "No") %>
+                    <%= f.label(:ship_alone_items, "Yes", class: "form_radio_button") %>
                     <%= f.radio_button(:ship_alone_items, "No") %>
+                    <%= f.label(:ship_alone_items, "No", class: "form_radio_button") %>
                   </div>
                 </div>
 
                 <div class="panel-heading form-group">
-                  <h4 class="panel-title">Product Type(s):</h4>
+                  <h4 class="panel-title">Product Type:</h4>
                 </div>
 
                 <div class="form-group">
                   <%= f.fields_for :product_types do |product_type| %>
                       <%= render 'product_type_fields', :f => product_type %>
                   <% end %>
-                  <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info' %>
+                  <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info', id: "add_another_product_type" %>
                 </div>
 
                 <div class="form-group">
@@ -713,34 +761,32 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">How and when do you provide inventory updates (including discounted and new items)?</h4>
                   </div>
-                  <div class="col-lg-6 col-md-9">
-                    <%= f.label :method, "Method:"%>
-
-                    <%= f.label(:method, "Via EDI") %>
-                    <%= f.radio_button(:method, "Via EDI") %>
-                    <%= f.label(:method, "Via Email") %>
-                    <%= f.radio_button(:method, "Via Email") %>
-                    <%= f.label(:method, "Other") %>
-                    <%= f.radio_button(:method, "Other") %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.label :method, "Method:", class: "form_radio_button"%>
+                    <%= f.radio_button(:method, "Via EDI", class: "radio_button_method_js") %>
+                    <%= f.label(:method, "Via EDI", class: "form_radio_button") %>
+                    <%= f.radio_button(:method, "Via Email", class: "radio_button_method_js") %>
+                    <%= f.label(:method, "Via Email", class: "form_radio_button") %>
+                    <%= f.radio_button(:method, "Other", id: "radio_method_other_js", class: "radio_button_method_js") %>
+                    <%= f.label(:method, "Other", class: "form_radio_button") %>
                   </div>
                   <div class="col-lg-6 col-md-9">
-                    <%= f.text_field :method_other, :class => "form-control" %>
+                    <%= f.text_field :method_other, placeholder: 'Other...', :class => "form-control", id: "form_method_other_js" %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="col-lg-6 col-md-9">
-                    <%= f.label :frequency, "Frequency:"%>
-
-                    <%= f.label(:frequency, "Daily") %>
-                    <%= f.radio_button(:frequency, "Daily") %>
-                    <%= f.label(:frequency, "Weekly") %>
-                    <%= f.radio_button(:frequency, "Weekly") %>
-                    <%= f.label(:frequency, "Other") %>
-                    <%= f.radio_button(:frequency, "Other") %>
+                  <div class="col-lg-4 col-md-9">
+                    <%= f.label :frequency, "Frequency:", class: "form_radio_button"%>
+                    <%= f.radio_button(:frequency, "Daily", class: "radio_button_frequency_js") %>
+                    <%= f.label(:frequency, "Daily", class: "form_radio_button") %>
+                    <%= f.radio_button(:frequency, "Weekly", class: "radio_button_frequency_js") %>
+                    <%= f.label(:frequency, "Weekly", class: "form_radio_button") %>
+                    <%= f.radio_button(:frequency, "Other", id: "radio_frequency_other_js", class: "radio_button_frequency_js") %>
+                    <%= f.label(:frequency, "Other", class: "form_radio_button") %>
                   </div>
                   <div class="col-lg-6 col-md-9">
-                    <%= f.text_field :frequency_other, :class => "form-control" %>
+                    <%= f.text_field :frequency_other, placeholder: 'Other...', :class => "form-control", id: "form_frequency_other_js" %>
                   </div>
                 </div>
 
@@ -785,22 +831,22 @@
                     <h4 class="panel-title">Are there any costs/fees in addition to COGs?</h4>
                   </div>
                   <div class="col-lg-4 col-md-9">
-                    <%= f.label(:costs_fees_radio, "Yes") %>
-                    <%= f.radio_button(:costs_fees_radio, "Yes") %>
-                    <%= f.label(:costs_fees_radio, "No") %>
-                    <%= f.radio_button(:costs_fees_radio, "No") %>
+                    <%= f.radio_button(:costs_fees_radio, "Yes", class: "radio_button_costs_fees_js", id: "radio_costs_fees_yes_js") %>
+                    <%= f.label(:costs_fees_radio, "Yes", class: "form_radio_button") %>
+                    <%= f.radio_button(:costs_fees_radio, "No", class: "radio_button_costs_fees_js") %>
+                    <%= f.label(:costs_fees_radio, "No", class: "form_radio_button") %>
                   </div>
                   <div class="col-lg-10 col-md-9">
-                    <%= f.text_area :costs_fees, :class => "form-control" %>
+                    <%= f.text_area :costs_fees, :class => "form-control form_costs_fees_other_js" %>
                   </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group form_costs_fees_other_js">
                   <div class="panel-heading">
                     <h4 class="panel-title">If so, how are these costs billed?</h4>
                   </div>
                   <div class="col-lg-10 col-md-9">
-                    <%= f.text_area :if_so_costs_fees, :class => "form-control" %>
+                    <%= f.text_area :if_so_costs_fees, :class => "form-control costs_fees" %>
                   </div>
                 </div>
 
@@ -809,19 +855,19 @@
                     <h4 class="panel-title">Are there any special requirements for purchase orders?</h4>
                   </div>
                   <div class="col-lg-4 col-md-9">
-                    <%= f.label(:requirements_for_purchase_orders, "Yes") %>
-                    <%= f.radio_button(:requirements_for_purchase_orders, "Yes") %>
-                    <%= f.label(:requirements_for_purchase_orders, "No") %>
-                    <%= f.radio_button(:requirements_for_purchase_orders, "No") %>
+                    <%= f.radio_button(:requirements_for_purchase_orders, "Yes", class: "radio_button_purchase_orders_js", id: "radio_purchase_orders_yes_js") %>
+                    <%= f.label(:requirements_for_purchase_orders, "Yes", class: "form_radio_button") %>
+                    <%= f.radio_button(:requirements_for_purchase_orders, "No", class: "radio_button_purchase_orders_js") %>
+                    <%= f.label(:requirements_for_purchase_orders, "No", class: "form_radio_button") %>
                   </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group purchase_orders_block_js">
                   <div class="panel-heading">
                     <h4 class="panel-title">If yes, please explain the requirements:</h4>
                   </div>
                   <div class="col-lg-10 col-md-9">
-                    <%= f.text_area :if_yes_requirements_for_purchase_orders, :class => "form-control" %>
+                    <%= f.text_area :if_yes_requirements_for_purchase_orders, :class => "form-control purchase_order" %>
                   </div>
                 </div>
 
@@ -834,14 +880,14 @@
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">Are there any special requirements for purchase orders?</h4>
-                  </div>
-                  <div class="col-lg-10 col-md-9">
-                    <%= f.text_field :return_policy, :class => "form-control" %>
-                  </div>
-                </div>
+                <!--<div class="form-group">-->
+                  <!--<div class="panel-heading">-->
+                    <!--<h4 class="panel-title">Are there any special requirements for purchase orders?</h4>-->
+                  <!--</div>-->
+                  <!--<div class="col-lg-10 col-md-9">-->
+                    <!--<%#= f.text_field :return_policy, :class => "form-control" %>-->
+                  <!--</div>-->
+                <!--</div>-->
 
                 <div class="form-group">
                   <div class="panel-heading">
@@ -876,8 +922,6 @@
           <div class="panel panel-default toggle panelMove panelClose panelRefresh" id="dyn_0">
             <div class="panel-heading">
               <h4 class="panel-title">CONSENT</h4>
-
-
             </div>
             <div class="panel-body">
               <form role="form" class="form-horizontal group-border stripped" id="validate" novalidate="novalidate">
