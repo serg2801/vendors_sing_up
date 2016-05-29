@@ -697,6 +697,12 @@
                 </div>
 
                 <div class="form-group">
+
+                  <div class="col-lg-6 col-md-9">
+                    <%= select_tag 'board[product_type]', grouped_options_for_select(@grouped_options), :class => "form-control requires" %>
+                  </div>
+
+
                   <select>
                     <optgroup label="FURNITURE">
                       <option value="">SEATING - SOFAS & LOVESEATS</option>
@@ -829,11 +835,11 @@
                     </optgroup>
                     <optgroup label="BED & BATH">
                       <option value="">BEDDING ACCESSORIES - THROWS & BLANKETS</option>
-                      <option value="">BEDDING ACCESSORIES - PILLOW INSERTS</option>>
-                      <option value="">BEDDING ACCESSORIES - DECORATIVE PILLOWS BATH LINENS </option>
-                      <option value="">BEDDING ACCESSORIES - TOWELS </option>
-                      <option value="">BEDDING ACCESSORIES - BATH RUGS </option>
-                      <option value="">BEDDING ACCESSORIES - SHOWER CURTAINS </option>
+                      <option value="">BEDDING ACCESSORIES - PILLOW INSERTS</option>
+                      <option value="">BEDDING ACCESSORIES - DECORATIVE PILLOWS BATH LINENS</option>
+                      <option value="">BEDDING ACCESSORIES - TOWELS</option>
+                      <option value="">BEDDING ACCESSORIES - BATH RUGS</option>
+                      <option value="">BEDDING ACCESSORIES - SHOWER CURTAINS</option>
                     </optgroup>
                     <optgroup label="BED & BATH">
                       <option value="">BATH FITTINGS - WALL MOUNTED HARDWARE</option>
@@ -941,9 +947,9 @@
                       <option value="">HARDWARE - KNOCKERS</option>
                       <option value="">HARDWARE - MAILBOXES</option>
                       <option value="">HARDWARE - NUMBERS</option>
-                      <option value="">HARDWARE - PULLS, HANDLES & KNOBS </option>
-                      <option value="">HARDWARE - REGISTER COVERS </option>
-                      <option value="">HARDWARE - SWITCH PLATES </option>
+                      <option value="">HARDWARE - PULLS, HANDLES & KNOBS</option>
+                      <option value="">HARDWARE - REGISTER COVERS</option>
+                      <option value="">HARDWARE - SWITCH PLATES</option>
                     </optgroup>
                     <optgroup label="DÉCOR">
                       <option value="">FABRIC BY THE YARD</option>
@@ -990,7 +996,7 @@
                       <option value="">OUTDOOR ACCESSORIES - DOORMATS</option>
                     </optgroup>
                   </select>
-                  
+
 
                   <!--<%#= f.fields_for :product_types do |product_type| %>-->
                   <!--<%#= render 'product_type_fields', :f => product_type %>-->

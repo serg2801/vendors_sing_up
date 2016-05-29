@@ -10,14 +10,35 @@ class BoardsController < ApplicationController
   end
 
   def new
+    @grouped_options = {
+        'FURNITURE - SEATING' => ['SOFAS & LOVESEATS', 'SECTIONALS', 'SLEEPERS & DAYBEDS', 'ACCENT CHAIRS', 'DINING CHAIRS', 'DESK CHAIRS', 'CHAISES, SETTEES', 'BENCHES, OTTOMANS & POUFS', 'BAR & COUNTER', 'STOOLS'],
+        'FURNITURE - SHELVING & CABINETS' => ['ARMOIRES & CABINETS', 'BAR STORAGE & CARTS', 'SIDEBOARDS & HUTCHES', 'MEDIA CONSOLES', 'SHELVES & BOOKCASES'],
+        'FURNITURE - TABLES' => ['DINING TABLES', 'BAR & COUNTER TABLES', 'COCKTAIL & COFFEE TABLES', 'CONSOLE TABLES', 'SIDE TABLES', 'TRUNKS', 'DESKS'],
+        'FURNITURE - BEDROOM FURNITURE' => ['BED FRAMES', 'HEADBOARDS', 'MATTRESSES', 'NIGHTSTANDS', 'DRESSERS'],
+        'FURNITURE - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+        'FURNITURE - OFFICE FURNITURE' => ['DESKS', 'CHAIRS', 'OFFICE STORAGE'],
+
+        'FURNITURE - OUTDOOR FURNITURE' => ['SOFAS & LOVESEATS', 'SECTIONALS', 'LOUNGERS', 'ACCENT CHAIRS', 'COFFEE TABLES', 'DINING CHAIRS', 'DINING & BAR TABLES', 'STOOLS'],
+        'KITCHEN & TABLETOP - APPLIANCES' => ['REFRIGERATOR', 'OVENS', 'COOKTOPS', 'RANGES', 'DISHWASHERS', 'HOODS', 'FITTINGS'],
+        'KITCHEN & TABLETOP - ACCESSORIES' => ['STEP STOOLS + LADDERS', 'KNOBS & HANDLES', 'STORAGE', 'TRASHCANS'],
+        'KITCHEN & TABLETOP - COOKWARE, BAKEWARE & TOOLS' => ['CUTLERY & PREP', 'BAKEWARE', 'POTS & PANS', 'COOKING TOOLS', 'CANISTERS & JARS'],
+
+        'KITCHEN & TABLETOP - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+        'KITCHEN & TABLETOP - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+        'KITCHEN & TABLETOP - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+        'KITCHEN & TABLETOP - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+        'KITCHEN & TABLETOP - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+        'KITCHEN & TABLETOP - BATH FURNITURE' => ['ÉTAGÈRES & CABINETS', 'MIRRORS', 'VANITIES & SINKS', 'TUBS'],
+    }
     @board = Board.new
   end
 
   def create
+    binding.pry
     @board = Board.new(board_params)
     if @board.save
-      BoardMailer.signup_confirmation(@board).deliver
-      BoardMailer.send_confirmation(@board).deliver
+      # BoardMailer.signup_confirmation(@board).deliver
+      # BoardMailer.send_confirmation(@board).deliver
       redirect_to board_success_path
     else
       render 'new'
@@ -43,7 +64,7 @@ class BoardsController < ApplicationController
                                   :inventory_email, :inventory_fax, :returns_name, :returns_phone, :returns_email, :returns_fax, :product_information_name, :product_information_phone,
                                   :product_information_email, :product_information_fax, :customer_service_name, :customer_service_phone, :customer_service_email, :customer_service_fax,
                                   :inventory_integration_method, :integrations_contact_name, :integrations_contact_phone, :integrations_contact_email, :integrations_contact_fax, :upc_marketing,
-                                  :upc_ticketing_contact_name, :upc_ticketing_contact_phone, :upc_ticketing_contact_email,:upc_ticketing_contact_fax, :returns_contact_name, :returns_contact_phone,
+                                  :upc_ticketing_contact_name, :upc_ticketing_contact_phone, :upc_ticketing_contact_email, :upc_ticketing_contact_fax, :returns_contact_name, :returns_contact_phone,
                                   :returns_contact_email, :returns_contact_fax, :returns_address_street, :returns_address_unit, :returns_address_city, :returns_address_state, :returns_address_zip,
                                   :returns_address_country, :preferred_shipping_method, :protocol_for_freight_shipments, :multiple_warehouses, :shipping_from_multiple_warehouses,
                                   :transportation_and_shipment_section, :ship_alone_items, :average_inventory_levels, :typical_shipping_lead_time_count, :typical_shipping_lead_time_day,

@@ -2,7 +2,7 @@
     <% if @board.errors.any? %>
         <div id="error_explanation">
           <h2>
-            <%= pluralize(@board.errors.count, "error") %> prohibited
+            <%= pluralize(@board.errors.count, 'error') %> prohibited
             this project from being saved:
           </h2>
           <ul class="<%= flash_class(:warning) %>">
@@ -27,16 +27,16 @@
         <div class="panel-body pt0 pb0">
           <div class="form-horizontal group-border stripped" id="validate">
             <div class="form-group">
-              <%= f.label :legal_business_name, "Legal Business Name:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :legal_business_name, 'Legal Business Name:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :legal_business_name, :class => "form-control requires" %>
+                <%= f.text_field :legal_business_name, :class => 'form-control requires' %>
               </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :company_name, "Company Name/D.B.A:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :company_name, 'Company Name/D.B.A:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :company_name, :class => "form-control" %>
+                <%= f.text_field :company_name, :class => 'form-control' %>
               </div>
             </div>
 
@@ -48,17 +48,17 @@
             </div>
 
             <div class="form-group">
-              <%= f.label :vendor_based_in, "Vendor Location:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :vendor_based_in, 'Vendor Location:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-4 col-md-9">
-                <%= f.label(:vendor_based_in, "United States") %>
+                <%= f.label(:vendor_based_in, 'United States') %>
                 <%= f.radio_button(:vendor_based_in, 'United States') %>
-                <%= f.label(:vendor_based_in, "Europe") %>
+                <%= f.label(:vendor_based_in, 'Europe') %>
                 <%= f.radio_button(:vendor_based_in, 'Europe') %>
-                <%= f.label(:vendor_based_in, "Other") %>
+                <%= f.label(:vendor_based_in, 'Other') %>
                 <%= f.radio_button(:vendor_based_in, 'Other') %>
               </div>
               <div class="col-lg-4 col-md-9">
-                <%= f.text_field :vendor_based_in_other, :class => "form-control" %>
+                <%= f.text_field :vendor_based_in_other, :class => 'form-control' %>
               </div>
             </div>
           </div>
@@ -77,37 +77,37 @@
           <div class="form-horizontal group-border stripped" id="validate">
 
             <div class="form-group">
-              <%= f.label :main_address_street, "Street:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :main_address_street, 'Street:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :main_address_street, :class => "form-control" %>
+                <%= f.text_field :main_address_street, :class => 'form-control' %>
               </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :main_address_unit, "Unit, Suite, Floor:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :main_address_unit, 'Unit, Suite, Floor:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :main_address_unit, :class => "form-control" %>
+                <%= f.text_field :main_address_unit, :class => 'form-control' %>
               </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :main_address_city, "City:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :main_address_city, 'City:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :main_address_city, :class => "form-control" %>
+                <%= f.text_field :main_address_city, :class => 'form-control' %>
               </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :main_address_state, "State:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :main_address_state, 'State:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :main_address_state, :class => "form-control" %>
+                <%= f.text_field :main_address_state, :class => 'form-control' %>
               </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :main_address_zip, "Zip/Postal Code:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :main_address_zip, 'Zip/Postal Code:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-10 col-md-9">
-                <%= f.text_field :main_address_zip, :class => "form-control" %>
+                <%= f.text_field :main_address_zip, :class => 'form-control' %>
               </div>
             </div>
 
@@ -199,9 +199,9 @@
             </div>
 
             <div class="form-group">
-              <%= f.label :purchase_orders_email, "Email:", :class => "col-lg-2 col-md-3 control-label" %>
+              <%= f.label :purchase_orders_email, 'Email:', :class => 'col-lg-2 col-md-3 control-label' %>
               <div class="col-lg-4 col-md-9">
-                <%= f.email_field :purchase_orders_email, :class => "form-control" %>
+                <%= f.email_field :purchase_orders_email, :class => 'form-control' %>
               </div>
               <%= f.label :purchase_orders_fax, "Fax:", :class => "col-lg-2 col-md-3 control-label" %>
               <div class="col-lg-4 col-md-9">
