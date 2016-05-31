@@ -5,11 +5,6 @@
       <li><a href="http://tandemarbor.com/pages/about-us">About</a></li>
       <li><a href="https://www.tandemarbor.com">Return to TandemArbor.com</a></li>
     </ul>
-    <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-    <% else %>
-        <%= link_to 'Log in', new_user_session_path %>
-    <% end %>
   </div>
   <div class="col-md-6 col-sm-12 ta-CustomerNavRight">
     <ul class="ta-CustomerMenu">
@@ -35,6 +30,13 @@
   <div class="col-md-6 col-sm-12">
     <ul class="ta-PrimaryNavigationLinks" style="float: right;">
       <!--<li><%#= link_to "Trade Application", trade_signup_path %></li>-->
+      <li>
+        <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+        <% else %>
+            <%= link_to 'Log in', new_user_session_path %>
+        <% end %>
+      </li>
       <li><%= link_to "Vendor Application", vendor_signup_path %></li>
     </ul>
   </div>

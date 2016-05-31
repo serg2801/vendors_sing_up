@@ -19,7 +19,7 @@ class TradeMailer < ApplicationMailer
     @user = user
     mail to: @user.email,
          #      reply_to: "vendors@tandemarbor.com",
-         subject:  "Vendor Form"
+         subject:  "[LOGIN] Tandem Arbor Vendors"
   end
 
   def update_trade(trade)

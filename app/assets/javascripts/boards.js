@@ -41,6 +41,30 @@ $(document).on("page:change",function () {
         $("#contact_other_js").toggle();
     });
 
+    $("#remove_contact_order_js").click(function() {
+        $("#contact_order_js").toggle();
+    });
+
+    $("#remove_contact_inventory_js").click(function() {
+        $("#contact_inventory_js").toggle();
+    });
+
+    $("#remove_contact_return_js").click(function() {
+        $("#contact_return_js").toggle();
+    });
+
+    $("#remove_contact_information_js").click(function() {
+        $("#contact_information_js").toggle();
+    });
+
+    $("#remove_contact_service_js").click(function() {
+        $("#contact_service_js").toggle();
+    });
+
+    $("#remove_contact_other_js").click(function() {
+        $("#contact_other_js").toggle();
+    });
+
     $(".form-group .radio_button_js").click(function () {
         if (document.getElementById("radio_button_other_js").checked)
         {
@@ -91,7 +115,7 @@ $(document).on("page:change",function () {
         }else
         {
             $(".form_costs_fees_other_js").hide();
-            $(".form_costs_fees_other_js").val("");
+            //$(".form_costs_fees_other_js").val("");
             $(".form_costs_fees_other_js .costs_fees").val("");
         }
     });

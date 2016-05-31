@@ -188,7 +188,7 @@
                 <div class="col-lg-10 col-md-9">
                   <div class="dropdown">
                     <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Add additional contact fields
+                      Add Additional Contacts
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -229,6 +229,7 @@
                     <%= f.text_field :purchase_orders_fax, :class => "form-control" %>
                   </div>
                 </div>
+                <button class="btn btn-danger" type="button" id="remove_contact_order_js">Remove</button>
               </div>
 
               <div id="contact_inventory_js">
@@ -257,6 +258,7 @@
                     <%= f.text_field :inventory_fax, :class => "form-control" %>
                   </div>
                 </div>
+                <button class="btn btn-danger" type="button" id="remove_contact_inventory_js">Remove</button>
               </div>
 
               <div id="contact_return_js">
@@ -285,6 +287,7 @@
                     <%= f.text_field :returns_fax, :class => "form-control" %>
                   </div>
                 </div>
+                <button class="btn btn-danger" type="button" id="remove_contact_return_js">Remove</button>
               </div>
 
               <div id="contact_information_js">
@@ -313,6 +316,7 @@
                     <%= f.text_field :product_information_fax, :class => "form-control" %>
                   </div>
                 </div>
+                <button class="btn btn-danger" type="button" id="remove_contact_information_js">Remove</button>
               </div>
 
               <div id="contact_service_js">
@@ -341,9 +345,13 @@
                     <%= f.text_field :customer_service_fax, :class => "form-control" %>
                   </div>
                 </div>
+                <button class="btn btn-danger" type="button" id="remove_contact_service_js">Remove</button>
               </div>
 
               <div id="contact_other_js">
+                <div class="panel-heading form-group">
+                  <h4 class="panel-title">Other Representative or Contact</h4>
+                </div>
                 <div class="form-group">
                   <%= f.label :contact_other_title, "Title:", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-4 col-md-9">
@@ -372,6 +380,7 @@
                     <%= f.text_field :contact_other_fax, :class => "form-control" %>
                   </div>
                 </div>
+                <button class="btn btn-danger" type="button" id="remove_contact_other_js">Remove</button>
               </div>
 
             </div>
@@ -837,9 +846,9 @@
                     <%= f.radio_button(:costs_fees_radio, "No", class: "radio_button_costs_fees_js") %>
                     <%= f.label(:costs_fees_radio, "No", class: "form_radio_button") %>
                   </div>
-                  <div class="col-lg-10 col-md-9">
-                    <%= f.text_area :costs_fees, :class => "form-control form_costs_fees_other_js" %>
-                  </div>
+                  <!--<div class="col-lg-10 col-md-9">-->
+                    <!--<%#= f.text_area :costs_fees, :class => "form-control form_costs_fees_other_js" %>-->
+                  <!--</div>-->
                 </div>
 
                 <div class="form-group form_costs_fees_other_js">
