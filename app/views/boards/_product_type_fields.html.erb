@@ -1,8 +1,15 @@
 <div class="form-group nested-fields">
-  <div class="col-lg-6 col-md-9">
+  <div class="field">
+    <div class="col-lg-2 col-md-3 control-label"></div>
+  </div>
+  <div class="col-lg-10 col-md-9">
     <%= f.select :name, grouped_options_for_select(@grouped_options), {}, {:class => "form-control requires"} %>
   </div>
-  <div class="product_type">
+  <div class="field">
+    <div class="col-lg-2 col-md-3 control-label"></div>
+  </div>
+  <div class="product_type col-lg-10 col-md-9 field remove_mt">
     <%= link_to_remove_association "Remove", f, class: "btn btn-danger remove_another_product_type_js" %>
   </div>
 </div>
+<div class="col-lg-2 col-md-3 control-label"></div>

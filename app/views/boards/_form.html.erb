@@ -41,16 +41,14 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-group form_m0">
                 <%= f.fields_for :brands do |brand| %>
                     <%= render 'brand_fields', :f => brand %>
                 <% end %>
-                <div class="field">
-                  <div class="col-lg-2 col-md-3 control-label"></div>
-                </div>
-                <div class="col-lg-10 col-md-9 field">
-                  <%= link_to_add_association 'Add Another Brand Name', f, :brands, class: 'btn btn-info', id: "add_brand_name" %>
-                </div>
+
+                  <div class="col-lg-10 col-md-9 field">
+                    <%= link_to_add_association 'Add Another Brand Name', f, :brands, class: 'btn btn-info', id: "add_brand_name" %>
+                  </div>
               </div>
 
               <div class="form-group">
@@ -190,7 +188,10 @@
               </div>
 
               <div class="form-group">
-                <div class="col-lg-10 col-md-9">
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field">
                   <div class="dropdown">
                     <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       Add Additional Contacts
@@ -234,7 +235,12 @@
                     <%= f.text_field :purchase_orders_fax, :class => "form-control" %>
                   </div>
                 </div>
-                <button class="btn btn-danger" type="button" id="remove_contact_order_js">Remove</button>
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field remove_contact_p0">
+                  <button class="btn btn-danger" type="button" id="remove_contact_order_js">Remove</button>
+                </div>
               </div>
 
               <div id="contact_inventory_js">
@@ -263,7 +269,12 @@
                     <%= f.text_field :inventory_fax, :class => "form-control" %>
                   </div>
                 </div>
-                <button class="btn btn-danger" type="button" id="remove_contact_inventory_js">Remove</button>
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field remove_contact_p0">
+                  <button class="btn btn-danger" type="button" id="remove_contact_inventory_js">Remove</button>
+                </div>
               </div>
 
               <div id="contact_return_js">
@@ -292,7 +303,12 @@
                     <%= f.text_field :returns_fax, :class => "form-control" %>
                   </div>
                 </div>
-                <button class="btn btn-danger" type="button" id="remove_contact_return_js">Remove</button>
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field remove_contact_p0">
+                  <button class="btn btn-danger" type="button" id="remove_contact_return_js">Remove</button>
+                </div>
               </div>
 
               <div id="contact_information_js">
@@ -321,7 +337,12 @@
                     <%= f.text_field :product_information_fax, :class => "form-control" %>
                   </div>
                 </div>
-                <button class="btn btn-danger" type="button" id="remove_contact_information_js">Remove</button>
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field remove_contact_p0">
+                  <button class="btn btn-danger" type="button" id="remove_contact_information_js">Remove</button>
+                </div>
               </div>
 
               <div id="contact_service_js">
@@ -350,7 +371,12 @@
                     <%= f.text_field :customer_service_fax, :class => "form-control" %>
                   </div>
                 </div>
-                <button class="btn btn-danger" type="button" id="remove_contact_service_js">Remove</button>
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field remove_contact_p0">
+                  <button class="btn btn-danger" type="button" id="remove_contact_service_js">Remove</button>
+                </div>
               </div>
 
               <div id="contact_other_js">
@@ -385,7 +411,12 @@
                     <%= f.text_field :contact_other_fax, :class => "form-control" %>
                   </div>
                 </div>
-                <button class="btn btn-danger" type="button" id="remove_contact_other_js">Remove</button>
+                <div class="field">
+                  <div class="col-lg-2 col-md-3 control-label"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 field remove_contact_p0">
+                  <button class="btn btn-danger" type="button" id="remove_contact_other_js">Remove</button>
+                </div>
               </div>
 
             </div>
@@ -458,11 +489,13 @@
             <div class="panel-body pt0 pb0">
               <div class="form-horizontal group-border stripped" id="validate">
 
-                <div class="form-group">
+                <div class="form-group form_m0">
                   <%= f.fields_for :transportation_and_shipments do |transportation| %>
                       <%= render 'transportation_and_shipment_fields', :f => transportation %>
                   <% end %>
-                  <%= link_to_add_association 'Add Another Location', f, :transportation_and_shipments, class: 'btn btn-info', id: 'add_another_location' %>
+                  <div class="col-lg-10 col-md-9 another_location">
+                    <%= link_to_add_association 'Add Another Location', f, :transportation_and_shipments, class: 'btn btn-info', id: 'add_another_location' %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -605,11 +638,16 @@
                   <div class="panel-heading ">
                     <h4 class="panel-title">Preferred shipping method:</h4>
                   </div>
-                  <div class="col-lg-4 col-md-9 radio_button_group_ml">
-                    <%= f.radio_button(:preferred_shipping_method, "Vendor's Account") %>
-                    <%= f.label(:preferred_shipping_method, "Vendor's Account", class: "form_radio_button") %>
-                    <%= f.radio_button(:preferred_shipping_method, "Arbor Gentry's Account") %>
-                    <%= f.label(:preferred_shipping_method, "Arbor Gentry's Account", class: "form_radio_button") %>
+                  <div class="col-lg-10 col-md-9 radio_button_group_ml">
+                    <div class="field">
+                      <div class="col-lg-2 col-md-3 control-label"></div>
+                    </div>
+                    <div class="col-lg-10 col-md-9">
+                      <%= f.radio_button(:preferred_shipping_method, "Vendor's Account") %>
+                      <%= f.label(:preferred_shipping_method, "Vendor's Account", class: "form_radio_button") %>
+                      <%= f.radio_button(:preferred_shipping_method, "Arbor Gentry's Account") %>
+                      <%= f.label(:preferred_shipping_method, "Arbor Gentry's Account", class: "form_radio_button") %>
+                    </div>
                   </div>
                 </div>
 
@@ -620,7 +658,9 @@
                   <%= f.fields_for :vendor_carriers do |carrier| %>
                       <%= render 'vendor_carrier_fields', :f => carrier %>
                   <% end %>
-                  <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info', id: "add_another_carrier" %>
+                  <div class="col-lg-10 col-md-9">
+                    <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info', id: "add_another_carrier" %>
+                  </div>
                 </div>
 
                 <!--<div class="panel-heading form-group">-->
@@ -637,6 +677,9 @@
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">What is your protocol for freight shipments?</h4>
+                  </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_area :protocol_for_freight_shipments, placeholder: "Boxed, palletized, blanket-wrapped, etc.", :class => "form-control" %>
@@ -698,11 +741,16 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">Do you have ship alone items?</h4>
                   </div>
-                  <div class="col-lg-4 col-md-9 radio_button_group_ml">
-                    <%= f.radio_button(:ship_alone_items, "Yes") %>
-                    <%= f.label(:ship_alone_items, "Yes", class: "form_radio_button") %>
-                    <%= f.radio_button(:ship_alone_items, "No") %>
-                    <%= f.label(:ship_alone_items, "No", class: "form_radio_button") %>
+                  <div class="col-lg-10 col-md-9 radio_button_group_ml">
+                    <div class="field">
+                      <div class="col-lg-2 col-md-3 control-label"></div>
+                    </div>
+                    <div class="col-lg-10 col-md-9">
+                      <%= f.radio_button(:ship_alone_items, "Yes") %>
+                      <%= f.label(:ship_alone_items, "Yes", class: "form_radio_button") %>
+                      <%= f.radio_button(:ship_alone_items, "No") %>
+                      <%= f.label(:ship_alone_items, "No", class: "form_radio_button") %>
+                    </div>
                   </div>
                 </div>
 
@@ -714,12 +762,17 @@
                     <%= f.fields_for :product_types do |product_type| %>
                         <%= render 'product_type_fields', :f => product_type %>
                     <% end %>
+                  <div class="col-lg-10 col-md-9">
                     <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info', id: "add_another_product_type" %>
+                  </div>
                 </div>
 
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">What are your average inventory levels?</h4>
+                  </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :average_inventory_levels, :class => "form-control" %>
@@ -729,6 +782,9 @@
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">What is your typical shipping lead time?</h4>
+                  </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
                   <div class="col-lg-3 col-md-9">
                     <%= f.select(:typical_shipping_lead_time_count, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {}, {:class => "form-control requires"}) %>
@@ -741,6 +797,9 @@
                 <div class="form-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">What are your average inventory replenishment timelines?</h4>
+                  </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
                   <div class="col-lg-3 col-md-9">
                     <%= f.select(:average_inventory_replenishment_time_count, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {}, {:class => "form-control requires"}) %>
@@ -860,6 +919,9 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">If so, how are these costs billed?</h4>
                   </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
+                  </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_area :if_so_costs_fees, :class => "form-control costs_fees" %>
                   </div>
@@ -881,6 +943,9 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">If yes, please explain the requirements:</h4>
                   </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
+                  </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_area :if_yes_requirements_for_purchase_orders, :class => "form-control purchase_order" %>
                   </div>
@@ -890,6 +955,9 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">Please explain your discount/promotional rules in regards to IMAP
                       pricing:</h4>
+                  </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :imap_pricing, :class => "form-control" %>
@@ -909,6 +977,9 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">What, if any, are your merchandising stipulations and strategy
                       recommendations for your product?</h4>
+                  </div>
+                  <div class="field">
+                    <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :merchandising, :class => "form-control" %>
