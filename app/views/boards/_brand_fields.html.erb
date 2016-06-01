@@ -5,9 +5,10 @@
   <div class="col-lg-10 col-md-9 field">
     <%= f.text_field :name, :class => "form-control" %>
   </div>
-  <div class="brand_name clearfix">
-    <div class="col-lg-2 col-md-3 control-label">
-      <%= link_to_remove_association "Remove", f, class: "btn btn-danger remove_brand_js" %>
-    </div>
+  <div class="field">
+    <div class="col-lg-2 col-md-3 control-label"></div>
+  </div>
+  <div class="brand_name col-lg-10 col-md-9 field">
+    <%= link_to_remove_association "Remove", f, class: "btn btn-danger remove_brand_js" %>
   </div>
 </div>
