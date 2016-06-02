@@ -58,6 +58,55 @@
     .another_location {
       padding: 0;
     }
+    .select_m_t {
+      margin-top: 10px;
+    }
+    .add_brand_name {
+      height: 30px;
+      position: relative;
+
+      #add_brand_name {
+        position: absolute;
+        left: 200px;
+        top: 5px;
+      }
+    }
+    .add_another_product_type {
+      height: 30px;
+      position: relative;
+
+      #add_another_product_type {
+        position: absolute;
+        left: 200px;
+        top: 5px;
+      }
+    }
+    .add_another_carrier {
+      height: 30px;
+      position: relative;
+
+      #add_another_carrier {
+        position: absolute;
+        left: 200px;
+        top: 5px;
+      }
+    }
+    .add_another_location {
+      height: 30px;
+      position: relative;
+
+      #add_another_location {
+        position: absolute;
+        left: 185px;
+        top: 5px;
+      }
+    }
+    .border_form_ship {
+      margin-left: -15px;
+      margin-right: -15px;
+      border-bottom: 1px solid #e3e3e3;
+      padding: 30px;
+    }
   }
   .remove_contact_p0 {
     padding: 0;

@@ -41,12 +41,12 @@
                 </div>
               </div>
 
-              <div class="form-group form_m0">
+              <div class="form-group">
                 <%= f.fields_for :brands do |brand| %>
                     <%= render 'brand_fields', :f => brand %>
                 <% end %>
 
-                  <div class="col-lg-10 col-md-9 field">
+                  <div class="col-lg-10 col-md-9 add_brand_name">
                     <%= link_to_add_association 'Add Another Brand Name', f, :brands, class: 'btn btn-info', id: "add_brand_name" %>
                   </div>
               </div>
@@ -493,7 +493,7 @@
                   <%= f.fields_for :transportation_and_shipments do |transportation| %>
                       <%= render 'transportation_and_shipment_fields', :f => transportation %>
                   <% end %>
-                  <div class="col-lg-10 col-md-9 another_location">
+                  <div class="col-lg-10 col-md-9 another_location add_another_location">
                     <%= link_to_add_association 'Add Another Location', f, :transportation_and_shipments, class: 'btn btn-info', id: 'add_another_location' %>
                   </div>
                 </div>
@@ -635,14 +635,9 @@
               <div class="form-horizontal group-border stripped" id="validate">
 
                 <div class="form-group">
-                  <div class="panel-heading ">
-                    <h4 class="panel-title">Preferred shipping method:</h4>
-                  </div>
                   <div class="col-lg-10 col-md-9 radio_button_group_ml">
-                    <div class="field">
-                      <div class="col-lg-2 col-md-3 control-label"></div>
-                    </div>
-                    <div class="col-lg-10 col-md-9">
+                    <%= f.label :returns_address_country, "Preferred shipping method:", :class => "col-lg-2 col-md-3 control-label" %>
+                    <div class="col-lg-10 col-md-9 radio_button_group">
                       <%= f.radio_button(:preferred_shipping_method, "Vendor's Account") %>
                       <%= f.label(:preferred_shipping_method, "Vendor's Account", class: "form_radio_button") %>
                       <%= f.radio_button(:preferred_shipping_method, "Arbor Gentry's Account") %>
@@ -658,7 +653,7 @@
                   <%= f.fields_for :vendor_carriers do |carrier| %>
                       <%= render 'vendor_carrier_fields', :f => carrier %>
                   <% end %>
-                  <div class="col-lg-10 col-md-9">
+                  <div class="col-lg-10 col-md-9 add_another_carrier">
                     <%= link_to_add_association 'Add Another Carrier', f, :vendor_carriers, class: 'btn btn-info', id: "add_another_carrier" %>
                   </div>
                 </div>
@@ -681,7 +676,7 @@
                   <div class="field">
                     <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
-                  <div class="col-lg-10 col-md-9">
+                  <div class="col-lg-12 col-md-9">
                     <%= f.text_area :protocol_for_freight_shipments, placeholder: "Boxed, palletized, blanket-wrapped, etc.", :class => "form-control" %>
                   </div>
                 </div>
@@ -755,14 +750,14 @@
                 </div>
 
                 <div class="panel-heading form-group">
-                  <h4 class="panel-title">Product Type:</h4>
+                  <h4 class="panel-title">Product Type(s) Available:</h4>
                 </div>
 
                 <div class="form-group">
                     <%= f.fields_for :product_types do |product_type| %>
                         <%= render 'product_type_fields', :f => product_type %>
                     <% end %>
-                  <div class="col-lg-10 col-md-9">
+                  <div class="col-lg-10 col-md-9 add_another_product_type">
                     <%= link_to_add_association 'Add Another Product Type', f, :product_types, class: 'btn btn-info', id: "add_another_product_type" %>
                   </div>
                 </div>
@@ -774,44 +769,34 @@
                   <div class="field">
                     <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
-                  <div class="col-lg-10 col-md-9">
+                  <div class="col-lg-12 col-md-9">
                     <%= f.text_field :average_inventory_levels, :class => "form-control" %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">What is your typical shipping lead time?</h4>
-                  </div>
-                  <div class="field">
-                    <div class="col-lg-2 col-md-3 control-label"></div>
+                  <%= f.label :returns_address_zip, "What is your typical shipping lead time?", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-3 col-md-9">
+                    <%= f.select(:typical_shipping_lead_time_count, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {}, {:class => "form-control requires select_m_t"}) %>
                   </div>
                   <div class="col-lg-3 col-md-9">
-                    <%= f.select(:typical_shipping_lead_time_count, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {}, {:class => "form-control requires"}) %>
-                  </div>
-                  <div class="col-lg-3 col-md-9">
-                    <%= f.select(:typical_shipping_lead_time_day, ['Day(s)', 'Week(s)'], {}, {:class => "form-control requires"}) %>
+                    <%= f.select(:typical_shipping_lead_time_day, ['Day(s)', 'Week(s)'], {}, {:class => "form-control requires select_m_t"}) %>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">What are your average inventory replenishment timelines?</h4>
-                  </div>
-                  <div class="field">
-                    <div class="col-lg-2 col-md-3 control-label"></div>
+                  <%= f.label :returns_address_zip, "What are your average inventory replenishment timelines?", :class => "col-lg-2 col-md-3 control-label" %>
+                  <div class="col-lg-3 col-md-9">
+                    <%= f.select(:average_inventory_replenishment_time_count, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {}, {:class => "form-control requires select_m_t"}) %>
                   </div>
                   <div class="col-lg-3 col-md-9">
-                    <%= f.select(:average_inventory_replenishment_time_count, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {}, {:class => "form-control requires"}) %>
-                  </div>
-                  <div class="col-lg-3 col-md-9">
-                    <%= f.select(:average_inventory_replenishment_time_day, ['Day(s)', 'Week(s)'], {}, {:class => "form-control requires"}) %>
+                    <%= f.select(:average_inventory_replenishment_time_day, ['Day(s)', 'Week(s)'], {}, {:class => "form-control requires select_m_t"}) %>
                   </div>
                   <div class="col-lg-1 col-md-9">
-                    <%= f.label :average_inventory_replenishment_time_other, "Other:", :class => "col-lg-2 col-md-3 control-label" %>
+                    <%= f.label :average_inventory_replenishment_time_other, "Other:", :class => "col-lg-2 col-md-3 control-label select_m_t" %>
                   </div>
                   <div class="col-lg-3 col-md-9">
-                    <%= f.text_field :average_inventory_replenishment_time_other, :class => "form-control" %>
+                    <%= f.text_field :average_inventory_replenishment_time_other, :class => "form-control select_m_t" %>
                   </div>
                 </div>
 
@@ -959,7 +944,7 @@
                   <div class="field">
                     <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
-                  <div class="col-lg-10 col-md-9">
+                  <div class="col-lg-12 col-md-9">
                     <%= f.text_field :imap_pricing, :class => "form-control" %>
                   </div>
                 </div>
@@ -981,7 +966,7 @@
                   <div class="field">
                     <div class="col-lg-2 col-md-3 control-label"></div>
                   </div>
-                  <div class="col-lg-10 col-md-9">
+                  <div class="col-lg-12 col-md-9">
                     <%= f.text_field :merchandising, :class => "form-control" %>
                   </div>
                 </div>
