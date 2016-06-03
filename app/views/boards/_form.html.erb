@@ -41,7 +41,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" id="brand_name_form_list">
                 <%= f.fields_for :brands do |brand| %>
                     <%= render 'brand_fields', :f => brand %>
                 <% end %>
@@ -489,7 +489,7 @@
             <div class="panel-body pt0 pb0">
               <div class="form-horizontal group-border stripped" id="validate">
 
-                <div class="form-group form_m0">
+                <div class="form-group form_m0" id="another_location_form_list">
                   <%= f.fields_for :transportation_and_shipments do |transportation| %>
                       <%= render 'transportation_and_shipment_fields', :f => transportation %>
                   <% end %>
@@ -649,7 +649,7 @@
                 <div class="panel-heading form-group">
                   <h4 class="panel-title">What are your preferred carriers?</h4>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="another_carrier_form_list">
                   <%= f.fields_for :vendor_carriers do |carrier| %>
                       <%= render 'vendor_carrier_fields', :f => carrier %>
                   <% end %>
@@ -753,7 +753,7 @@
                   <h4 class="panel-title">Product Type(s) Available:</h4>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="another_product_type_form_list">
                     <%= f.fields_for :product_types do |product_type| %>
                         <%= render 'product_type_fields', :f => product_type %>
                     <% end %>
