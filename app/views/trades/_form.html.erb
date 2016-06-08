@@ -119,8 +119,8 @@
                 <% Option.order(:title).each do |option_type| %>
                     <div class="col-lg-3 col-md-6">
                       <div class="checkbox-custom">
-                        <%= check_box_tag "trade[option_ids][]", option_type.id, nil, :id => "cmt_#{option_type.id}", name_option: "checkbox_option[]" %>
-                        <label for="cmt_<%= option_type.id %>"><%= option_type.title.upcase %></label>
+                        <%= check_box_tag "trade[option_ids][]", option_type.id, nil, :id => "ot_#{option_type.id}", name_option: "checkbox_option[]" %>
+                        <label for="ot_<%= option_type.id %>"><%= option_type.title.upcase %></label>
                       </div>
                     </div>
                 <% end %>
@@ -137,8 +137,8 @@
                 <% Category.order(:title).each do |category_type| %>
                     <div class="col-lg-3 col-md-6">
                       <div class="checkbox-custom">
-                        <%= check_box_tag "trade[category_ids][]", category_type.id, nil, :id => "cmt_#{category_type.id}", name_category: "checkbox_category[]" %>
-                        <label for="cmt_<%= category_type.id %>"><%= category_type.title.upcase %></label>
+                        <%= check_box_tag "trade[category_ids][]", category_type.id, nil, :id => "ct_#{category_type.id}", name_category: "checkbox_category[]" %>
+                        <label for="ct_<%= category_type.id %>"><%= category_type.title.upcase %></label>
                       </div>
                     </div>
                 <% end %>
@@ -149,8 +149,8 @@
                 <% Channel.order(:title).each do |channel_type| %>
                     <div class="col-lg-3 col-md-6">
                       <div class="checkbox-custom">
-                        <%= check_box_tag "trade[channel_ids][]", channel_type.id, nil, :id => "cmt_#{channel_type.id}", name_channel: "checkbox_channel[]" %>
-                        <label for="cmt_<%= channel_type.id %>"><%= channel_type.title.upcase %></label>
+                        <%= check_box_tag "trade[channel_ids][]", channel_type.id, nil, :id => "cht_#{channel_type.id}", name_channel: "checkbox_channel[]" %>
+                        <label for="cht_<%= channel_type.id %>"><%= channel_type.title.upcase %></label>
                       </div>
                     </div>
                 <% end %>
