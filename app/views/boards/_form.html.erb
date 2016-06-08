@@ -59,7 +59,7 @@
                   <%= f.radio_button(:vendor_based_in, 'Europe', class: "radio_button_js") %>
                   <%= f.label(:vendor_based_in, "Europe", class: "form_radio_button") %>
                   <%= f.radio_button(:vendor_based_in, 'Other', id: "radio_button_other_js", class: "radio_button_js") %>
-                  <%= f.label(:vendor_based_in, "Other", class: "form_radio_button") %>
+                  <%= f.label(:vendor_based_in, "Other", class: "form_radio_button form_label_other") %>
                 </div>
                 <div class="col-lg-4 col-md-9">
                   <%= f.text_field :vendor_based_in_other, placeholder: "Other...", :class => "form-control", id: "form_other_js" %>
@@ -444,9 +444,9 @@
                   <%= f.radio_button(:inventory_integration_method, 'None', class: "radio_inventory_js") %>
                   <%= f.label(:inventory_integration_method, "None", class: "form_radio_button") %>
                   <%= f.radio_button(:inventory_integration_method, 'Other', id: "radio_inventory_js", class: "radio_inventory_js") %>
-                  <%= f.label(:inventory_integration_method, "Other", class: "form_radio_button") %>
+                  <%= f.label(:inventory_integration_method, "Other", class: "form_radio_button form_label_other") %>
                 </div>
-                <div class="col-lg-4 col-md-9">
+                <div class="col-lg-4 col-md-9 form_other_group_inventory">
                   <%= f.text_field :inventory_integration_method_other, placeholder: "Other...", :class => "form-control", id: "form_other_inventory_js" %>
                 </div>
               </div>
@@ -637,7 +637,7 @@
                 <div class="form-group">
                   <div class="col-lg-10 col-md-9 radio_button_group_ml">
                     <%= f.label :returns_address_country, "Preferred shipping method:", :class => "col-lg-2 col-md-3 control-label" %>
-                    <div class="col-lg-10 col-md-9 radio_button_group">
+                    <div class="col-lg-10 col-md-9 radio_button_group_shipping">
                       <%= f.radio_button(:preferred_shipping_method, "Vendor's Account") %>
                       <%= f.label(:preferred_shipping_method, "Vendor's Account", class: "form_radio_button") %>
                       <%= f.radio_button(:preferred_shipping_method, "Arbor Gentry's Account") %>
@@ -733,14 +733,9 @@
                 <!--</div>-->
 
                 <div class="form-group">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">Do you have ship alone items?</h4>
-                  </div>
                   <div class="col-lg-10 col-md-9 radio_button_group_ml">
-                    <div class="field">
-                      <div class="col-lg-2 col-md-3 control-label"></div>
-                    </div>
-                    <div class="col-lg-10 col-md-9">
+                    <%= f.label :ship_alone_items, "Do you have ship alone items?", :class => "col-lg-2 col-md-3 control-label" %>
+                    <div class="col-lg-10 col-md-9 radio_button_group_p_top">
                       <%= f.radio_button(:ship_alone_items, "Yes") %>
                       <%= f.label(:ship_alone_items, "Yes", class: "form_radio_button") %>
                       <%= f.radio_button(:ship_alone_items, "No") %>
@@ -820,14 +815,14 @@
                     <h4 class="panel-title">How and when do you provide inventory updates (including discounted and new
                       items)?</h4>
                   </div>
-                  <div class="col-lg-4 col-md-9">
+                  <div class="col-lg-4 col-md-9 radio_button_group_method">
                     <%= f.label :method, "Method:", class: "form_radio_button" %>
                     <%= f.radio_button(:method, "Via EDI", class: "radio_button_method_js") %>
                     <%= f.label(:method, "Via EDI", class: "form_radio_button") %>
                     <%= f.radio_button(:method, "Via Email", class: "radio_button_method_js") %>
                     <%= f.label(:method, "Via Email", class: "form_radio_button") %>
                     <%= f.radio_button(:method, "Other", id: "radio_method_other_js", class: "radio_button_method_js") %>
-                    <%= f.label(:method, "Other", class: "form_radio_button") %>
+                    <%= f.label(:method, "Other", class: "form_radio_button form_label_other") %>
                   </div>
                   <div class="col-lg-6 col-md-9">
                     <%= f.text_field :method_other, placeholder: 'Other...', :class => "form-control", id: "form_method_other_js" %>
@@ -835,14 +830,14 @@
                 </div>
 
                 <div class="form-group">
-                  <div class="col-lg-4 col-md-9">
+                  <div class="col-lg-4 col-md-9 radio_button_group_method">
                     <%= f.label :frequency, "Frequency:", class: "form_radio_button" %>
                     <%= f.radio_button(:frequency, "Daily", class: "radio_button_frequency_js") %>
                     <%= f.label(:frequency, "Daily", class: "form_radio_button") %>
                     <%= f.radio_button(:frequency, "Weekly", class: "radio_button_frequency_js") %>
                     <%= f.label(:frequency, "Weekly", class: "form_radio_button") %>
                     <%= f.radio_button(:frequency, "Other", id: "radio_frequency_other_js", class: "radio_button_frequency_js") %>
-                    <%= f.label(:frequency, "Other", class: "form_radio_button") %>
+                    <%= f.label(:frequency, "Other", class: "form_radio_button form_label_other") %>
                   </div>
                   <div class="col-lg-6 col-md-9">
                     <%= f.text_field :frequency_other, placeholder: 'Other...', :class => "form-control", id: "form_frequency_other_js" %>

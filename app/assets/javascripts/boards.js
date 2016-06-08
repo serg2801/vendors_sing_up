@@ -124,24 +124,27 @@ $(document).on("page:change", function () {
             $("#brand_name_form_list .field input:text").each(function () {
                 var input = $(this);
                 if (input.val() == "") {
+                    input.parents('.nested-fields').hide();
                     input.parents('.nested-fields').find(".remove_brand_js").trigger("click");
                 }
             });
+        })
+        .on('cocoon:after-insert', function () {
+            $('#brand_name_form_list .nested-fields').css("background","#edefef");
         });
-        //.on('cocoon:after-insert', function () {
-        //    if ($("#brand_name_form_list .field input:text").length === 1) {
-        //        $("#brand_name_form_list .field input:text").parents('.nested-fields').find(".brand_name .remove_brand_js").hide();
-        //    }
-        //});
 
     $('#another_carrier_form_list')
         .on('cocoon:before-insert', function () {
             $("#another_carrier_form_list .field input:text").each(function () {
                 var input = $(this);
                 if (input.val() == "") {
+                    input.parents('.nested-fields').hide();
                     input.parents('.nested-fields').find(".remove_another_carrier_js").trigger("click");
                 }
             });
+        })
+        .on('cocoon:after-insert', function () {
+            $('#another_carrier_form_list .nested-fields').css("background","#edefef");
         });
 
     $('#another_product_type_form_list')
@@ -149,9 +152,13 @@ $(document).on("page:change", function () {
             $("#another_product_type_form_list").find(":selected").each(function () {
                 var input = $(this);
                 if (input.val() == "") {
+                    input.parents('.nested-fields').hide();
                     input.parents('.nested-fields').find(".remove_another_product_type_js").trigger("click");
                 }
             });
+        })
+        .on('cocoon:after-insert', function () {
+            $('#another_product_type_form_list .nested-fields').css("background","#edefef");
         });
 
     $('#another_location_form_list')
@@ -159,6 +166,7 @@ $(document).on("page:change", function () {
             $("#another_location_form_list .field input:text").each(function () {
                 var input = $(this);
                 if (input.val() == "") {
+                    input.parents('.nested-fields').hide();
                     input.parents('.nested-fields').find(".remove_ship_information_js").trigger("click");
                 }
             });

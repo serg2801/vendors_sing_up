@@ -32,13 +32,26 @@
       display: none;
     }
     .radio_button_group {
+      width: 25%;
       padding: 5px;
     }
     .radio_button_group_inventory {
+      width: 25%;
       padding-top: 12px;
+    }
+    .form_other_group_inventory {
+      padding-top: 7px;
     }
     .radio_button_group_ml {
       margin-left: 10px;
+    }
+    .radio_button_group_shipping {
+      padding: 5px;
+      width: 50%;
+    }
+    .radio_button_group_method {
+      padding: 5px;
+      width: 30%;
     }
     #form_other_inventory_js {
       display: none;
@@ -106,6 +119,12 @@
       margin-right: -15px;
       border-bottom: 1px solid #e3e3e3;
       padding: 30px;
+    }
+    .radio_button_group_p_top {
+      padding-top: 10px;
+    }
+    .form_label_other {
+      margin-right: 0;
     }
   }
   .remove_contact_p0 {
