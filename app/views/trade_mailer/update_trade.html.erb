@@ -13,19 +13,19 @@
 <p>Web site url: <%= @trade.web_site_url_my %></p>
 <div>
   <p>Check the options that describe your business:</p>
-  <% @trade.options.each do |option| %>
+  <% @trade_options.each do |option| %>
       <p>--- <%= option.title %></p>
   <% end %>
 </div>
 <div>
   <p>What categories would you like to see on Tandem Arbor:</p>
-  <% @trade.categories.each do |category| %>
+  <% @trade_categories.each do |category| %>
       <p>--- <%= category.title %></p>
   <% end %>
 </div>
 <div>
   <p>What channel(s) do you currently sell through:</p>
-  <% @trade.channels.each do |channel| %>
+  <% @trade_channels.each do |channel| %>
       <p>--- <%= channel.title %></p>
   <% end %>
 </div>

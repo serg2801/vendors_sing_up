@@ -24,6 +24,9 @@ class TradeMailer < ApplicationMailer
 
   def update_trade(trade)
     @trade = trade
+    @trade_options = Trade.find(trade.id).options
+    @trade_categories = Trade.find(trade.id).categories
+    @trade_channels = Trade.find(trade.id).channels
     attachments["#{@trade.image}"] = File.read("#{Rails.root}/public/#{@trade.image}") unless @trade.image_url.nil?
     mail to: "trade@tandemarbor.com",
          # reply_to: "vendors@tandemarbor.com",
