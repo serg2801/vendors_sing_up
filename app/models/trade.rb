@@ -1,6 +1,6 @@
 class Trade < ActiveRecord::Base
 
-  belongs_to :user
+  belongs_to :user, :dependent => :destroy
 
   has_many :categories, :through =>  :trade_categories
   has_many :trade_categories, dependent: :destroy

@@ -5,7 +5,7 @@ class Board < ActiveRecord::Base
   has_many :arbor_gentry_carriers
   has_many :product_types
 
-  belongs_to :user
+  belongs_to :user, :dependent => :destroy
 
   mount_uploader :w_9_form, ImageUploader
   mount_uploader :certificate, ImageUploader
