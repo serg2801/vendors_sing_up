@@ -11,6 +11,8 @@ class Trade < ActiveRecord::Base
   has_many :options, :through =>  :trade_options
   has_many :trade_options, dependent: :destroy
 
+  has_many :information_trades, :dependent => :destroy
+
   validates :business_name, :greeting, :first_name, :last_name, :email, :phone_number, :address,
             :city, :state, :zipcode, :country, :web_site_url_my, presence:  true
   validates :phone_number, :numericality => {:only_integer => true}

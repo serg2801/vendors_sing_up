@@ -61,6 +61,13 @@ ActiveAdmin.register Trade do
       row :image do
         link_to('download', "#{trade.image}", :download => "#{trade.id}_vendor") unless trade.image_url.nil?
       end
+      panel 'Vendor Agreement' do
+        attributes_table_for trade.information_trades do
+          row :vendor_agreement do |va|
+            link_to('download', "#{va.vendor_agreement.file.file}", :download => "#{va.id}_Vendor Agreement")
+          end
+        end
+      end
     end
   end
 
@@ -92,7 +99,6 @@ ActiveAdmin.register Trade do
         render 'new'
       end
     end
-
 
     private
     def trade_params

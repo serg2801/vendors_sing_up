@@ -21,8 +21,11 @@ Rails.application.routes.draw do
   get 'board_success',         to: 'static_pages#board'
   get 'board_success_update',  to: 'static_pages#board_update'
   get 'trade_success_update',  to: 'static_pages#trade_update'
+  get 'upload_vendor_agreement_success',  to: 'static_pages#upload_vendor_agreement_success'
 
   get 'persons/profile', as: 'user_root'
+  get 'upload-vendor-agreement-new',  to: 'persons#upload_vendor_agreement_new'
+  post 'upload-vendor-agreement-new', to: 'persons#upload_vendor_agreement_create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

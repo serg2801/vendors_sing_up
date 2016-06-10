@@ -17,4 +17,7 @@ class StaticPagesController < ApplicationController
 
   def trade_update
   end
+  def upload_vendor_agreement_success
+
+  end
 end

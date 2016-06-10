@@ -4,7 +4,7 @@
   <!--<%#= link_to "Update Vendor Form", edit_trade_path(@trade_user) if @trade_user %>-->
 <!--</div>-->
 
-<div class="home_container">
+<div class="profile_container">
   <div class="top_block">
     <h1 class="home_subject">BECOME A VENDOR:</h1>
 
@@ -32,9 +32,7 @@
       </div>
       <div class="content">
         <p class="content_text">
-          COMPLETE THE <%= link_to 'UPDATE YOUR VENDOR APPLICATION', edit_trade_path(@trade_user), class: 'content_link' if @trade_user %>. TELL US ABOUT
-          YOUR BUSINESS SO OUR STYLE EXPERTS CAN CONSIDER
-          HOW TO BEST SHOWCASE YOUR PRODUCT.
+          Your Vendor Application has been approved! You may make updates to it <%= link_to 'here', edit_trade_path(@trade_user), class: 'content_link' if @trade_user %>.
         </p>
       </div>
       <div class="right_block">
@@ -56,8 +54,8 @@
       </div>
       <div class="content">
         <p class="content_text">
-          ONCE YOU ARE AN APPROVED VENDOR, YOU WILL NEED TO REVIEW AND AGREE TO
-          <a href="#" class="content_link">VENDOR AGREEMENT</a> TERMS AND CONDITIONS.
+          Please review and sign the <%= link_to 'Vendor Agreement', '/Arbor Gentry Vendor Agreement.pdf', :download => "Arbor Gentry Vendor Agreement.pdf", class: 'content_link' %>.
+          You may upload the completed Vendor Agreement <%= link_to 'here', upload_vendor_agreement_new_path, class: 'content_link' %>.
         </p>
       </div>
       <div class="right_block">
