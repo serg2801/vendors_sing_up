@@ -26,6 +26,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
 gem 'country_select'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'

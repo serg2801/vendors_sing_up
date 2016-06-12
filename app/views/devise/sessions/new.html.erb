@@ -1,5 +1,10 @@
 <div class="row">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <% flash.each do |key, value| %>
+          <div class="text-center <%= flash_class(key) %>">
+            <p>Sorry, but the username/password combination you entered is incorrect. Please try again.</p>
+          </div>
+      <% end %>
 
 <div class="col-lg-12 form_container">
     <!-- col-lg-12 start here -->

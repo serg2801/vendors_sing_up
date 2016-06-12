@@ -17,6 +17,7 @@ class TradeMailer < ApplicationMailer
   def create_user(trade, user)
     @trade = trade
     @user = user
+    @user_pas = decryption(user.pas_decrypt)
     mail to: @user.email,
          #      reply_to: "vendors@tandemarbor.com",
          subject:  "[LOGIN] Tandem Arbor Vendors"
@@ -31,6 +32,20 @@ class TradeMailer < ApplicationMailer
     mail to: "trade@tandemarbor.com",
          # reply_to: "vendors@tandemarbor.com",
          subject:  "Update Vendor Onboarding Form" + "#{@trade.business_name}"
+  end
+
+  private
+
+  def decryption(password)
+    cipher = OpenSSL::Cipher.new('AES-128-ECB')
+    cipher.decrypt()
+    cipher.key = ENV["key_encrypt_decrypt"]
+    tempkey = Base64.decode64(password)
+    crypt = cipher.update(tempkey)
+    crypt << cipher.final()
+    return crypt
+  rescue Exception => exc
+    puts ("Message for the decryption log file for message #{password} = #{exc.message}")
   end
 
 end

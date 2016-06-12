@@ -1,7 +1,7 @@
 <!--<h1>Hello <%#= @user.email %></h1>-->
 <!--<div>-->
-  <!--<%#= link_to "Update Onboarding Form", edit_board_path(@board_user) if @board_user %>-->
-  <!--<%#= link_to "Update Vendor Form", edit_trade_path(@trade_user) if @trade_user %>-->
+<!--<%#= link_to "Update Onboarding Form", edit_board_path(@board_user) if @board_user %>-->
+<!--<%#= link_to "Update Vendor Form", edit_trade_path(@trade_user) if @trade_user %>-->
 <!--</div>-->
 
 <div class="profile_container">
@@ -32,7 +32,8 @@
       </div>
       <div class="content">
         <p class="content_text">
-          Your Vendor Application has been approved! You may make updates to it <%= link_to 'here', edit_trade_path(@trade_user), class: 'content_link' if @trade_user %>.
+          Your Vendor Application has been approved! You may make updates to
+          it <%= link_to 'here', edit_trade_path(@trade_user), class: 'content_link' if @trade_user %>.
         </p>
       </div>
       <div class="right_block">
@@ -54,8 +55,11 @@
       </div>
       <div class="content">
         <p class="content_text">
-          Please review and sign the <%= link_to 'Vendor Agreement', '/Arbor Gentry Vendor Agreement.pdf', :download => "Arbor Gentry Vendor Agreement.pdf", class: 'content_link' %>.
-          You may upload the completed Vendor Agreement <%= link_to 'here', upload_vendor_agreement_new_path, class: 'content_link' %>.
+          Please review and sign
+          the <%= link_to 'Vendor Agreement', '/Arbor Gentry Vendor Agreement.pdf', :download => "Arbor Gentry Vendor Agreement.pdf", class: 'content_link' %>
+          .
+          You may upload the completed Vendor
+          Agreement <%= link_to 'here', upload_vendor_agreement_new_path, class: 'content_link' %>.
         </p>
       </div>
       <div class="right_block">
@@ -75,19 +79,35 @@
           <p>#<span>3.</span></p>
         </div>
       </div>
-      <div class="content">
-        <p class="content_text">
-          NEXT IS <a href="#" class="content_link">VENDOR SETUP & ONBOARDING</a>. WE WILL REQUIRE SOME ADDITIONAL
-          DETAILS TO REGISTER YOUR COMPANY TO ENSURE A SEAMLESS INTEGRATION.
-        </p>
-      </div>
-      <div class="right_block">
-        <%= link_to '#' do %>
-            <div class="block_center">
-              <i class="fa fa-play" aria-hidden="true"></i>
-            </div>
-        <% end %>
-      </div>
+      <% if @information_trades.blank? %>
+          <div class="content">
+            <p class="content_text">
+              NEXT IS <a href="#" class="content_link">VENDOR SETUP & ONBOARDING</a>. WE WILL REQUIRE SOME ADDITIONAL
+              DETAILS TO REGISTER YOUR COMPANY TO ENSURE A SEAMLESS INTEGRATION.
+            </p>
+          </div>
+          <div class="right_block">
+            <%= link_to '#' do %>
+                <div class="block_center">
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
+            <% end %>
+          </div>
+      <% else %>
+          <div class="content">
+            <p class="content_text">
+              NEXT IS <%= link_to 'VENDOR SETUP & ONBOARDING', vendor_onboarding_path, class: 'content_link' %>. WE WILL REQUIRE SOME ADDITIONAL
+              DETAILS TO REGISTER YOUR COMPANY TO ENSURE A SEAMLESS INTEGRATION.
+            </p>
+          </div>
+          <div class="right_block">
+            <%= link_to vendor_onboarding_path do %>
+                <div class="block_center">
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
     </div>
 
     <div class="step_block ">
@@ -113,5 +133,6 @@
       </div>
     </div>
   </div>
-  <p class="contact">If you have any questions, please contact us at <a href="mailto:hello@tandemarbor.com">hello@tandemarbor.com</a></p>
+  <p class="contact">If you have any questions, please contact us at
+    <a href="mailto:hello@tandemarbor.com">hello@tandemarbor.com</a></p>
 </div>

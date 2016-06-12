@@ -23,7 +23,7 @@ ActiveAdmin.register Trade do
   end
 
   show do
-    attributes_table  do
+    attributes_table do
       row :business_name
       row :greeting
       row :first_name
@@ -62,9 +62,15 @@ ActiveAdmin.register Trade do
         link_to('download', "#{trade.image}", :download => "#{trade.id}_vendor") unless trade.image_url.nil?
       end
       panel 'Vendor Agreement' do
-        attributes_table_for trade.information_trades do
-          row :vendor_agreement do |va|
-            link_to('download', "#{va.vendor_agreement.file.file}", :download => "#{va.id}_Vendor Agreement")
+        table_for trade.information_trades do
+          column 'Show Vendor Agreement' do |at|
+            # binding.pry
+            # at.patient.name
+            link_to('Show Vendor Agreement', "#{at.vendor_agreement}")
+          end
+          column 'Download Vendor Agreement' do |at|
+            # binding.pry
+            link_to('Download', "#{at.vendor_agreement}", :download => "#{trade.business_name}_Vendor Agreement")
           end
         end
       end
@@ -80,7 +86,7 @@ ActiveAdmin.register Trade do
     @trade = Trade.find(params[:format])
     o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
     password_string = (0...20).map { o[rand(o.length)] }.join
-    @user = User.new({email: @trade.email, password: password_string, password_confirmation: password_string, pas_decrypt: password_string})
+    @user = User.new({email: @trade.email, password: password_string, password_confirmation: password_string, pas_decrypt: encryption(password_string)})
     if @user.save
       @trade = Trade.find(params[:format])
       @trade.update_attributes(grant_access: true, user_id: @user.id)
@@ -104,6 +110,20 @@ ActiveAdmin.register Trade do
     def trade_params
       params.require(:trade).permit!
     end
+
+    def encryption(password)
+      begin
+        cipher = OpenSSL::Cipher.new('AES-128-ECB')
+        cipher.encrypt()
+        cipher.key = ENV["key_encrypt_decrypt"]
+        crypt = cipher.update(password) + cipher.final()
+        crypt_string = (Base64.encode64(crypt))
+        return crypt_string
+      rescue Exception => exc
+        puts ("Message for the encryption log file for message #{password} = #{exc.message}")
+      end
+    end
+
   end
 
 

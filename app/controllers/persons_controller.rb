@@ -3,6 +3,7 @@ class PersonsController < ApplicationController
    @user = User.find(current_user.id)
    @board_user = @user.board
    @trade_user = @user.trade
+   @information_trades = @user.trade.information_trades
   end
 
   def upload_vendor_agreement_new
@@ -14,7 +15,7 @@ class PersonsController < ApplicationController
     @trade = Trade.where(user_id: @user.id)
     if params[:information_trade].nil?
       @information_trade = InformationTrade.new
-      # flash[:warning] = "Please, upload a PDF!"
+      flash[:warning] = "Please, upload a PDF!"
       render 'upload_vendor_agreement_new'
     else
       @information_trade = InformationTrade.new(vendor_agreement: params[:information_trade]['vendor_agreement'].tempfile, trade_id: @trade.first.id)

@@ -4,11 +4,13 @@
 <div>
   <p>Brand Name(s):</p>
   <% @board.brands.each do |brand| %>
-  <p> <%= brand.name %></p>
+      <p>--- <%= brand.name %></p>
   <% end %>
 </div>
 <p>Vendor Location: <%= @board.vendor_based_in %></p>
-<p> Other: <%= @board.vendor_based_in_other %></p>
+<% unless @board.vendor_based_in_other.blank? %>
+    <p> Other: <%= @board.vendor_based_in_other %></p>
+<% end %>
 
 <h3>Vendor Main Address</h3>
 
@@ -36,51 +38,67 @@
 <p>Email: <%= @board.finance_email %></p>
 <p>Fax: <%= @board.finance_fax %></p>
 
-<h5>Purchase Orders and Order Fulfillment Representative</h5>
-<p>Name: <%= @board.purchase_orders_name %></p>
+<% unless @board.purchase_orders_email.blank? %>
+    <h5>Purchase Orders and Order Fulfillment Representative</h5>
 
-<p>Phone: <%= @board.purchase_orders_phone %></p>
-<p>Email: <%= @board.purchase_orders_email %></p>
-<p>Fax: <%= @board.purchase_orders_fax %></p>
+    <p>Name: <%= @board.purchase_orders_name %></p>
+    <p>Phone: <%= @board.purchase_orders_phone %></p>
+    <p>Email: <%= @board.purchase_orders_email %></p>
+    <p>Fax: <%= @board.purchase_orders_fax %></p>
+<% end %>
 
-<h5>Inventory Representative</h5>
+<% unless @board.inventory_email.blank? %>
+    <h5>Inventory Representative</h5>
 
-<p>Name:<%= @board.inventory_name %></p>
-<p>Phone:<%= @board.inventory_phone %></p>
-<p>Email:<%= @board.inventory_email %></p>
-<p>Fax:<%= @board.inventory_fax %></p>
+    <p>Name:<%= @board.inventory_name %></p>
+    <p>Phone:<%= @board.inventory_phone %></p>
+    <p>Email:<%= @board.inventory_email %></p>
+    <p>Fax:<%= @board.inventory_fax %></p>
+<% end %>
 
-<h5>Returns Representative</h5>
+<% unless @board.returns_email.blank? %>
+    <h5>Returns Representative</h5>
 
-<p>Name:<%= @board.returns_name %></p>
-<p>Phone:<%= @board.returns_phone %></p>
-<p>Email:<%= @board.returns_email %></p>
-<p>Fax:<%= @board.returns_fax %></p>
+    <p>Name:<%= @board.returns_name %></p>
+    <p>Phone:<%= @board.returns_phone %></p>
+    <p>Email:<%= @board.returns_email %></p>
+    <p>Fax:<%= @board.returns_fax %></p>
+<% end %>
 
-<h5>Product Information Representative</h5>
+<% unless @board.product_information_email.blank? %>
+    <h5>Product Information Representative</h5>
 
-<p>Name:<%= @board.product_information_name %></p>
-<p>Pxone: <%= @board.product_information_phone %></p>
-<p>Email: <%= @board.product_information_email %></p>
-<p>Fax:<%= @board.product_information_fax %></p>
+    <p>Name:<%= @board.product_information_name %></p>
+    <p>Pxone: <%= @board.product_information_phone %></p>
+    <p>Email: <%= @board.product_information_email %></p>
+    <p>Fax:<%= @board.product_information_fax %></p>
+<% end %>
 
-<h5>Customer Service Representative</h5>
+<% unless @board.customer_service_email.blank? %>
+    <h5>Customer Service Representative</h5>
 
-<p>Name: <%= @board.customer_service_name %></p>
-<p>Phone:<%= @board.customer_service_phone %></p>
-<p>Email:<%= @board.customer_service_email %></p>
-<p>Fax:<%= @board.customer_service_fax %></p>
+    <p>Name: <%= @board.customer_service_name %></p>
+    <p>Phone:<%= @board.customer_service_phone %></p>
+    <p>Email:<%= @board.customer_service_email %></p>
+    <p>Fax:<%= @board.customer_service_fax %></p>
+<% end %>
 
-<h5>Other</h5>
+<% unless @board.contact_other_email.blank? %>
+    <h5>Other</h5>
 
-<p>Title: <%= @board.contact_other_title %></p>
-<p>Name: <%= @board.contact_other_name %></p>
-<p>Phone:<%= @board.contact_other_phone %></p>
-<p>Email:<%= @board.contact_other_email %></p>
-<p>Fax:<%= @board.contact_other_fax %></p>
+    <p>Title: <%= @board.contact_other_title %></p>
+    <p>Name: <%= @board.contact_other_name %></p>
+    <p>Phone:<%= @board.contact_other_phone %></p>
+    <p>Email:<%= @board.contact_other_email %></p>
+    <p>Fax:<%= @board.contact_other_fax %></p>
+<% end %>
 
 <h3>Inventory Integration</h3>
 <p><%= @board.inventory_integration_method %></p>
+<% unless @board.inventory_integration_method_other.blank? %>
+    <p> Other: <%= @board.inventory_integration_method_other %></p>
+<% end %>
+
 
 <h5>Integrations Contact</h5>
 
@@ -97,31 +115,30 @@
       <h5>Ship From Information:</h5>
 
       <p>Street: <%= t.ship_from_information_street %></p>
+
       <p>Unit, Suite, Floor: <%= t.ship_from_information_unit %></p>
+
       <p>City: <%= t.ship_from_information_city %></p>
+
       <p>State: <%= t.ship_from_information_state %></p>
+
       <p>Zip/Postal Code: <%= t.ship_from_information_zip %></p>
+
       <p>Country: <%= t.ship_from_information_country %></p>
 
       <h5>Transportation Contact</h5>
 
       <p>Name: <%= t.transportation_contact_name %></p>
+
       <p>Phone: <%= t.transportation_contact_phone %></p>
+
       <p>Email: <%= t.transportation_contact_email %></p>
+
       <p>Fax: <%= t.transportation_contact_fax %></p>
   <% end %>
 </div>
 
 <h3>Returns Information</h3>
-
-<!--<p>UPC Marketing: <%#= @board.upc_marketing %></p>-->
-
-<!--<h5>UPC Ticketing Contact:</h5>-->
-
-<!--<p>Name:<%#= @board.upc_ticketing_contact_name %></p>-->
-<!--<p>Phone:<%#= @board.upc_ticketing_contact_phone %></p>-->
-<!--<p>Email:<%#= @board.upc_ticketing_contact_email %></p>-->
-<!--<p>Fax:<%#= @board.upc_ticketing_contact_fax %></p>-->
 
 <h5>Returns Contact:</h5>
 
@@ -146,24 +163,14 @@
 <div>
   <h5>What are your preferred carriers?</h5>
   <% @board.vendor_carriers.each do |v| %>
-  <p> <%= v.name %></p>
+      <p>- <%= v.name %></p>
   <% end %>
 </div>
-
-<!--<div>-->
-  <!--<h5>If "Arbor Gentry's Accounts," what are your preferred carriers?</h5>-->
-  <!--<%# @board.arbor_gentry_carriers.each do |a| %>-->
-      <!--<p> <%#= a.name %></p>-->
-  <!--<%# end %>-->
-<!--</div>-->
 
 <p>What is your protocol for freight shipments? <%= @board.protocol_for_freight_shipments %></p>
 
 <h3>Warehousing</h3>
 
-<!--<p>Do you have multiple warehouses? <%#= @board.multiple_warehouses %></p>-->
-<!--<p>Do you plan on shipping from multiple warehouses? <%#= @board.shipping_from_multiple_warehouses %></p>-->
-<!--<p>Are all warehouses listed under the Transportation and Shipment section? <%#= @board.transportation_and_shipment_section %></p>-->
 <p>Do you have ship alone items? <%= @board.ship_alone_items %></p>
 
 <div>
@@ -184,7 +191,9 @@
   <p>What are your average inventory replenishment timelines?</p>
   <%= @board.average_inventory_replenishment_time_count %>
   <%= @board.average_inventory_replenishment_time_day %>
-  <p>Other: <%= @board.average_inventory_replenishment_time_other %></p>
+  <% unless @board.average_inventory_replenishment_time_other.blank? %>
+      <p>Other: <%= @board.average_inventory_replenishment_time_other %></p>
+  <% end %>
 </div>
 
 <h3>Product Details</h3>
@@ -193,33 +202,33 @@
 
 <div>
   <p>Method: <%= @board.method %></p>
-  <p>Other: <%= @board.method_other %></p>
+  <% unless @board.method_other.blank? %>
+      <p>Other: <%= @board.method_other %></p>
+  <% end %>
 </div>
 
 <div>
   <p>Frequency: <%= @board.frequency %></p>
-  <p>Other: <%= @board.frequency_other %></p>
+  <% unless @board.frequency_other.blank? %>
+      <p>Other: <%= @board.frequency_other %></p>
+  <% end %>
 </div>
-
-<!--<h5>How do we bill the following fees?</h5>-->
-
-<!--<p>Credit Card: <%#= @board.credit_card %></p>-->
-<!--<p>Wire Transfer: <%#= @board.wire_transfer %></p>-->
-<!--<p>ACH: <%#= @board.ach %></p>-->
-<!--<p>Check By Mail: <%#= @board.check_by_mail %></p>-->
-<!--<p>PayPal: <%#= @board.pay_pal %></p>-->
-<!--<p>Bitcoin: <%#= @board.bitcoin %></p>-->
-
 <p>Are there any costs/fees in addition to COGs? <%= @board.costs_fees_radio %></p>
-<p>Are there any costs/fees in addition to COGs? <%= @board.costs_fees %></p>
-<p>If so, how are these costs billed? <%= @board.if_so_costs_fees %></p>
+<% unless @board.if_so_costs_fees.blank? %>
+    <p>If so, how are these costs billed? <%= @board.if_so_costs_fees %></p>
+<% end %>
 
-<p>Are there any special requirements for purchase orders?<%= @board.requirements_for_purchase_orders %></p>
-<p>If yes, please explain the requirements:  <%= @board.if_yes_requirements_for_purchase_orders %></p>
+<p>Are there any special requirements:<%= @board.requirements_for_purchase_orders %></p>
+<% unless @board.if_yes_requirements_for_purchase_orders.blank? %>
+    <p>If yes, please explain the requirements:  <%= @board.if_yes_requirements_for_purchase_orders %></p>
+<% end %>
 
-<p>Please explain your discount/promotional rules in regards to IMAP pricing:<%= @board.imap_pricing %></p>
-<p>What is your chosen return policy?<%= @board.return_policy %></p>
-<p>What, if any, are your merchandising stipulations and strategy recommendations for your product?<%= @board.merchandising %></p>
+<% unless @board.imap_pricing.blank? %>
+    <p>Please explain your discount/promotional rules in regards to IMAP pricing:<%= @board.imap_pricing %></p>
+<% end %>
+
+<p>What, if any, are your merchandising stipulations and strategy recommendations for your
+  product?<%= @board.merchandising %></p>
 
 <p>Consented: true </p>
 

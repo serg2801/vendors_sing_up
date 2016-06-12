@@ -32,7 +32,7 @@ ActiveAdmin.register Board do
     @board = Board.find(params[:format])
     o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
     password_string = (0...20).map { o[rand(o.length)] }.join
-    @user = User.new({email: @board.primary_business_email, password: password_string, password_confirmation: password_string, pas_decrypt: password_string})
+    @user = User.new({email: @board.primary_business_email, password: password_string, password_confirmation: password_string, pas_decrypt: encryption(password_string)})
     if @user.save
       @board = Board.find(params[:format])
       @board.update_attributes(grants_access: true, user_id: @user.id)
@@ -61,6 +61,19 @@ ActiveAdmin.register Board do
     private
     def board_params
       params.require(:board).permit!
+    end
+
+    def encryption(password)
+      begin
+        cipher = OpenSSL::Cipher.new('AES-128-ECB')
+        cipher.encrypt()
+        cipher.key = ENV["key_encrypt_decrypt"]
+        crypt = cipher.update(password) + cipher.final()
+        crypt_string = (Base64.encode64(crypt))
+        return crypt_string
+      rescue Exception => exc
+        puts ("Message for the encryption log file for message #{password} = #{exc.message}")
+      end
     end
   end
 

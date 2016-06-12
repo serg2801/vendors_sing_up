@@ -61,7 +61,7 @@
                   <%= f.radio_button(:vendor_based_in, 'Other', id: "radio_button_other_js", class: "radio_button_js") %>
                   <%= f.label(:vendor_based_in, "Other", class: "form_radio_button form_label_other") %>
                 </div>
-                <div class="col-lg-4 col-md-9">
+                <div class="col-lg-4 col-md-9 form_other">
                   <%= f.text_field :vendor_based_in_other, placeholder: "Other...", :class => "form-control", id: "form_other_js" %>
                 </div>
               </div>
@@ -824,7 +824,7 @@
                     <%= f.radio_button(:method, "Other", id: "radio_method_other_js", class: "radio_button_method_js") %>
                     <%= f.label(:method, "Other", class: "form_radio_button form_label_other") %>
                   </div>
-                  <div class="col-lg-6 col-md-9">
+                  <div class="col-lg-6 col-md-9 form_other">
                     <%= f.text_field :method_other, placeholder: 'Other...', :class => "form-control", id: "form_method_other_js" %>
                   </div>
                 </div>
@@ -839,7 +839,7 @@
                     <%= f.radio_button(:frequency, "Other", id: "radio_frequency_other_js", class: "radio_button_frequency_js") %>
                     <%= f.label(:frequency, "Other", class: "form_radio_button form_label_other") %>
                   </div>
-                  <div class="col-lg-6 col-md-9">
+                  <div class="col-lg-6 col-md-9 form_other">
                     <%= f.text_field :frequency_other, placeholder: 'Other...', :class => "form-control", id: "form_frequency_other_js" %>
                   </div>
                 </div>
