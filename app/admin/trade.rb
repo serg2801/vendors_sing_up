@@ -64,12 +64,9 @@ ActiveAdmin.register Trade do
       panel 'Vendor Agreement' do
         table_for trade.information_trades do
           column 'Show Vendor Agreement' do |at|
-            # binding.pry
-            # at.patient.name
             link_to('Show Vendor Agreement', "#{at.vendor_agreement}")
           end
           column 'Download Vendor Agreement' do |at|
-            # binding.pry
             link_to('Download', "#{at.vendor_agreement}", :download => "#{trade.business_name}_Vendor Agreement")
           end
         end
