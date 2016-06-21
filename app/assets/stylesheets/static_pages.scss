@@ -111,4 +111,109 @@
       line-height: 26px;
     }
   }
+  .about_page {
+    .about {
+      .about_banner {
+        font-size: 17px;
+        line-height: 25px;
+        .about_span {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .links {
+        padding-top: 20px;
+        overflow: hidden;
+        .link_tandemarbor {
+          float: left;
+          .link_style {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+          }
+        }
+        .link_arborgentry {
+          float: right;
+          .link_style {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .offerings {
+      .title_offerings {
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+        line-height: 26px;
+        padding: 15px 0 15px;
+
+        .about_span {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .about_banner {
+        font-size: 17px;
+        line-height: 25px;
+        .about_span {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .about_customers {
+        padding-top: 20px;
+      }
+    }
+    .policies {
+      .about_banner {
+        font-size: 17px;
+        line-height: 25px;
+        padding-bottom: 25px;
+        .about_span {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    .procedures {
+      .about_banner {
+        font-size: 17px;
+        line-height: 25px;
+        .about_span {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .product_categories_page {
+    .lists {
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+
+      .list {
+        display: inline-block;
+        vertical-align: top;
+        width: 24%;
+        text-align: left;
+
+        .list_title {
+          font-weight: bold;
+        }
+        .list_level_1 {
+          padding: 0;
+          .li_style_type_not {
+            list-style-type: none;
+          }
+          .list_level_2 {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
 }

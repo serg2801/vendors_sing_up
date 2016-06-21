@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'board_success',         to: 'static_pages#board'
   get 'board_success_update',  to: 'static_pages#board_update'
   get 'trade_success_update',  to: 'static_pages#trade_update'
+  get 'about',                 to: 'static_pages#about'
+  get 'product_categories',    to: 'static_pages#product_categories'
   get 'upload_vendor_agreement_success',  to: 'static_pages#upload_vendor_agreement_success'
 
   get 'persons/profile', as: 'user_root'
