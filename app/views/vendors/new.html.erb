@@ -33,7 +33,7 @@
 
             </div>
             <div class="panel-body pt0 pb0">
-              <div class="form-horizontal group-border stripped" id="validate">
+              <div class="form-horizontal group-border stripped">
                 <div class="form-group">
                   <%= f.label :business_name, "Business Name/D.B.A:", :class => "col-lg-2 col-md-3 control-label" %>
                   <div class="col-lg-10 col-md-9">
@@ -120,9 +120,36 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :certificate, "Interior Design Certificate Number:", :class => "col-lg-2 col-md-3 control-label certificate_label" %>
+                  <%= f.label :certificate, "Interior Design Certificate Number:", :class => "col-lg-2 col-md-3 control-label certificate_label label_pt_0" %>
                   <div class="col-lg-10 col-md-9">
                     <%= f.text_field :certificate, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :about_our_company, "Where did you learned about our company?", :class => "col-lg-2 col-md-3 control-label control-label label_pt_0" %>
+                  <div class="col-lg-10 col-md-9">
+                    <%= f.text_field :about_our_company, :class => "form-control" %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :designer, "Brick & Mortar or designer:", :class => "col-lg-2 col-md-3 control-label label_pt_0" %>
+                  <div class="col-lg-10 col-md-9">
+                    <div class="checkbox-custom">
+                      <%= f.check_box :designer, id: 'designer_checkbox' %>
+                      <label class="checkbox_label" for="designer_checkbox">Yes</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :tax_exempt, "Tax exempt:", :class => "col-lg-2 col-md-3 control-label label_pt_0" %>
+                  <div class="col-lg-10 col-md-9">
+                    <div class="checkbox-custom">
+                      <%= f.check_box :tax_exempt, id: 'tax_exempt_checkbox' %>
+                      <label class="checkbox_label" for="tax_exempt_checkbox">Yes</label>
+                    </div>
                   </div>
                 </div>
 
@@ -137,7 +164,7 @@
                       <div class="col-lg-3 col-md-6">
                         <div class="checkbox-custom">
                           <%= check_box_tag "vendor[company_ids][]", company_type.id, nil, :id => "cmt_#{company_type.id}", name_company: "checkbox_company[]" %>
-                          <label for="cmt_<%= company_type.id %>"><%= company_type.title.upcase %></label>
+                          <label class="checkbox_label" for="cmt_<%= company_type.id %>"><%= company_type.title.upcase %></label>
                         </div>
                       </div>
                   <% end %>
@@ -195,7 +222,7 @@
 
               </div>
               <div class="panel-body">
-                <form role="form" class="form-horizontal group-border stripped" id="validate" novalidate="novalidate">
+                <form role="form" class="form-horizontal group-border stripped" id="" novalidate="novalidate">
                   <div class="form-group">
                     <label class="col-xs-12 control-label">By submitting this form, you agree to the following: </label>
 
@@ -214,7 +241,7 @@
                     <div class="col-xs-12 agree_checkbox">
                       <div class="checkbox-custom">
                         <input type="checkbox" value="option" id="agree checkbox_agree" name="agree">
-                        <label for="agree">I agree to the terms, conditions, and agreements outlined above.</label>
+                        <label class="checkbox_label" for="checkbox_agree">I agree to the terms, conditions, and agreements outlined above.</label>
                       </div>
                     </div>
                   </div>

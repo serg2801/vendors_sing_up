@@ -115,7 +115,7 @@
                     <div class="col-lg-3 col-md-6">
                       <div class="checkbox-custom">
                         <%= check_box_tag "trade[option_ids][]", option_type.id, nil, :id => "ot_#{option_type.id}", name_option: "checkbox_option[]" %>
-                        <label for="ot_<%= option_type.id %>"><%= option_type.title.upcase %></label>
+                        <label class="checkbox_label" for="ot_<%= option_type.id %>"><%= option_type.title.upcase %></label>
                       </div>
                     </div>
                 <% end %>
@@ -133,7 +133,7 @@
                     <div class="col-lg-3 col-md-6">
                       <div class="checkbox-custom">
                         <%= check_box_tag "trade[category_ids][]", category_type.id, nil, :id => "ct_#{category_type.id}", name_category: "checkbox_category[]" %>
-                        <label for="ct_<%= category_type.id %>"><%= category_type.title.upcase %></label>
+                        <label class="checkbox_label" for="ct_<%= category_type.id %>"><%= category_type.title.upcase %></label>
                       </div>
                     </div>
                 <% end %>
@@ -145,7 +145,7 @@
                     <div class="col-lg-3 col-md-6">
                       <div class="checkbox-custom">
                         <%= check_box_tag "trade[channel_ids][]", channel_type.id, nil, :id => "cht_#{channel_type.id}", name_channel: "checkbox_channel[]" %>
-                        <label for="cht_<%= channel_type.id %>"><%= channel_type.title.upcase %></label>
+                        <label class="checkbox_label" for="cht_<%= channel_type.id %>"><%= channel_type.title.upcase %></label>
                       </div>
                     </div>
                 <% end %>
@@ -213,7 +213,7 @@
                   <div class="col-xs-12 agree_checkbox">
                     <div class="checkbox-custom">
                       <input type="checkbox" value="option" id="agree checkbox_agree" name="agree">
-                      <label for="agree">I agree to the terms, conditions, and agreements outlined above.</label>
+                      <label class="checkbox_label" for="agree">I agree to the terms, conditions, and agreements outlined above.</label>
                     </div>
                   </div>
                 </div>

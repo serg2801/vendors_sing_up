@@ -11,7 +11,9 @@
 <p>State: <%= @vendor.state %></p>
 <p>Country: <%= @vendor.country %></p>
 <p>Web site url: <%= @vendor.web_site_url %></p>
-<p>Interior Design Certificate Number: <%= @vendor.certificate %></p>
+<p>Where did you learned about our company?: <%= @vendor.about_our_company %></p>
+<p>Brick & Mortar or designer: <%= @vendor.designer %></p>
+<p>Tax exempt: <%= @vendor.tax_exempt %></p>
 <div>
   <p>Check the options that describe your business:</p>
   <% @vendor.companies.each do |company| %>
