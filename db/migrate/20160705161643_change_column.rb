@@ -1,7 +1,7 @@
 class ChangeColumn < ActiveRecord::Migration
   def up
-    change_column :vendors, :designer, :text
-    change_column :vendors, :tax_exempt, :text
+    change_column :vendors, :designer, :text, default: nil
+    change_column :vendors, :tax_exempt, :text, default: nil
   end
 
   def down

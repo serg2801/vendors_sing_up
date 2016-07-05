@@ -14,324 +14,329 @@
 ActiveRecord::Schema.define(version: 20160705161643) do
 
   create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
+    t.string   "namespace",     limit: 255
+    t.text     "body",          limit: 65535
+    t.string   "resource_id",   limit: 255,   null: false
+    t.string   "resource_type", limit: 255,   null: false
+    t.integer  "author_id",     limit: 4
+    t.string   "author_type",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "arbor_gentry_carriers", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "board_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.integer  "board_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "arbor_gentry_carriers", ["board_id"], name: "index_arbor_gentry_carriers_on_board_id"
+  add_index "arbor_gentry_carriers", ["board_id"], name: "index_arbor_gentry_carriers_on_board_id", using: :btree
 
   create_table "boards", force: :cascade do |t|
-    t.string   "legal_business_name"
-    t.string   "company_name"
-    t.string   "vendor_based_in"
-    t.string   "vendor_based_in_other"
-    t.string   "main_address_street"
-    t.string   "main_address_unit"
-    t.string   "main_address_city"
-    t.string   "main_address_state"
-    t.string   "main_address_zip"
-    t.string   "main_address_country"
-    t.string   "primary_business_name"
-    t.string   "primary_business_phone"
-    t.string   "primary_business_email"
-    t.string   "primary_business_fax"
-    t.string   "finance_name"
-    t.string   "finance_phone"
-    t.string   "finance_email"
-    t.string   "finance_fax"
-    t.string   "purchase_orders_name"
-    t.string   "purchase_orders_phone"
-    t.string   "purchase_orders_email"
-    t.string   "purchase_orders_fax"
-    t.string   "inventory_name"
-    t.string   "inventory_phone"
-    t.string   "inventory_email"
-    t.string   "inventory_fax"
-    t.string   "returns_name"
-    t.string   "returns_phone"
-    t.string   "returns_email"
-    t.string   "returns_fax"
-    t.string   "product_information_name"
-    t.string   "product_information_phone"
-    t.string   "product_information_email"
-    t.string   "product_information_fax"
-    t.string   "customer_service_name"
-    t.string   "customer_service_phone"
-    t.string   "customer_service_email"
-    t.string   "customer_service_fax"
-    t.string   "inventory_integration_method"
-    t.string   "integrations_contact_name"
-    t.string   "integrations_contact_phone"
-    t.string   "integrations_contact_email"
-    t.string   "integrations_contact_fax"
-    t.string   "upc_marketing"
-    t.string   "upc_ticketing_contact_name"
-    t.string   "upc_ticketing_contact_phone"
-    t.string   "upc_ticketing_contact_email"
-    t.string   "upc_ticketing_contact_fax"
-    t.string   "returns_contact_name"
-    t.string   "returns_contact_phone"
-    t.string   "returns_contact_email"
-    t.string   "returns_contact_fax"
-    t.string   "returns_address_street"
-    t.string   "returns_address_unit"
-    t.string   "returns_address_city"
-    t.string   "returns_address_state"
-    t.string   "returns_address_zip"
-    t.string   "returns_address_country"
-    t.string   "preferred_shipping_method"
-    t.text     "protocol_for_freight_shipments"
-    t.string   "multiple_warehouses"
-    t.string   "shipping_from_multiple_warehouses"
-    t.string   "transportation_and_shipment_section"
-    t.string   "ship_alone_items"
-    t.string   "average_inventory_levels"
-    t.string   "typical_shipping_lead_time_count"
-    t.string   "typical_shipping_lead_time_day"
-    t.string   "average_inventory_replenishment_time_count"
-    t.string   "average_inventory_replenishment_time_day"
-    t.string   "average_inventory_replenishment_time_other"
-    t.string   "method"
-    t.string   "method_other"
-    t.string   "frequency"
-    t.string   "frequency_other"
-    t.string   "credit_card"
-    t.string   "wire_transfer"
-    t.string   "ach"
-    t.string   "check_by_mail"
-    t.string   "pay_pal"
-    t.string   "bitcoin"
-    t.string   "costs_fees"
-    t.string   "if_so_costs_fees"
-    t.string   "requirements_for_purchase_orders"
-    t.string   "if_yes_requirements_for_purchase_orders"
-    t.text     "imap_pricing"
-    t.string   "return_policy"
-    t.text     "merchandising"
-    t.datetime "created_at",                                                 null: false
-    t.datetime "updated_at",                                                 null: false
-    t.integer  "user_id"
-    t.boolean  "grants_access",                              default: false
-    t.string   "costs_fees_radio"
-    t.text     "w_9_form"
-    t.text     "certificate"
-    t.text     "inventory_integration_method_other"
-    t.text     "contact_other_title"
-    t.text     "contact_other_name"
-    t.text     "contact_other_phone"
-    t.text     "contact_other_email"
-    t.text     "contact_other_fax"
+    t.string   "legal_business_name",                        limit: 255
+    t.string   "company_name",                               limit: 255
+    t.string   "vendor_based_in",                            limit: 255
+    t.string   "vendor_based_in_other",                      limit: 255
+    t.string   "main_address_street",                        limit: 255
+    t.string   "main_address_unit",                          limit: 255
+    t.string   "main_address_city",                          limit: 255
+    t.string   "main_address_state",                         limit: 255
+    t.string   "main_address_zip",                           limit: 255
+    t.string   "main_address_country",                       limit: 255
+    t.string   "primary_business_name",                      limit: 255
+    t.string   "primary_business_phone",                     limit: 255
+    t.string   "primary_business_email",                     limit: 255
+    t.string   "primary_business_fax",                       limit: 255
+    t.string   "finance_name",                               limit: 255
+    t.string   "finance_phone",                              limit: 255
+    t.string   "finance_email",                              limit: 255
+    t.string   "finance_fax",                                limit: 255
+    t.string   "purchase_orders_name",                       limit: 255
+    t.string   "purchase_orders_phone",                      limit: 255
+    t.string   "purchase_orders_email",                      limit: 255
+    t.string   "purchase_orders_fax",                        limit: 255
+    t.string   "inventory_name",                             limit: 255
+    t.string   "inventory_phone",                            limit: 255
+    t.string   "inventory_email",                            limit: 255
+    t.string   "inventory_fax",                              limit: 255
+    t.string   "returns_name",                               limit: 255
+    t.string   "returns_phone",                              limit: 255
+    t.string   "returns_email",                              limit: 255
+    t.string   "returns_fax",                                limit: 255
+    t.string   "product_information_name",                   limit: 255
+    t.string   "product_information_phone",                  limit: 255
+    t.string   "product_information_email",                  limit: 255
+    t.string   "product_information_fax",                    limit: 255
+    t.string   "customer_service_name",                      limit: 255
+    t.string   "customer_service_phone",                     limit: 255
+    t.string   "customer_service_email",                     limit: 255
+    t.string   "customer_service_fax",                       limit: 255
+    t.string   "inventory_integration_method",               limit: 255
+    t.string   "integrations_contact_name",                  limit: 255
+    t.string   "integrations_contact_phone",                 limit: 255
+    t.string   "integrations_contact_email",                 limit: 255
+    t.string   "integrations_contact_fax",                   limit: 255
+    t.string   "upc_marketing",                              limit: 255
+    t.string   "upc_ticketing_contact_name",                 limit: 255
+    t.string   "upc_ticketing_contact_phone",                limit: 255
+    t.string   "upc_ticketing_contact_email",                limit: 255
+    t.string   "upc_ticketing_contact_fax",                  limit: 255
+    t.string   "returns_contact_name",                       limit: 255
+    t.string   "returns_contact_phone",                      limit: 255
+    t.string   "returns_contact_email",                      limit: 255
+    t.string   "returns_contact_fax",                        limit: 255
+    t.string   "returns_address_street",                     limit: 255
+    t.string   "returns_address_unit",                       limit: 255
+    t.string   "returns_address_city",                       limit: 255
+    t.string   "returns_address_state",                      limit: 255
+    t.string   "returns_address_zip",                        limit: 255
+    t.string   "returns_address_country",                    limit: 255
+    t.string   "preferred_shipping_method",                  limit: 255
+    t.text     "protocol_for_freight_shipments",             limit: 65535
+    t.string   "multiple_warehouses",                        limit: 255
+    t.string   "shipping_from_multiple_warehouses",          limit: 255
+    t.string   "transportation_and_shipment_section",        limit: 255
+    t.string   "ship_alone_items",                           limit: 255
+    t.string   "average_inventory_levels",                   limit: 255
+    t.string   "typical_shipping_lead_time_count",           limit: 255
+    t.string   "typical_shipping_lead_time_day",             limit: 255
+    t.string   "average_inventory_replenishment_time_count", limit: 255
+    t.string   "average_inventory_replenishment_time_day",   limit: 255
+    t.string   "average_inventory_replenishment_time_other", limit: 255
+    t.string   "method",                                     limit: 255
+    t.string   "method_other",                               limit: 255
+    t.string   "frequency",                                  limit: 255
+    t.string   "frequency_other",                            limit: 255
+    t.string   "credit_card",                                limit: 255
+    t.string   "wire_transfer",                              limit: 255
+    t.string   "ach",                                        limit: 255
+    t.string   "check_by_mail",                              limit: 255
+    t.string   "pay_pal",                                    limit: 255
+    t.string   "bitcoin",                                    limit: 255
+    t.string   "costs_fees",                                 limit: 255
+    t.string   "if_so_costs_fees",                           limit: 255
+    t.string   "requirements_for_purchase_orders",           limit: 255
+    t.string   "if_yes_requirements_for_purchase_orders",    limit: 255
+    t.text     "imap_pricing",                               limit: 65535
+    t.string   "return_policy",                              limit: 255
+    t.text     "merchandising",                              limit: 65535
+    t.datetime "created_at",                                                               null: false
+    t.datetime "updated_at",                                                               null: false
+    t.integer  "user_id",                                    limit: 4
+    t.boolean  "grants_access",                                            default: false
+    t.string   "costs_fees_radio",                           limit: 255
+    t.text     "w_9_form",                                   limit: 65535
+    t.text     "certificate",                                limit: 65535
+    t.text     "inventory_integration_method_other",         limit: 65535
+    t.text     "contact_other_title",                        limit: 65535
+    t.text     "contact_other_name",                         limit: 65535
+    t.text     "contact_other_phone",                        limit: 65535
+    t.text     "contact_other_email",                        limit: 65535
+    t.text     "contact_other_fax",                          limit: 65535
   end
 
   create_table "brands", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "board_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.integer  "board_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "brands", ["board_id"], name: "index_brands_on_board_id"
+  add_index "brands", ["board_id"], name: "index_brands_on_board_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "channels", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "companies", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "greetings", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "information_trades", force: :cascade do |t|
-    t.text     "vendor_agreement"
-    t.integer  "trade_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.text     "vendor_agreement", limit: 65535
+    t.integer  "trade_id",         limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "options", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "product_types", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "board_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.integer  "board_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "product_types", ["board_id"], name: "index_product_types_on_board_id"
+  add_index "product_types", ["board_id"], name: "index_product_types_on_board_id", using: :btree
 
   create_table "trade_categories", force: :cascade do |t|
-    t.integer  "trade_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "trade_id",    limit: 4
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "trade_channels", force: :cascade do |t|
-    t.integer  "trade_id"
-    t.integer  "channel_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "trade_id",   limit: 4
+    t.integer  "channel_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "trade_options", force: :cascade do |t|
-    t.integer  "trade_id"
-    t.integer  "option_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "trade_id",   limit: 4
+    t.integer  "option_id",  limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "trades", force: :cascade do |t|
-    t.string   "business_name"
-    t.string   "greeting"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "address"
-    t.string   "suite"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
-    t.string   "country"
-    t.string   "web_site_url_my"
-    t.string   "web_site"
-    t.text     "information"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "image"
-    t.integer  "user_id"
-    t.boolean  "grant_access",    default: false
+    t.string   "business_name",   limit: 255
+    t.string   "greeting",        limit: 255
+    t.string   "first_name",      limit: 255
+    t.string   "last_name",       limit: 255
+    t.string   "email",           limit: 255
+    t.string   "phone_number",    limit: 255
+    t.string   "address",         limit: 255
+    t.string   "suite",           limit: 255
+    t.string   "city",            limit: 255
+    t.string   "state",           limit: 255
+    t.string   "zipcode",         limit: 255
+    t.string   "country",         limit: 255
+    t.string   "web_site_url_my", limit: 255
+    t.string   "web_site",        limit: 255
+    t.text     "information",     limit: 65535
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "image",           limit: 255
+    t.integer  "user_id",         limit: 4
+    t.boolean  "grant_access",                  default: false
   end
 
   create_table "transportation_and_shipments", force: :cascade do |t|
-    t.string   "ship_from_information_street"
-    t.string   "ship_from_information_unit"
-    t.string   "ship_from_information_city"
-    t.string   "ship_from_information_state"
-    t.string   "ship_from_information_zip"
-    t.string   "ship_from_information_country"
-    t.string   "transportation_contact_name"
-    t.string   "transportation_contact_phone"
-    t.string   "transportation_contact_email"
-    t.string   "transportation_contact_fax"
-    t.integer  "board_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "ship_from_information_street",  limit: 255
+    t.string   "ship_from_information_unit",    limit: 255
+    t.string   "ship_from_information_city",    limit: 255
+    t.string   "ship_from_information_state",   limit: 255
+    t.string   "ship_from_information_zip",     limit: 255
+    t.string   "ship_from_information_country", limit: 255
+    t.string   "transportation_contact_name",   limit: 255
+    t.string   "transportation_contact_phone",  limit: 255
+    t.string   "transportation_contact_email",  limit: 255
+    t.string   "transportation_contact_fax",    limit: 255
+    t.integer  "board_id",                      limit: 4
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
-  add_index "transportation_and_shipments", ["board_id"], name: "index_transportation_and_shipments_on_board_id"
+  add_index "transportation_and_shipments", ["board_id"], name: "index_transportation_and_shipments_on_board_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "pas_decrypt"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "pas_decrypt",            limit: 255
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vendor_carriers", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "board_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.integer  "board_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "vendor_carriers", ["board_id"], name: "index_vendor_carriers_on_board_id"
+  add_index "vendor_carriers", ["board_id"], name: "index_vendor_carriers_on_board_id", using: :btree
 
   create_table "vendor_companies", force: :cascade do |t|
-    t.integer  "vendor_id"
-    t.integer  "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "vendor_id",  limit: 4
+    t.integer  "company_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "vendors", force: :cascade do |t|
-    t.string   "business_name"
-    t.string   "greeting"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "address"
-    t.string   "suite"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
-    t.string   "country"
-    t.string   "web_site_url"
-    t.string   "certificate"
-    t.text     "information"
+    t.string   "business_name",     limit: 255
+    t.string   "greeting",          limit: 255
+    t.string   "first_name",        limit: 255
+    t.string   "last_name",         limit: 255
+    t.string   "email",             limit: 255
+    t.string   "phone_number",      limit: 255
+    t.string   "address",           limit: 255
+    t.string   "suite",             limit: 255
+    t.string   "city",              limit: 255
+    t.string   "state",             limit: 255
+    t.string   "zipcode",           limit: 255
+    t.string   "country",           limit: 255
+    t.string   "web_site_url",      limit: 255
+    t.string   "certificate",       limit: 255
+    t.text     "information",       limit: 65535
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "image"
-    t.text     "about_our_company"
-    t.text     "designer",          default: "f"
-    t.text     "tax_exempt",        default: "f"
+    t.string   "image",             limit: 255
+    t.text     "about_our_company", limit: 65535
+    t.text     "designer",          limit: 65535
+    t.text     "tax_exempt",        limit: 65535
   end
 
+  add_foreign_key "arbor_gentry_carriers", "boards"
+  add_foreign_key "brands", "boards"
+  add_foreign_key "product_types", "boards"
+  add_foreign_key "transportation_and_shipments", "boards"
+  add_foreign_key "vendor_carriers", "boards"
 end
