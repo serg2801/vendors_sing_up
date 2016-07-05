@@ -8,11 +8,9 @@
 
 # Company Type
 
-Company.create(title: "Brick and Mortar Store")
-Company.create(title: "Online Store")
-Company.create(title: "Sales Rep./Showroom")
-Company.create(title: "Manufacturer")
 Company.create(title: "Interior Designer")
+Company.create(title: "Sales Rep./Showroom")
+Company.create(title: "Retailer")
 Company.create(title: "Other")
 
 # Option Type
