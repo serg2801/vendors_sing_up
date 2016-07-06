@@ -43,6 +43,9 @@ ActiveAdmin.register Vendor do
           rows :title
         end
       end
+      row :dropship_e_commerce
+      row :stocking_dealer
+      row :non_stocking_dealer
       row :created_at
       row :image do
         image_tag vendor.image.url

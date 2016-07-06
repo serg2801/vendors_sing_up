@@ -29,7 +29,8 @@ class VendorsController < ApplicationController
   def vendor_params
     params.require(:vendor).permit(:business_name, :greeting, :first_name, :last_name, :email, :phone_number, :address,
                                    :suite, :city, :state, :zipcode, :country, :web_site_url, :information, :image,
-                                   :certificate, :about_our_company, :designer, :tax_exempt)
+                                   :certificate, :about_our_company, :designer, :tax_exempt, :dropship_e_commerce,
+                                   :stocking_dealer, :non_stocking_dealer)
   end
 
 end
