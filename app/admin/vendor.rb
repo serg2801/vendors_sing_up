@@ -35,7 +35,7 @@ ActiveAdmin.register Vendor do
       row :web_site_url
       row :certificate
       row :about_our_company
-      row :designer
+      # row :designer
       row :tax_exempt
       row :information
       panel 'Companies' do
