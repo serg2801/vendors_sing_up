@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706103655) do
+ActiveRecord::Schema.define(version: 20160709154135) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -326,15 +326,15 @@ ActiveRecord::Schema.define(version: 20160706103655) do
     t.string   "web_site_url"
     t.string   "certificate"
     t.text     "information"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "image"
     t.text     "about_our_company"
-    t.text     "designer",            default: "f"
-    t.text     "tax_exempt",          default: "f"
-    t.boolean  "dropship_e_commerce", default: false
-    t.boolean  "stocking_dealer",     default: false
-    t.boolean  "non_stocking_dealer", default: false
+    t.text     "tax_exempt"
+    t.boolean  "dropship_e_commerce",    default: false
+    t.boolean  "stocking_dealer",        default: false
+    t.boolean  "non_stocking_dealer",    default: false
+    t.text     "describe_your_business"
   end
 
 end

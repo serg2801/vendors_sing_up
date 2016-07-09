@@ -35,14 +35,14 @@ ActiveAdmin.register Vendor do
       row :web_site_url
       row :certificate
       row :about_our_company
-      # row :designer
       row :tax_exempt
       row :information
-      panel 'Companies' do
-        attributes_table_for vendor.companies do
-          rows :title
-        end
-      end
+      # panel 'Companies' do
+      #   attributes_table_for vendor.companies do
+      #     rows :title
+      #   end
+      # end
+      row :describe_your_business
       row :dropship_e_commerce
       row :stocking_dealer
       row :non_stocking_dealer

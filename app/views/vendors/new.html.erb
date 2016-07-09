@@ -150,28 +150,18 @@
                   <%= f.file_field :image, class: 'btn-file input_uploader' %>
                 </div>
 
-                <!--<div class="form-group">-->
-                  <!--<div class="col-lg-10 col-md-9 radio_button_group_ml">-->
-                    <!--<%#= f.label :designer, 'Do you have a storefront/brick and mortar store?', :class => 'col-lg-2 col-md-3 control-label' %>-->
-                    <!--<div class="col-lg-10 col-md-9 radio_button_group_p_top">-->
-                      <!--<%#= f.radio_button(:designer, 'Yes') %>-->
-                      <!--<%#= f.label(:designer, 'Yes', class: 'form_radio_button') %>-->
-                      <!--<%#= f.radio_button(:designer, 'No') %>-->
-                      <!--<%#= f.label(:designer, 'No', class: 'form_radio_button') %>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</div>-->
-
-                <div class="form-group company_check_box">
-                  <label class="col-xs-12 control-label">Check the options that describe your business: </label>
-                  <% Company.order(:title).each do |company_type| %>
-                      <div class="col-lg-3 col-md-6">
-                        <div class="checkbox-custom">
-                          <%= check_box_tag 'vendor[company_ids][]', company_type.id, nil, :id => "cmt_#{company_type.id}", name_company: 'checkbox_company[]' %>
-                          <label class="checkbox_label" for="cmt_<%= company_type.id %>"><%= company_type.title.upcase %></label>
-                        </div>
-                      </div>
-                  <% end %>
+                <div class="form-group radio_button_business_js">
+                  <div class="col-lg-10 col-md-9 radio_button_group_ml">
+                    <%= f.label :describe_your_business, 'Check the options that describe your business:', :class => 'col-lg-2 col-md-3 control-label' %>
+                    <div class="col-lg-10 col-md-9 radio_button_group_p_top radio_button_group_js">
+                      <%= f.radio_button(:describe_your_business, 'Contract', class: 'radio_button_contract_js') %>
+                      <%= f.label(:describe_your_business, 'Contract', class: 'form_radio_button') %>
+                      <%= f.radio_button(:describe_your_business, 'Retailer', class: 'radio_button_retailer_js') %>
+                      <%= f.label(:describe_your_business, 'Retailer', class: 'form_radio_button') %>
+                      <%= f.radio_button(:describe_your_business, 'Designer') %>
+                      <%= f.label(:describe_your_business, 'Designer', class: 'form_radio_button') %>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="form-group sub_options_js">

@@ -14,12 +14,13 @@
 <p>Where did you learn about our company? <%= @vendor.about_our_company %></p>
 <!--<p>Do you have a storefront/brick and mortar store? <%#= @vendor.designer %></p>-->
 <p>Tax exempt? <%= @vendor.tax_exempt %></p>
-<div>
-  <p>Check the options that describe your business:</p>
-  <% @vendor.companies.each do |company| %>
-  <p>--- <%= company.title %></p>
-  <% end %>
-</div>
+<!--<div>-->
+  <!--<p>Check the options that describe your business:</p>-->
+  <!--<%# @vendor.companies.each do |company| %>-->
+  <!--<p>-&#45;&#45; <%#= company.title %></p>-->
+  <!--<%# end %>-->
+<!--</div>-->
+<p>Check the options that describe your business: <%= @vendor.describe_your_business %></p>
 <p>Dropship/e-Commerce: <%= @vendor.dropship_e_commerce %></p>
 <p>Stocking Dealer: <%= @vendor.stocking_dealer %></p>
 <p>Non-Stocking Dealer: <%= @vendor.non_stocking_dealer %></p>
