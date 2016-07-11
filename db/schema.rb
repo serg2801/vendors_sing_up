@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709154135) do
+ActiveRecord::Schema.define(version: 20160711183422) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -335,6 +335,7 @@ ActiveRecord::Schema.define(version: 20160709154135) do
     t.boolean  "stocking_dealer",        default: false
     t.boolean  "non_stocking_dealer",    default: false
     t.text     "describe_your_business"
+    t.string   "contract_details"
   end
 
 end

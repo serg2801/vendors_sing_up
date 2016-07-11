@@ -182,6 +182,14 @@
                   </div>
                 </div>
 
+                <div class="form-group contract_details_js">
+                  <%= f.label :contract_details, 'Contract Details:', :class => 'col-lg-2 col-md-3 control-label' %>
+                  <div class="col-lg-3 col-md-9">
+                    <%= f.select(:contract_details, ['Commercial', 'Hospitality', 'Showroom', 'Staging'], {}, {:class => 'form-control requires'}) %>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>

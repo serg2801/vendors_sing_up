@@ -14,16 +14,19 @@
 <p>Where did you learn about our company? <%= @vendor.about_our_company %></p>
 <!--<p>Do you have a storefront/brick and mortar store? <%#= @vendor.designer %></p>-->
 <p>Tax exempt? <%= @vendor.tax_exempt %></p>
-<!--<div>-->
-  <!--<p>Check the options that describe your business:</p>-->
-  <!--<%# @vendor.companies.each do |company| %>-->
-  <!--<p>-&#45;&#45; <%#= company.title %></p>-->
-  <!--<%# end %>-->
-<!--</div>-->
 <p>Check the options that describe your business: <%= @vendor.describe_your_business %></p>
-<p>Dropship/e-Commerce: <%= @vendor.dropship_e_commerce %></p>
-<p>Stocking Dealer: <%= @vendor.stocking_dealer %></p>
-<p>Non-Stocking Dealer: <%= @vendor.non_stocking_dealer %></p>
+<% if @vendor.dropship_e_commerce %>
+    <p>Dropship/e-Commerce: <%= @vendor.dropship_e_commerce %></p>
+<% end %>
+<% if @vendor.stocking_dealer %>
+    <p>Stocking Dealer: <%= @vendor.stocking_dealer %></p>
+<% end %>
+<% if @vendor.non_stocking_dealer %>
+    <p>Non-Stocking Dealer: <%= @vendor.non_stocking_dealer %></p>
+<% end %>
+<% unless @vendor.contract_details.blank? %>
+    <p>Contract Details: <%= @vendor.contract_details %></p>
+<% end %>
 <p>Information: <%= @vendor.information %></p>
 <p>Consented: true </p>
 
