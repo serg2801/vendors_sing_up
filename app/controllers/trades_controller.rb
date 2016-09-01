@@ -10,6 +10,7 @@ class TradesController < ApplicationController
   end
 
   def create
+    params[:trade][:phone_number] = params[:trade][:phone_number].scan(/\d/).join('')
     @trade = Trade.new(trade_params)
     @categories = params[:trade][:category_ids]
     @channels = params[:trade][:channel_ids]
@@ -51,6 +52,7 @@ class TradesController < ApplicationController
   end
 
   def update
+    params[:trade][:phone_number] = params[:trade][:phone_number].scan(/\d/).join('')
     @user = User.find(current_user.id)
     @trade = @user.trade
     @categories = params[:trade][:category_ids]

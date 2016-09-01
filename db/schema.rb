@@ -330,7 +330,7 @@ ActiveRecord::Schema.define(version: 20160711183422) do
     t.datetime "updated_at",                             null: false
     t.string   "image"
     t.text     "about_our_company"
-    t.text     "tax_exempt"
+    t.text     "tax_exempt",             default: "f"
     t.boolean  "dropship_e_commerce",    default: false
     t.boolean  "stocking_dealer",        default: false
     t.boolean  "non_stocking_dealer",    default: false

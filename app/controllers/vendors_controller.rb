@@ -5,6 +5,7 @@ class VendorsController < ApplicationController
   end
 
   def create
+    params[:vendor][:phone_number] = params[:vendor][:phone_number].scan(/\d/).join('')
     @vendor = Vendor.new(vendor_params)
     if @vendor.save
       VendorMailer.signup_cinfirmation(@vendor).deliver
